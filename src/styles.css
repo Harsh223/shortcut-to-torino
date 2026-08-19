@@ -143,6 +143,34 @@
   padding-inline: 1.25rem;
 }
 
+/* Bright sky wash used behind the hero */
+@utility sky-wash {
+  background:
+    radial-gradient(120% 80% at 50% -10%, oklch(0.96 0.03 230) 0%, transparent 55%),
+    linear-gradient(180deg, var(--color-sky-deep) 0%, var(--color-sky) 38%, #ffffff 92%);
+}
+
+/* Big friendly pill button */
+@utility pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.95rem 1.9rem;
+  font-size: 1rem;
+  font-weight: 800;
+  white-space: nowrap;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.pill:hover {
+  transform: translateY(-2px);
+}
+
+
 /* App-like chip: white pill, hairline border */
 @utility chip {
   display: inline-flex;
