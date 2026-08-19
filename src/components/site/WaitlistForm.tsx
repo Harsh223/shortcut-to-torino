@@ -50,10 +50,11 @@ export function WaitlistForm({ compact = false }: { compact?: boolean }) {
         />
         <button
           type="submit"
-          className="h-12 rounded-full bg-azure px-6 text-sm font-bold text-white transition-colors hover:bg-azure-hover"
+          className="h-12 rounded-full bg-grass px-7 text-sm font-extrabold text-white transition-colors hover:bg-grass-hover"
         >
           {c.waitlist.button}
         </button>
+
       </div>
       <p
         className={`mt-2.5 text-xs font-medium ${state === "error" ? "text-destructive" : "text-muted-foreground"}`}
