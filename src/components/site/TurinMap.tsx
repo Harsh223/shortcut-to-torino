@@ -6,7 +6,7 @@ type Props = {
 };
 
 const GRID_V = Array.from({ length: 22 }, (_, i) => 40 + i * 58);
-const GRID_H = Array.from({ length: 13 }, (_, i) => 30 + i * 56);
+const GRID_H = Array.from({ length: 19 }, (_, i) => 30 + i * 56);
 
 export function TurinMap({ variant = "night", className = "", showRoutes = true, layers }: Props) {
   const night = variant === "night";
@@ -18,7 +18,7 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
 
   return (
     <svg
-      viewBox="0 0 1200 700"
+      viewBox="0 0 1200 1010"
       preserveAspectRatio="xMidYMid slice"
       aria-hidden="true"
       className={className}
@@ -41,7 +41,7 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
         </filter>
       </defs>
 
-      <rect width="1200" height="700" fill="url(#sc-sky)" />
+      <rect width="1200" height="1010" fill="url(#sc-sky)" />
 
       {/* distant hills wash (east of the river) */}
       <path
@@ -72,7 +72,7 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
       {/* the grid */}
       <g stroke={streetColor} strokeWidth="3">
         {GRID_V.map((x) => (
-          <line key={`v${x}`} x1={x} y1="0" x2={x} y2="700" />
+          <line key={`v${x}`} x1={x} y1="0" x2={x} y2="1010" />
         ))}
         {GRID_H.map((y) => (
           <line key={`h${y}`} x1="0" y1={y} x2="1200" y2={y} />
@@ -82,20 +82,21 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
       {/* major avenues */}
       <g stroke={majorColor} strokeWidth="9" strokeLinecap="round">
         <line x1="0" y1="366" x2="1200" y2="366" />
-        <line x1="330" y1="0" x2="330" y2="700" />
-        <line x1="620" y1="0" x2="960" y2="700" />
+        <line x1="330" y1="0" x2="330" y2="1010" />
+        <line x1="620" y1="0" x2="1120" y2="1010" />
+        <line x1="0" y1="702" x2="1200" y2="702" />
       </g>
 
       {/* the Po */}
       <path
-        d="M980 -20 C930 140 1010 260 940 400 C880 520 940 620 900 720"
+        d="M980 -20 C930 140 1010 260 940 400 C880 520 960 700 900 1030"
         stroke={waterColor}
         strokeWidth="46"
         fill="none"
         strokeLinecap="round"
       />
       <path
-        d="M980 -20 C930 140 1010 260 940 400 C880 520 940 620 900 720"
+        d="M980 -20 C930 140 1010 260 940 400 C880 520 960 700 900 1030"
         stroke={night ? "#0DB4B9" : "#0DB4B9"}
         strokeOpacity="0.18"
         strokeWidth="46"
