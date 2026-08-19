@@ -5,34 +5,34 @@ import { Wordmark } from "./Logo";
 export function Footer() {
   const { c } = useI18n();
   return (
-    <footer className="border-t border-divider bg-paper">
-      <div className="container-site grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
+    <footer className="bg-forest-deep text-white">
+      <div className="container-site grid gap-10 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <Wordmark />
-          <p className="mt-3 max-w-xs text-sm text-muted-foreground">{c.footer.tagline}</p>
-          <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-divider bg-white px-3 py-1.5 text-xs font-bold text-ink">
-            <span className="h-2 w-2 rounded-full bg-teal" />
+          <Wordmark tone="light" />
+          <p className="mt-4 max-w-xs text-sm text-white/70">{c.footer.tagline}</p>
+          <p className="mt-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-2 text-xs font-extrabold text-white">
+            <span className="h-2 w-2 rounded-full bg-amber" />
             {c.footer.made}
           </p>
         </div>
 
         <div>
-          <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+          <p className="text-xs font-extrabold uppercase tracking-wider text-white/50">
             {c.footer.product}
           </p>
-          <ul className="mt-3 space-y-2 text-sm font-semibold text-ink">
+          <ul className="mt-4 space-y-2.5 text-sm font-bold text-white/85">
             <li>
-              <Link to="/features" className="hover:text-azure">
+              <Link to="/features" className="hover:text-amber">
                 {c.nav.product}
               </Link>
             </li>
             <li>
-              <Link to="/turin" className="hover:text-azure">
+              <Link to="/turin" className="hover:text-amber">
                 {c.nav.turin}
               </Link>
             </li>
             <li>
-              <Link to="/download" className="hover:text-azure">
+              <Link to="/download" className="hover:text-amber">
                 {c.nav.download}
               </Link>
             </li>
@@ -40,24 +40,24 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+          <p className="text-xs font-extrabold uppercase tracking-wider text-white/50">
             {c.footer.legal}
           </p>
-          <ul className="mt-3 space-y-2 text-sm font-semibold text-ink">
+          <ul className="mt-4 space-y-2.5 text-sm font-bold text-white/85">
             <li>
-              <Link to="/privacy" className="hover:text-azure">
+              <Link to="/privacy" className="hover:text-amber">
                 Privacy
               </Link>
             </li>
             <li>
-              <Link to="/terms" className="hover:text-azure">
+              <Link to="/terms" className="hover:text-amber">
                 {c.terms.title}
               </Link>
             </li>
           </ul>
         </div>
       </div>
-      <div className="container-site border-t border-divider py-6 text-xs text-muted-foreground">
+      <div className="container-site border-t border-white/10 py-6 text-xs text-white/55">
         © {new Date().getFullYear()} Shortcut. {c.footer.rights}
       </div>
     </footer>

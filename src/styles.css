@@ -55,46 +55,66 @@
   --color-divider: var(--divider);
   --color-subtle: var(--subtle);
 
-  --shadow-chrome: 0 8px 24px -8px oklch(0.255 0.031 260.4 / 0.18);
-  --shadow-float: 0 18px 48px -18px oklch(0.255 0.031 260.4 / 0.35);
-  --shadow-device: 0 40px 80px -32px oklch(0.216 0.035 237.6 / 0.45);
+  /* Bright city palette */
+  --color-sky: var(--sky);
+  --color-sky-deep: var(--sky-deep);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-grass: var(--grass);
+  --color-grass-hover: var(--grass-hover);
+  --color-amber: var(--amber);
+  --color-cream: var(--cream);
+
+  --shadow-chrome: 0 8px 24px -8px oklch(0.3 0.05 160 / 0.18);
+  --shadow-float: 0 18px 48px -18px oklch(0.3 0.05 160 / 0.32);
+  --shadow-device: 0 40px 80px -32px oklch(0.3 0.05 160 / 0.4);
 }
 
 :root {
-  --radius: 1rem;
+  --radius: 1.25rem;
 
-  --ink: oklch(0.255 0.031 260.4);
-  --paper: oklch(0.966 0.005 258.3);
-  --navy: oklch(0.274 0.049 241.4);
-  --navy-deep: oklch(0.216 0.035 237.6);
-  --azure: oklch(0.612 0.21 260.7);
-  --azure-hover: oklch(0.548 0.209 261.4);
-  --teal: oklch(0.7 0.117 198.4);
-  --coral: oklch(0.726 0.178 43.2);
-  --success: oklch(0.631 0.154 152.9);
-  --divider: oklch(0.929 0.011 256.7);
-  --subtle: oklch(0.628 0.032 254.8);
+  --ink: oklch(0.31 0.075 158);
+  --paper: oklch(0.975 0.008 120);
+  --navy: oklch(0.36 0.09 158);
+  --navy-deep: oklch(0.3 0.08 158);
+  --azure: oklch(0.55 0.15 158);
+  --azure-hover: oklch(0.48 0.14 158);
+  --teal: oklch(0.68 0.13 195);
+  --coral: oklch(0.73 0.18 43);
+  --success: oklch(0.63 0.154 152.9);
+  --divider: oklch(0.925 0.012 150);
+  --subtle: oklch(0.6 0.03 155);
+
+  --sky: oklch(0.88 0.075 235);
+  --sky-deep: oklch(0.76 0.115 240);
+  --forest: oklch(0.38 0.1 158);
+  --forest-deep: oklch(0.29 0.078 158);
+  --grass: oklch(0.58 0.15 152);
+  --grass-hover: oklch(0.51 0.145 152);
+  --amber: oklch(0.8 0.16 78);
+  --cream: oklch(0.985 0.012 95);
 
   --background: oklch(1 0 0);
-  --foreground: var(--ink);
+  --foreground: var(--forest-deep);
   --card: oklch(1 0 0);
-  --card-foreground: var(--ink);
+  --card-foreground: var(--forest-deep);
   --popover: oklch(1 0 0);
-  --popover-foreground: var(--ink);
-  --primary: var(--azure);
+  --popover-foreground: var(--forest-deep);
+  --primary: var(--grass);
   --primary-foreground: oklch(1 0 0);
-  --secondary: var(--paper);
-  --secondary-foreground: var(--ink);
-  --muted: var(--paper);
-  --muted-foreground: oklch(0.463 0.038 255.7);
-  --accent: var(--paper);
-  --accent-foreground: var(--ink);
+  --secondary: var(--cream);
+  --secondary-foreground: var(--forest-deep);
+  --muted: var(--cream);
+  --muted-foreground: oklch(0.5 0.03 155);
+  --accent: var(--cream);
+  --accent-foreground: var(--forest-deep);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
   --border: var(--divider);
   --input: var(--divider);
-  --ring: var(--azure);
+  --ring: var(--grass);
 }
+
 
 @layer base {
   * {
@@ -122,6 +142,34 @@
   max-width: 76rem;
   padding-inline: 1.25rem;
 }
+
+/* Bright sky wash used behind the hero */
+@utility sky-wash {
+  background:
+    radial-gradient(120% 80% at 50% -10%, oklch(0.96 0.03 230) 0%, transparent 55%),
+    linear-gradient(180deg, var(--color-sky-deep) 0%, var(--color-sky) 38%, #ffffff 92%);
+}
+
+/* Big friendly pill button */
+@utility pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.95rem 1.9rem;
+  font-size: 1rem;
+  font-weight: 800;
+  white-space: nowrap;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.pill:hover {
+  transform: translateY(-2px);
+}
+
 
 /* App-like chip: white pill, hairline border */
 @utility chip {
