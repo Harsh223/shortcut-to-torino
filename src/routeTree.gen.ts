@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TurinRouteImport } from './routes/turin'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TurinRoute = TurinRouteImport.update({
   id: '/turin',
   path: '/turin',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/download': typeof DownloadRoute
   '/features': typeof FeaturesRoute
   '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/turin': typeof TurinRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/download': typeof DownloadRoute
   '/features': typeof FeaturesRoute
   '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/turin': typeof TurinRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,22 @@ export interface FileRoutesById {
   '/download': typeof DownloadRoute
   '/features': typeof FeaturesRoute
   '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/turin': typeof TurinRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/download' | '/features' | '/privacy' | '/turin'
+  fullPaths: '/' | '/download' | '/features' | '/privacy' | '/terms' | '/turin'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/download' | '/features' | '/privacy' | '/turin'
-  id: '__root__' | '/' | '/download' | '/features' | '/privacy' | '/turin'
+  to: '/' | '/download' | '/features' | '/privacy' | '/terms' | '/turin'
+  id:
+    | '__root__'
+    | '/'
+    | '/download'
+    | '/features'
+    | '/privacy'
+    | '/terms'
+    | '/turin'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +92,7 @@ export interface RootRouteChildren {
   DownloadRoute: typeof DownloadRoute
   FeaturesRoute: typeof FeaturesRoute
   PrivacyRoute: typeof PrivacyRoute
+  TermsRoute: typeof TermsRoute
   TurinRoute: typeof TurinRoute
 }
 
@@ -109,6 +126,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/turin': {
       id: '/turin'
       path: '/turin'
@@ -124,6 +148,7 @@ const rootRouteChildren: RootRouteChildren = {
   DownloadRoute: DownloadRoute,
   FeaturesRoute: FeaturesRoute,
   PrivacyRoute: PrivacyRoute,
+  TermsRoute: TermsRoute,
   TurinRoute: TurinRoute,
 }
 export const routeTree = rootRouteImport
