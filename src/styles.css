@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Shortcut design system — Turin mobility app marketing site.
- * Light page, one dark navy hero that looks like in-app navigation.
+ * Shortcut design system — deep racing green, warm paper, gold accent.
+ * Product page for Shortcut, an app by Civimatica.
  */
 
 @theme inline {
@@ -45,8 +45,8 @@
   /* Brand tokens */
   --color-ink: var(--ink);
   --color-paper: var(--paper);
-  --color-navy: var(--navy);
-  --color-navy-deep: var(--navy-deep);
+  --color-navy: var(--forest);
+  --color-navy-deep: var(--forest-deep);
   --color-azure: var(--azure);
   --color-azure-hover: var(--azure-hover);
   --color-teal: var(--teal);
@@ -55,44 +55,49 @@
   --color-divider: var(--divider);
   --color-subtle: var(--subtle);
 
-  /* Bright city palette */
-  --color-sky: var(--sky);
-  --color-sky-deep: var(--sky-deep);
+  --color-mist: var(--mist);
+  --color-mist-deep: var(--mist-deep);
+  --color-sky: var(--mist);
+  --color-sky-deep: var(--mist-deep);
   --color-forest: var(--forest);
   --color-forest-deep: var(--forest-deep);
   --color-grass: var(--grass);
   --color-grass-hover: var(--grass-hover);
-  --color-amber: var(--amber);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-amber: var(--gold);
   --color-cream: var(--cream);
 
-  --shadow-chrome: 0 8px 24px -8px oklch(0.3 0.05 160 / 0.18);
-  --shadow-float: 0 18px 48px -18px oklch(0.3 0.05 160 / 0.32);
-  --shadow-device: 0 40px 80px -32px oklch(0.3 0.05 160 / 0.4);
+  --shadow-chrome: 0 8px 24px -10px oklch(0.26 0.06 160 / 0.2);
+  --shadow-float: 0 20px 50px -22px oklch(0.26 0.06 160 / 0.35);
+  --shadow-device: 0 50px 90px -36px oklch(0.2 0.05 160 / 0.55);
 }
 
 :root {
   --radius: 1.25rem;
 
-  --ink: oklch(0.31 0.075 158);
-  --paper: oklch(0.975 0.008 120);
-  --navy: oklch(0.36 0.09 158);
-  --navy-deep: oklch(0.3 0.08 158);
-  --azure: oklch(0.55 0.15 158);
-  --azure-hover: oklch(0.48 0.14 158);
-  --teal: oklch(0.68 0.13 195);
-  --coral: oklch(0.73 0.18 43);
-  --success: oklch(0.63 0.154 152.9);
-  --divider: oklch(0.925 0.012 150);
-  --subtle: oklch(0.6 0.03 155);
+  --forest-deep: oklch(0.245 0.055 162);
+  --forest: oklch(0.33 0.066 162);
+  --grass: oklch(0.45 0.09 163);
+  --grass-hover: oklch(0.38 0.082 163);
 
-  --sky: oklch(0.88 0.075 235);
-  --sky-deep: oklch(0.76 0.115 240);
-  --forest: oklch(0.38 0.1 158);
-  --forest-deep: oklch(0.29 0.078 158);
-  --grass: oklch(0.58 0.15 152);
-  --grass-hover: oklch(0.51 0.145 152);
-  --amber: oklch(0.8 0.16 78);
-  --cream: oklch(0.985 0.012 95);
+  --gold: oklch(0.79 0.125 88);
+  --gold-soft: oklch(0.9 0.07 90);
+
+  --teal: oklch(0.72 0.1 185);
+  --azure: oklch(0.63 0.16 245);
+  --azure-hover: oklch(0.55 0.16 245);
+  --coral: oklch(0.72 0.16 40);
+  --success: oklch(0.63 0.15 153);
+
+  --ink: var(--forest-deep);
+  --paper: oklch(0.978 0.007 95);
+  --cream: oklch(0.955 0.014 95);
+  --mist: oklch(0.945 0.011 162);
+  --mist-deep: oklch(0.895 0.02 162);
+
+  --divider: oklch(0.905 0.01 155);
+  --subtle: oklch(0.58 0.02 158);
 
   --background: oklch(1 0 0);
   --foreground: var(--forest-deep);
@@ -101,11 +106,11 @@
   --popover: oklch(1 0 0);
   --popover-foreground: var(--forest-deep);
   --primary: var(--grass);
-  --primary-foreground: oklch(1 0 0);
+  --primary-foreground: oklch(0.99 0.005 95);
   --secondary: var(--cream);
   --secondary-foreground: var(--forest-deep);
   --muted: var(--cream);
-  --muted-foreground: oklch(0.5 0.03 155);
+  --muted-foreground: oklch(0.5 0.02 158);
   --accent: var(--cream);
   --accent-foreground: var(--forest-deep);
   --destructive: oklch(0.577 0.245 27.325);
@@ -114,7 +119,6 @@
   --input: var(--divider);
   --ring: var(--grass);
 }
-
 
 @layer base {
   * {
@@ -131,7 +135,7 @@
   h1,
   h2,
   h3 {
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
     text-wrap: balance;
   }
 }
@@ -139,56 +143,81 @@
 @utility container-site {
   width: 100%;
   margin-inline: auto;
-  max-width: 76rem;
+  max-width: 74rem;
   padding-inline: 1.25rem;
 }
 
-/* Bright sky wash used behind the hero */
-@utility sky-wash {
+/* Deep green section wash */
+@utility forest-wash {
   background:
-    radial-gradient(120% 80% at 50% -10%, oklch(0.96 0.03 230) 0%, transparent 55%),
-    linear-gradient(180deg, var(--color-sky-deep) 0%, var(--color-sky) 38%, #ffffff 92%);
+    radial-gradient(90% 70% at 80% 0%, oklch(0.4 0.08 168 / 0.75) 0%, transparent 60%),
+    radial-gradient(70% 60% at 5% 100%, oklch(0.38 0.07 155 / 0.6) 0%, transparent 65%),
+    var(--forest-deep);
 }
 
-/* Big friendly pill button */
+@utility paper-wash {
+  background:
+    radial-gradient(60% 50% at 50% 0%, oklch(0.96 0.02 162) 0%, transparent 70%), var(--paper);
+}
+
 @utility pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   border-radius: 9999px;
-  padding: 0.95rem 1.9rem;
-  font-size: 1rem;
-  font-weight: 800;
+  padding: 0.85rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   white-space: nowrap;
   transition:
     transform 180ms ease,
+    box-shadow 180ms ease,
     background-color 180ms ease,
     color 180ms ease;
 }
 .pill:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
-
-/* App-like chip: white pill, hairline border */
 @utility chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   border-radius: 9999px;
   border: 1px solid var(--color-divider);
   background: #fff;
   color: var(--color-ink);
-  padding: 0.5rem 0.9rem;
-  font-size: 0.875rem;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   white-space: nowrap;
   box-shadow: var(--shadow-chrome);
+}
+
+@utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility card-soft {
+  border-radius: 1.5rem;
+  border: 1px solid var(--color-divider);
+  background: #fff;
+  padding: 1.6rem;
   transition:
-    transform 200ms ease,
-    background-color 200ms ease,
-    color 200ms ease;
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+.card-soft:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-float);
 }
 
 @keyframes shortcut-pan {
@@ -221,11 +250,37 @@
 @keyframes shortcut-rise {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes shortcut-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shortcut-sweep {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  12%,
+  88% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
   }
 }
 
@@ -239,14 +294,18 @@
   animation: shortcut-dash 2.4s linear infinite;
 }
 .animate-rise {
-  animation: shortcut-rise 320ms ease-out both;
+  animation: shortcut-rise 420ms ease-out both;
+}
+.animate-float {
+  animation: shortcut-float 7s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-pan,
   .animate-puck,
   .animate-dash,
-  .animate-rise {
+  .animate-rise,
+  .animate-float {
     animation: none;
   }
 }
