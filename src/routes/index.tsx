@@ -74,7 +74,7 @@ function Home() {
             {c.hero.badge}
           </span>
           <h1 className="mx-auto mt-6 max-w-4xl text-[2.8rem] font-extrabold leading-[0.98] text-forest-deep sm:text-7xl">
-            {head} <span className="text-amber">{restTitle.join(" ")}</span>
+            {leadWords} <span className="text-amber">{lastWord}</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg font-medium leading-relaxed text-forest/75">
             {c.hero.sub}
