@@ -211,7 +211,7 @@ export const it = {
     title: "Strada senza uscita",
     sub: "Questa pagina non esiste. Ricalcolo del percorso…",
   },
-} as const;
+};
 
 export type Copy = typeof it;
 
