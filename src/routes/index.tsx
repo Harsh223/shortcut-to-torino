@@ -140,7 +140,7 @@ function Home() {
           <p className="mt-3 max-w-2xl text-base text-muted-foreground">{c.modes.sub}</p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {c.modes.items.map((m, i) => {
-              const Icon = MODE_ICONS[i];
+              const Icon = MODE_ICONS[i] ?? Car;
               return (
                 <div
                   key={m.name}
@@ -206,7 +206,7 @@ function Home() {
 
           <div className="mt-8 flex gap-2 overflow-x-auto pb-2 no-scrollbar">
             {c.layers.chips.map((chip, i) => {
-              const key = layerKeys[i];
+              const key = layerKeys[i] ?? "traffic";
               const active = layers[key];
               return (
                 <button
