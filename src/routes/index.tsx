@@ -59,7 +59,10 @@ function Home() {
   });
   const layerKeys = ["parking", "charging", "transit", "micromobility", "traffic", "signals"];
 
-  const [head, ...restTitle] = c.hero.title.split(" ");
+  const titleWords = c.hero.title.split(" ");
+  const lastWord = titleWords.pop() ?? "";
+  const leadWords = titleWords.join(" ");
+
 
   return (
     <>
