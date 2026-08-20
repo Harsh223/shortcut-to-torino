@@ -197,7 +197,35 @@ export const it = {
       { name: "Micromobilità", body: "Monopattini e bici in sharing sulla stessa mappa." },
       { name: "Offline", body: "Mappa cittadina consultabile senza connessione." },
     ],
+    chips: ["2 posti liberi", "Verde tra 12 s", "Coincidenza salva"],
+    lights: {
+      kicker: "Semafori",
+      title: "Sai quanto manca al verde",
+      body: "Sugli incroci che abbiamo mappato ti mostriamo i secondi che mancano al verde: riparti più morbido, freni meno all'ultimo e consumi meno.",
+      points: [
+        "Countdown sugli incroci mappati",
+        "Consiglio di velocità per prendere l'onda verde",
+        "Meno frenate brusche in coda",
+        "Funziona anche con lo schermo in tasca, a voce",
+      ],
+    },
+    ev: {
+      kicker: "Ricarica",
+      title: "La colonnina giusta, non la più vicina",
+      body: "Filtriamo le colonnine per presa, potenza e operatore, e ti diciamo se sono libere adesso. Puoi aggiungerle al viaggio come tappa, con l'autonomia stimata all'arrivo.",
+      points: [
+        "Disponibilità e potenza reale della colonnina",
+        "Tappa di ricarica dentro al percorso",
+        "Stima di batteria all'arrivo",
+        "Parcheggio e ricarica confrontati insieme",
+      ],
+    },
+    closing: {
+      title: "Una mappa sola, tutta la città",
+      body: "Entra in lista: ti scriviamo il giorno in cui Shortcut è scaricabile.",
+    },
   },
+
   citiesPage: {
     title: "Prima Torino, poi le altre",
     sub: "Costruiamo città per città, con i dati di ognuna.",
