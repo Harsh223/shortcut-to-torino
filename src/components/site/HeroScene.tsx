@@ -78,9 +78,7 @@ export function HeroScene() {
   );
 }
 
-    </div>
-  );
-}
+
 
 /** cheap transform-only parallax for the distant layer */
 function useParallax() {
