@@ -13,9 +13,15 @@ import {
 import { useI18n } from "@/lib/i18n";
 import { TurinMap } from "@/components/site/TurinMap";
 import { HeroScene } from "@/components/site/HeroScene";
+import { Reveal } from "@/components/site/Reveal";
 import { DriveMock, ParkingMock, TransitMock } from "@/components/site/PhoneMock";
 import { StoreButtons, WaitlistForm, useWaitlist } from "@/components/site/WaitlistForm";
 import parkingScene from "@/assets/parking-scene.png";
+import transitScene from "@/assets/transit-scene.png";
+import driveScene from "@/assets/drive-scene.png";
+import voiceScene from "@/assets/voice-scene.png";
+import cityScene from "@/assets/city-scene.png";
+
 
 
 
@@ -91,7 +97,7 @@ function Home() {
       {/* ------------------------- act 2 · one app, deep green ------------------- */}
       <section className="bg-paper py-12 sm:py-16">
         <div className="container-site">
-          <div className="forest-wash block-round px-6 py-14 text-white sm:px-10 lg:px-14">
+          <Reveal className="forest-wash block-round block px-6 py-14 text-white sm:px-10 lg:px-14">
             <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
               <div>
                 <h2 className="max-w-md text-3xl font-extrabold sm:text-4xl lg:text-[2.8rem] lg:leading-[1.05]">
@@ -135,15 +141,17 @@ function Home() {
               </div>
 
             </div>
-          </div>
+          </Reveal>
+
         </div>
       </section>
 
       {/* ------------------------ act 3 · parking, cream block ------------------- */}
       <section className="bg-white pb-12 sm:pb-16">
         <div className="container-site">
-          <div className="block-round bg-cream px-6 py-14 sm:px-10 lg:px-14">
+          <Reveal className="block-round block bg-cream px-6 py-14 sm:px-10 lg:px-14">
             <div className="grid items-center gap-10 lg:grid-cols-2">
+
               <div>
                 <p className="eyebrow text-grass">{c.parking.kicker}</p>
                 <h2 className="mt-3 text-3xl font-extrabold text-ink sm:text-4xl lg:text-[2.6rem] lg:leading-[1.06]">
@@ -175,15 +183,17 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
+
         </div>
       </section>
 
       {/* ------------------------- act 4 · transit, gold block ------------------- */}
       <section className="bg-white pb-12 sm:pb-16">
         <div className="container-site">
-          <div className="block-round bg-gold-soft/60 px-6 py-14 sm:px-10 lg:px-14">
+          <Reveal className="block-round block bg-gold-soft/60 px-6 py-14 sm:px-10 lg:px-14">
             <div className="grid items-center gap-10 lg:grid-cols-2">
+
               <div className="lg:order-2">
                 <p className="eyebrow text-grass">{c.transit.kicker}</p>
                 <h2 className="mt-3 text-3xl font-extrabold text-ink sm:text-4xl lg:text-[2.6rem] lg:leading-[1.06]">
@@ -201,19 +211,35 @@ function Home() {
                   ))}
                 </ul>
               </div>
-              <div className="flex justify-center lg:order-1">
-                <TransitMock />
+              <div className="relative flex justify-center lg:order-1">
+                <img
+                  src={transitScene}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                  className="w-full max-w-md object-contain"
+                />
+                <div className="absolute bottom-2 left-0 max-w-[70%] rounded-2xl border border-divider bg-white/95 px-3.5 py-2.5 text-[0.72rem] font-extrabold text-ink shadow-float">
+                  <span className="mb-0.5 block text-[0.62rem] uppercase tracking-wider text-grass">
+                    {c.scene.transitTitle}
+                  </span>
+                  {c.scene.transitBody}
+                </div>
               </div>
+
             </div>
-          </div>
+          </Reveal>
+
         </div>
       </section>
 
 
       {/* --------------------------------- drive --------------------------------- */}
-      <section className="forest-wash py-20 text-white">
-        <div className="container-site grid gap-12 lg:grid-cols-2">
-          <div>
+      <section className="forest-wash relative overflow-hidden pt-20 text-white">
+        <div className="container-site grid gap-12 pb-16 lg:grid-cols-2">
+          <Reveal>
             <p className="eyebrow text-gold">{c.drive.kicker}</p>
             <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">{c.drive.title}</h2>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-white/70">{c.drive.body}</p>
@@ -225,37 +251,48 @@ function Home() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="flex flex-col justify-between rounded-3xl border border-white/15 bg-white/5 p-6">
+            <Reveal delay={80} className="flex flex-col justify-between rounded-3xl border border-white/15 bg-white/5 p-6">
               <div className="flex h-20 w-20 items-center justify-center rounded-full border-4 border-gold text-2xl font-extrabold text-gold">
                 12
               </div>
-              <p className="mt-6 text-sm font-bold text-white/80">
-                {c.drive.points[0]}
-              </p>
-            </div>
-            <div className="rounded-3xl border border-white/15 bg-white/5 p-6">
+              <p className="mt-6 text-sm font-bold text-white/80">{c.drive.points[0]}</p>
+            </Reveal>
+            <Reveal delay={160} className="rounded-3xl border border-white/15 bg-white/5 p-6">
               <TrafficCone className="h-8 w-8 text-gold" />
               <p className="mt-6 text-sm font-bold text-white/80">{c.drive.points[1]}</p>
-            </div>
-            <div className="rounded-3xl border border-white/15 bg-white/5 p-6">
+            </Reveal>
+            <Reveal delay={240} className="rounded-3xl border border-white/15 bg-white/5 p-6">
               <Zap className="h-8 w-8 text-gold" />
               <p className="mt-6 text-sm font-bold text-white/80">{c.drive.points[2]}</p>
-            </div>
-            <div className="rounded-3xl border border-white/15 bg-white/5 p-6">
+            </Reveal>
+            <Reveal delay={320} className="rounded-3xl border border-white/15 bg-white/5 p-6">
               <Navigation className="h-8 w-8 text-gold" />
               <p className="mt-6 text-sm font-bold text-white/80">{c.drive.points[3]}</p>
-            </div>
+            </Reveal>
           </div>
+        </div>
+
+        <div className="relative h-[150px] w-full overflow-hidden sm:h-[220px] lg:h-[280px]">
+          <img
+            src={driveScene}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            width={1536}
+            height={640}
+            className="absolute bottom-0 left-1/2 h-full w-auto max-w-none -translate-x-1/2 object-contain object-bottom"
+          />
         </div>
       </section>
 
+
       {/* --------------------------------- voice --------------------------------- */}
-      <section className="bg-white py-20">
+      <section className="relative overflow-hidden bg-white py-20">
         <div className="container-site grid items-center gap-12 lg:grid-cols-2">
-          <div>
+          <Reveal>
             <p className="eyebrow text-grass">{c.voice.kicker}</p>
             <h2 className="mt-3 text-3xl font-extrabold text-ink sm:text-4xl">{c.voice.title}</h2>
             <p className="mt-4 text-base text-muted-foreground">{c.voice.sub}</p>
@@ -263,9 +300,18 @@ function Home() {
               {c.common.joinWaitlist}
               <ArrowRight className="h-4 w-4" />
             </button>
-          </div>
+            <img
+              src={voiceScene}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              width={1024}
+              height={768}
+              className="mt-10 w-full max-w-md object-contain"
+            />
+          </Reveal>
 
-          <div className="rounded-3xl border border-divider bg-paper p-5 sm:p-7">
+          <Reveal delay={120} className="rounded-3xl border border-divider bg-paper p-5 sm:p-7">
             <div className="space-y-3">
               {c.voice.lines.map((line, i) => (
                 <div
@@ -285,9 +331,10 @@ function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
+
 
       {/* ---------------------------------- more --------------------------------- */}
       <section className="bg-cream py-20">
@@ -323,7 +370,7 @@ function Home() {
 
       {/* --------------------------------- cities -------------------------------- */}
       <section className="bg-paper py-16">
-        <div className="container-site overflow-hidden rounded-[2rem] border border-divider bg-white">
+        <Reveal className="container-site block overflow-hidden rounded-[2rem] border border-divider bg-white">
           <div className="grid items-center gap-8 p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
             <div>
               <p className="eyebrow text-grass">{c.cities.kicker}</p>
@@ -340,8 +387,18 @@ function Home() {
               <TurinMap variant="night" className="absolute inset-0 h-full w-full" />
             </div>
           </div>
-        </div>
+          <img
+            src={cityScene}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            width={1536}
+            height={560}
+            className="h-[110px] w-full min-w-[720px] object-cover object-top sm:h-[150px]"
+          />
+        </Reveal>
       </section>
+
 
       {/* ---------------------------------- faq ---------------------------------- */}
       <section className="bg-white py-20">
