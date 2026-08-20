@@ -247,7 +247,29 @@ export const it = {
     storesTitle: "Presto sugli store",
     reqTitle: "Cosa ti serve",
     req: ["iPhone con iOS 16 o successivo", "Android 10 o successivo", "Posizione attiva durante la navigazione", "Account facoltativo"],
+    chips: ["Lancio il mese prossimo", "Prima Torino", "Niente spam"],
+    dayOne: {
+      title: "Cosa succede quando entri in lista",
+      items: [
+        { name: "Il link, il primo giorno", body: "Una sola email quando l'app è sugli store. Nessuna newsletter travestita." },
+        { name: "La tua città conta", body: "Le città indicate nella lista decidono l'ordine con cui apriamo dopo Torino." },
+        { name: "Niente spam", body: "Email e città, nient'altro. Cancellazione con un clic, sempre." },
+      ],
+    },
+    steps: {
+      title: "Come arriviamo al lancio",
+      items: [
+        { n: "01", name: "Torino per prima", body: "Dati locali, ZTL, parcheggi e rete GTT: la città che conosciamo meglio." },
+        { n: "02", name: "La cintura, subito dopo", body: "I comuni intorno entrano con la stessa mappa e gli stessi dati." },
+        { n: "03", name: "Le altre città", body: "Apriamo dove le richieste sono più forti. Fuori Torino non siamo ancora live, e lo diciamo." },
+      ],
+    },
+    closing: {
+      title: "Ci vediamo al lancio",
+      body: "Un'email, il link per scaricare, e la città in tasca.",
+    },
   },
+
   privacy: {
     title: "Privacy policy",
     updated: "Ultimo aggiornamento: agosto 2026",
