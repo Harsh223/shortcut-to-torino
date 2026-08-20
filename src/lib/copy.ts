@@ -197,7 +197,35 @@ export const it = {
       { name: "Micromobilità", body: "Monopattini e bici in sharing sulla stessa mappa." },
       { name: "Offline", body: "Mappa cittadina consultabile senza connessione." },
     ],
+    chips: ["2 posti liberi", "Verde tra 12 s", "Coincidenza salva"],
+    lights: {
+      kicker: "Semafori",
+      title: "Sai quanto manca al verde",
+      body: "Sugli incroci che abbiamo mappato ti mostriamo i secondi che mancano al verde: riparti più morbido, freni meno all'ultimo e consumi meno.",
+      points: [
+        "Countdown sugli incroci mappati",
+        "Consiglio di velocità per prendere l'onda verde",
+        "Meno frenate brusche in coda",
+        "Funziona anche con lo schermo in tasca, a voce",
+      ],
+    },
+    ev: {
+      kicker: "Ricarica",
+      title: "La colonnina giusta, non la più vicina",
+      body: "Filtriamo le colonnine per presa, potenza e operatore, e ti diciamo se sono libere adesso. Puoi aggiungerle al viaggio come tappa, con l'autonomia stimata all'arrivo.",
+      points: [
+        "Disponibilità e potenza reale della colonnina",
+        "Tappa di ricarica dentro al percorso",
+        "Stima di batteria all'arrivo",
+        "Parcheggio e ricarica confrontati insieme",
+      ],
+    },
+    closing: {
+      title: "Una mappa sola, tutta la città",
+      body: "Entra in lista: ti scriviamo il giorno in cui Shortcut è scaricabile.",
+    },
   },
+
   citiesPage: {
     title: "Prima Torino, poi le altre",
     sub: "Costruiamo città per città, con i dati di ognuna.",
@@ -219,7 +247,29 @@ export const it = {
     storesTitle: "Presto sugli store",
     reqTitle: "Cosa ti serve",
     req: ["iPhone con iOS 16 o successivo", "Android 10 o successivo", "Posizione attiva durante la navigazione", "Account facoltativo"],
+    chips: ["Lancio il mese prossimo", "Prima Torino", "Niente spam"],
+    dayOne: {
+      title: "Cosa succede quando entri in lista",
+      items: [
+        { name: "Il link, il primo giorno", body: "Una sola email quando l'app è sugli store. Nessuna newsletter travestita." },
+        { name: "La tua città conta", body: "Le città indicate nella lista decidono l'ordine con cui apriamo dopo Torino." },
+        { name: "Niente spam", body: "Email e città, nient'altro. Cancellazione con un clic, sempre." },
+      ],
+    },
+    steps: {
+      title: "Come arriviamo al lancio",
+      items: [
+        { n: "01", name: "Torino per prima", body: "Dati locali, ZTL, parcheggi e rete GTT: la città che conosciamo meglio." },
+        { n: "02", name: "La cintura, subito dopo", body: "I comuni intorno entrano con la stessa mappa e gli stessi dati." },
+        { n: "03", name: "Le altre città", body: "Apriamo dove le richieste sono più forti. Fuori Torino non siamo ancora live, e lo diciamo." },
+      ],
+    },
+    closing: {
+      title: "Ci vediamo al lancio",
+      body: "Un'email, il link per scaricare, e la città in tasca.",
+    },
   },
+
   privacy: {
     title: "Privacy policy",
     updated: "Ultimo aggiornamento: agosto 2026",
@@ -450,7 +500,35 @@ export const en: Copy = {
       { name: "Micromobility", body: "Shared scooters and bikes on the same map." },
       { name: "Offline", body: "City map usable without a connection." },
     ],
+    chips: ["2 spaces free", "Green in 12 s", "Connection saved"],
+    lights: {
+      kicker: "Traffic lights",
+      title: "You know how long until green",
+      body: "On the junctions we've mapped we show the seconds left until green: you pull away smoothly, brake less at the last second and burn less fuel.",
+      points: [
+        "Countdown on mapped junctions",
+        "Speed hint to catch the green wave",
+        "Fewer hard stops in traffic",
+        "Works by voice, phone still in your pocket",
+      ],
+    },
+    ev: {
+      kicker: "Charging",
+      title: "The right charger, not the nearest one",
+      body: "We filter chargers by plug, power and operator, and tell you whether they're free right now. Add one to the trip as a stop, with the estimated battery on arrival.",
+      points: [
+        "Real availability and delivered power",
+        "Charging stop inside the route",
+        "Battery estimate at arrival",
+        "Parking and charging compared together",
+      ],
+    },
+    closing: {
+      title: "One map, the whole city",
+      body: "Join the list: we email you the day Shortcut is downloadable.",
+    },
   },
+
   citiesPage: {
     title: "Turin first, then the rest",
     sub: "We build city by city, with each city's data.",
@@ -472,7 +550,29 @@ export const en: Copy = {
     storesTitle: "On the stores soon",
     reqTitle: "What you need",
     req: ["iPhone on iOS 16 or later", "Android 10 or later", "Location enabled while navigating", "Account optional"],
+    chips: ["Launching next month", "Turin first", "No spam"],
+    dayOne: {
+      title: "What happens when you join",
+      items: [
+        { name: "The link, on day one", body: "One email when the app hits the stores. Not a newsletter in disguise." },
+        { name: "Your city counts", body: "The cities people put in the list decide the order we open in after Turin." },
+        { name: "No spam", body: "Email and city, nothing else. One-click unsubscribe, always." },
+      ],
+    },
+    steps: {
+      title: "How we get to launch",
+      items: [
+        { n: "01", name: "Turin first", body: "Local data, restricted zones, parking and the GTT network: the city we know best." },
+        { n: "02", name: "Then the metro area", body: "The surrounding towns join with the same map and the same data." },
+        { n: "03", name: "Other cities", body: "We open where demand is strongest. Outside Turin we're not live yet, and we say so." },
+      ],
+    },
+    closing: {
+      title: "See you at launch",
+      body: "One email, the download link, and the city in your pocket.",
+    },
   },
+
   privacy: {
     title: "Privacy policy",
     updated: "Last updated: August 2026",
