@@ -73,14 +73,16 @@ export function WaitlistForm({
   source = "page",
   stacked = false,
   tone = "light",
+  initialCity = "",
 }: {
   source?: string;
   stacked?: boolean;
   tone?: "light" | "dark";
+  initialCity?: string;
 }) {
   const { c, lang } = useI18n();
   const [email, setEmail] = useState("");
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState(initialCity);
   const [consent, setConsent] = useState(true);
   const [state, setState] = useState<"idle" | "loading" | "error" | "failed" | "done" | "dup">(
     "idle",

@@ -63,7 +63,7 @@ function CityPage() {
   const cc = cityCopy(city, lang);
 
   const index = CITIES.findIndex((c) => c.slug === city.slug);
-  const next = CITIES[(index + 1) % CITIES.length];
+  const next = CITIES[(index + 1) % CITIES.length] ?? CITIES[0]!;
 
   const acts = [
     { act: cc.access, Icon: CircleParking },

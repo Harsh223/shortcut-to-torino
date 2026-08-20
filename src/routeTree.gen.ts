@@ -17,6 +17,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TurinRouteImport } from './routes/turin'
 import { Route as CitiesIndexRouteImport } from './routes/cities.index'
+import { Route as CitiesSlugRouteImport } from './routes/cities.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -58,6 +59,11 @@ const CitiesIndexRoute = CitiesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => CitiesRoute,
 } as any)
+const CitiesSlugRoute = CitiesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => CitiesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -67,6 +73,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/turin': typeof TurinRoute
+  '/cities/$slug': typeof CitiesSlugRoute
   '/cities/': typeof CitiesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/turin': typeof TurinRoute
+  '/cities/$slug': typeof CitiesSlugRoute
   '/cities': typeof CitiesIndexRoute
 }
 export interface FileRoutesById {
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/turin': typeof TurinRoute
+  '/cities/$slug': typeof CitiesSlugRoute
   '/cities/': typeof CitiesIndexRoute
 }
 export interface FileRouteTypes {
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/turin'
+    | '/cities/$slug'
     | '/cities/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/turin'
+    | '/cities/$slug'
     | '/cities'
   id:
     | '__root__'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/turin'
+    | '/cities/$slug'
     | '/cities/'
   fileRoutesById: FileRoutesById
 }
@@ -189,14 +201,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CitiesIndexRouteImport
       parentRoute: typeof CitiesRoute
     }
+    '/cities/$slug': {
+      id: '/cities/$slug'
+      path: '/$slug'
+      fullPath: '/cities/$slug'
+      preLoaderRoute: typeof CitiesSlugRouteImport
+      parentRoute: typeof CitiesRoute
+    }
   }
 }
 
 interface CitiesRouteChildren {
+  CitiesSlugRoute: typeof CitiesSlugRoute
   CitiesIndexRoute: typeof CitiesIndexRoute
 }
 
 const CitiesRouteChildren: CitiesRouteChildren = {
+  CitiesSlugRoute: CitiesSlugRoute,
   CitiesIndexRoute: CitiesIndexRoute,
 }
 
