@@ -27,7 +27,7 @@ export function HeroScene({
       <div className="relative flex h-[min(42svh,330px)] w-full justify-center overflow-hidden sm:h-[min(46svh,340px)] lg:h-[min(50svh,400px)]">
         {/* distant skyline + hills */}
         <img
-          src={heroSkyline}
+          src={skyline}
           alt=""
           aria-hidden="true"
           width={1920}
@@ -44,7 +44,7 @@ export function HeroScene({
             fits the width, and the roofline dissolves into the sky so the
             container cap never reads as a hard cut. */}
         <img
-          src={heroBand}
+          src={band}
           alt="Una via di Torino: portici, tram, parcheggio e ricarica elettrica"
           width={1920}
           height={720}
