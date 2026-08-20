@@ -134,26 +134,76 @@ function Home() {
         </div>
       </section>
 
+      {/* ------------------------ act 3 · parking, cream block ------------------- */}
+      <section className="bg-white pb-12 sm:pb-16">
+        <div className="container-site">
+          <div className="block-round bg-cream px-6 py-14 sm:px-10 lg:px-14">
+            <div className="grid items-center gap-10 lg:grid-cols-2">
+              <div>
+                <p className="eyebrow text-grass">{c.parking.kicker}</p>
+                <h2 className="mt-3 text-3xl font-extrabold text-ink sm:text-4xl lg:text-[2.6rem] lg:leading-[1.06]">
+                  {c.parking.title}
+                </h2>
+                <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
+                  {c.parking.body}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {c.parking.points.map((p) => (
+                    <li key={p} className="flex items-start gap-2.5 text-sm font-semibold text-ink">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-grass" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative">
+                <img
+                  src={parkingScene}
+                  alt="Sezione di una strada con parcheggio sotterraneo"
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                  className="w-full object-contain"
+                />
+                <div className="absolute left-[6%] top-[8%] rounded-xl bg-forest px-3 py-1.5 text-[0.7rem] font-extrabold text-gold shadow-float">
+                  {c.scene.parkBody}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* -------------------------------- parking -------------------------------- */}
-      <Story
-        kicker={c.parking.kicker}
-        title={c.parking.title}
-        body={c.parking.body}
-        points={c.parking.points}
-        media={<ParkingMock />}
-      />
+      {/* ------------------------- act 4 · transit, gold block ------------------- */}
+      <section className="bg-white pb-12 sm:pb-16">
+        <div className="container-site">
+          <div className="block-round bg-gold-soft/60 px-6 py-14 sm:px-10 lg:px-14">
+            <div className="grid items-center gap-10 lg:grid-cols-2">
+              <div className="lg:order-2">
+                <p className="eyebrow text-grass">{c.transit.kicker}</p>
+                <h2 className="mt-3 text-3xl font-extrabold text-ink sm:text-4xl lg:text-[2.6rem] lg:leading-[1.06]">
+                  {c.transit.title}
+                </h2>
+                <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
+                  {c.transit.body}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {c.transit.points.map((p) => (
+                    <li key={p} className="flex items-start gap-2.5 text-sm font-semibold text-ink">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-grass" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex justify-center lg:order-1">
+                <TransitMock />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* -------------------------------- transit -------------------------------- */}
-      <Story
-        kicker={c.transit.kicker}
-        title={c.transit.title}
-        body={c.transit.body}
-        points={c.transit.points}
-        media={<TransitMock />}
-        reverse
-        tone="cream"
-      />
 
       {/* --------------------------------- drive --------------------------------- */}
       <section className="forest-wash py-20 text-white">
