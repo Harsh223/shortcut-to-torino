@@ -65,11 +65,26 @@ function CityPage() {
   const index = CITIES.findIndex((c) => c.slug === city.slug);
   const next = CITIES[(index + 1) % CITIES.length] ?? CITIES[0]!;
 
+  const artwork = CITY_ART[city.slug];
+
   const acts = [
-    { act: cc.access, Icon: CircleParking },
-    { act: cc.transit, Icon: Bus },
-    { act: cc.drive, Icon: Navigation },
+    {
+      act: cc.access,
+      Icon: CircleParking,
+      art: artwork
+        ? { src: artwork.access, alt: artwork.accessAlt[lang], marks: artwork.accessMarks[lang] }
+        : null,
+    },
+    { act: cc.transit, Icon: Bus, art: null },
+    {
+      act: cc.drive,
+      Icon: Navigation,
+      art: artwork
+        ? { src: artwork.night, alt: artwork.nightAlt[lang], marks: artwork.nightMarks[lang] }
+        : null,
+    },
   ];
+
 
   return (
     <>
