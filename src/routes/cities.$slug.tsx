@@ -161,7 +161,9 @@ function CityPage() {
                 <CityDetail src={city.band} alt={city.alt[lang]} />
               </Reveal>
             )}
-            <div className="container-site grid items-center gap-10 lg:grid-cols-2">
+            <div
+              className={`container-site grid items-center gap-10 ${art ? "lg:grid-cols-2" : "max-w-4xl"}`}
+            >
               <Reveal className={flip ? "lg:order-2" : ""}>
                 <div>
                   <span
