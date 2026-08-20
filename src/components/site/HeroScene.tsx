@@ -40,6 +40,10 @@ export function HeroScene() {
           width={1920}
           height={720}
           className="absolute bottom-0 left-1/2 h-full w-auto min-w-full max-w-none -translate-x-1/2 object-cover object-bottom"
+          style={{
+            maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 8%, #000 26%)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 8%, #000 26%)",
+          }}
         />
 
         {/* chips pinned to the art */}
