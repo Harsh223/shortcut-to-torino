@@ -500,7 +500,35 @@ export const en: Copy = {
       { name: "Micromobility", body: "Shared scooters and bikes on the same map." },
       { name: "Offline", body: "City map usable without a connection." },
     ],
+    chips: ["2 spaces free", "Green in 12 s", "Connection saved"],
+    lights: {
+      kicker: "Traffic lights",
+      title: "You know how long until green",
+      body: "On the junctions we've mapped we show the seconds left until green: you pull away smoothly, brake less at the last second and burn less fuel.",
+      points: [
+        "Countdown on mapped junctions",
+        "Speed hint to catch the green wave",
+        "Fewer hard stops in traffic",
+        "Works by voice, phone still in your pocket",
+      ],
+    },
+    ev: {
+      kicker: "Charging",
+      title: "The right charger, not the nearest one",
+      body: "We filter chargers by plug, power and operator, and tell you whether they're free right now. Add one to the trip as a stop, with the estimated battery on arrival.",
+      points: [
+        "Real availability and delivered power",
+        "Charging stop inside the route",
+        "Battery estimate at arrival",
+        "Parking and charging compared together",
+      ],
+    },
+    closing: {
+      title: "One map, the whole city",
+      body: "Join the list: we email you the day Shortcut is downloadable.",
+    },
   },
+
   citiesPage: {
     title: "Turin first, then the rest",
     sub: "We build city by city, with each city's data.",
