@@ -25,10 +25,10 @@ const DESTY = hy(14); // 562
 
 export function TurinMap({ variant = "night", className = "", showRoutes = true, layers }: Props) {
   const night = variant === "night";
-  const streetColor = night ? "#173B52" : "#E2E7DC";
-  const majorColor = night ? "#22536F" : "#CBD8C4";
-  const blockColor = night ? "#0C2436" : "#FFFFFF";
-  const waterColor = night ? "#0B3A48" : "#BFE0F2";
+  const streetColor = night ? "#14503B" : "#E2E7DC";
+  const majorColor = night ? "#1E6B4E" : "#CBD8C4";
+  const blockColor = night ? "#0A3B2B" : "#FFFFFF";
+  const waterColor = night ? "#0E4A55" : "#BFE0F2";
   const on = (k: string) => !layers || layers[k];
 
   return (
@@ -40,12 +40,12 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
     >
       <defs>
         <linearGradient id="sc-sky" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor={night ? "#0E2A3D" : "#FBFAF4"} />
-          <stop offset="100%" stopColor={night ? "#081C28" : "#F2F5EC"} />
+          <stop offset="0%" stopColor={night ? "#0A3527" : "#FBFAF4"} />
+          <stop offset="100%" stopColor={night ? "#062219" : "#F2F5EC"} />
         </linearGradient>
         <linearGradient id="sc-hills" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={night ? "#12384C" : "#DCEBD6"} stopOpacity="0.9" />
-          <stop offset="100%" stopColor={night ? "#0E2A3D" : "#F2F5EC"} stopOpacity="0" />
+          <stop offset="0%" stopColor={night ? "#155A41" : "#DCEBD6"} stopOpacity="0.9" />
+          <stop offset="100%" stopColor={night ? "#0A3527" : "#F2F5EC"} stopOpacity="0" />
         </linearGradient>
         <filter id="sc-glow" x="-60%" y="-60%" width="220%" height="220%">
           <feGaussianBlur stdDeviation="9" result="b" />
@@ -113,21 +113,21 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
       />
       <path
         d="M980 -20 C930 180 1030 340 950 520 C880 680 970 830 930 1040"
-        stroke="#33A8C4"
+        stroke="#4FC3B1"
         strokeOpacity="0.16"
         strokeWidth="40"
         fill="none"
       />
 
       {/* park wedge on the far bank */}
-      <path d="M1000 420 L1130 392 L1160 620 L1020 620 Z" fill={night ? "#10404A" : "#D6EBCB"} />
+      <path d="M1000 420 L1130 392 L1160 620 L1020 620 Z" fill={night ? "#12543C" : "#D6EBCB"} />
 
       {on("traffic") && showRoutes && (
         <g strokeLinecap="round" fill="none" opacity="0.95">
-          <path d={`M0 ${MIDY} L${AX} ${MIDY}`} stroke="#1FA35A" strokeWidth="6" />
-          <path d={`M${AX} ${MIDY} L${BX} ${MIDY}`} stroke="#F2A33C" strokeWidth="6" />
-          <path d={`M${BX} 0 L${BX} ${TOPY}`} stroke="#F2A33C" strokeWidth="6" opacity="0.65" />
-          <path d={`M0 ${BOTY} L${vx(9)} ${BOTY}`} stroke="#1FA35A" strokeWidth="6" opacity="0.7" />
+          <path d={`M0 ${MIDY} L${AX} ${MIDY}`} stroke="#3FAE7E" strokeWidth="6" />
+          <path d={`M${AX} ${MIDY} L${BX} ${MIDY}`} stroke="#E0B34A" strokeWidth="6" />
+          <path d={`M${BX} 0 L${BX} ${TOPY}`} stroke="#E0B34A" strokeWidth="6" opacity="0.65" />
+          <path d={`M0 ${BOTY} L${vx(9)} ${BOTY}`} stroke="#3FAE7E" strokeWidth="6" opacity="0.7" />
         </g>
       )}
 
@@ -135,7 +135,7 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
         <>
           <path
             d={`M${AX} ${BOTY} L${AX} ${MIDY} L${BX} ${MIDY} L${BX} ${TOPY} L${CX} ${TOPY}`}
-            stroke="#2E9E5B"
+            stroke="#E0B34A"
             strokeWidth="12"
             fill="none"
             strokeLinecap="round"
@@ -154,15 +154,15 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
           />
           <path
             d={`M${CX} ${TOPY} L${CX} ${DESTY} L${DESTX} ${DESTY}`}
-            stroke="#33A8C4"
+            stroke="#4FC3B1"
             strokeWidth="8"
             strokeDasharray="2 14"
             strokeLinecap="round"
             fill="none"
           />
           <g transform={`translate(${DESTX} ${DESTY})`}>
-            <circle r="15" fill="#F2A33C" opacity="0.22" />
-            <circle r="7" fill="#F2A33C" />
+            <circle r="15" fill="#E0B34A" opacity="0.22" />
+            <circle r="7" fill="#E0B34A" />
           </g>
         </>
       )}
@@ -176,7 +176,7 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
             [vx(24), hy(3)],
           ].map(([x, y]) => (
             <g key={`t${x}-${y}`} transform={`translate(${x} ${y})`}>
-              <circle r="8" fill={night ? "#0E2A3D" : "#FFFFFF"} stroke="#33A8C4" strokeWidth="3.5" />
+              <circle r="8" fill={night ? "#0A3527" : "#FFFFFF"} stroke="#4FC3B1" strokeWidth="3.5" />
             </g>
           ))}
         </g>
@@ -191,7 +191,7 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
             [vx(26), hy(19)],
           ].map(([x, y]) => (
             <g key={`p${x}-${y}`} transform={`translate(${x} ${y})`}>
-              <rect x="-12" y="-12" width="24" height="24" rx="8" fill="#2E9E5B" />
+              <rect x="-12" y="-12" width="24" height="24" rx="8" fill="#E0B34A" />
               <text
                 x="0"
                 y="6"
@@ -216,7 +216,7 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
             [vx(2), hy(4)],
           ].map(([x, y]) => (
             <g key={`c${x}-${y}`} transform={`translate(${x} ${y})`}>
-              <circle r="11" fill="#1FA35A" />
+              <circle r="11" fill="#3FAE7E" />
               <path d="M2 -6 L-3.5 1 L0 1 L-1.5 6 L3.5 -1 L0 -1 Z" fill="#FFFFFF" />
             </g>
           ))}
@@ -232,7 +232,7 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
             [vx(28), hy(12)],
           ].map(([x, y]) => (
             <g key={`m${x}-${y}`} transform={`translate(${x} ${y})`}>
-              <circle r="9" fill="#F2A33C" />
+              <circle r="9" fill="#E0B34A" />
               <circle r="3" fill="#FFFFFF" />
             </g>
           ))}
@@ -247,9 +247,9 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
             [BX, TOPY],
           ].map(([x, y]) => (
             <g key={`s${x}-${y}`} transform={`translate(${x} ${y})`}>
-              <rect x="-6" y="-14" width="12" height="28" rx="6" fill={night ? "#0B2130" : "#1A2332"} />
-              <circle cy="-7" r="3" fill="#F2A33C" />
-              <circle cy="7" r="3" fill="#1FA35A" />
+              <rect x="-6" y="-14" width="12" height="28" rx="6" fill={night ? "#082A1F" : "#0A3527"} />
+              <circle cy="-7" r="3" fill="#E0B34A" />
+              <circle cy="7" r="3" fill="#3FAE7E" />
             </g>
           ))}
         </g>
@@ -257,9 +257,9 @@ export function TurinMap({ variant = "night", className = "", showRoutes = true,
 
       {/* location puck */}
       <g transform={`translate(${AX} ${BOTY})`}>
-        <circle r="26" fill="#0DB4B9" className="animate-puck" />
-        <circle r="14" fill="#0DB4B9" fillOpacity="0.25" />
-        <circle r="8" fill="#0DB4B9" stroke="#FFFFFF" strokeWidth="3" />
+        <circle r="26" fill="#7FD1B9" className="animate-puck" />
+        <circle r="14" fill="#7FD1B9" fillOpacity="0.25" />
+        <circle r="8" fill="#7FD1B9" stroke="#FFFFFF" strokeWidth="3" />
       </g>
     </svg>
   );
