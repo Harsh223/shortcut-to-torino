@@ -227,7 +227,8 @@ function Home() {
               </div>
 
             </div>
-          </div>
+          </Reveal>
+
         </div>
       </section>
 
