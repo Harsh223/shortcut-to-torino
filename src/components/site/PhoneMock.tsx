@@ -23,9 +23,13 @@ export function Device({
 
 function MapBed() {
   return (
-    <TurinMap variant="night" className="animate-pan absolute inset-0 h-full w-full scale-[1.5]" />
+    <>
+      <TurinMap variant="night" className="animate-pan absolute inset-0 h-full w-full scale-[1.5]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_0%,transparent_20%,oklch(0.2_0.05_160/0.55)_100%)]" />
+    </>
   );
 }
+
 
 function StatusBar({ label }: { label: string }) {
   return (

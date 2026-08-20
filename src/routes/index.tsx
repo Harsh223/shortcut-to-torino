@@ -14,7 +14,7 @@ import { useI18n } from "@/lib/i18n";
 import { TurinMap } from "@/components/site/TurinMap";
 import { HeroScene } from "@/components/site/HeroScene";
 import { Reveal } from "@/components/site/Reveal";
-import { DriveMock, ParkingMock, TransitMock } from "@/components/site/PhoneMock";
+import { DriveMock, ParkingMock } from "@/components/site/PhoneMock";
 import { StoreButtons, WaitlistForm, useWaitlist } from "@/components/site/WaitlistForm";
 import parkingScene from "@/assets/parking-scene.png";
 import transitScene from "@/assets/transit-scene.png";
