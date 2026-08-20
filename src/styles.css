@@ -348,3 +348,52 @@
 .no-scrollbar {
   scrollbar-width: none;
 }
+
+/* --------------------------------------------------------------------------
+ * /home2 — Google Maps flavoured brand scheme.
+ * Scoped variable overrides: every component below re-reads the same brand
+ * tokens, so the whole page re-skins without duplicating markup styles.
+ * ----------------------------------------------------------------------- */
+.gmaps {
+  --forest-deep: oklch(0.28 0.045 258); /* Google grey-900 blue cast */
+  --forest: oklch(0.52 0.19 259); /* Google blue #1A73E8 */
+  --grass: oklch(0.58 0.16 149); /* Google green #34A853 */
+  --grass-hover: oklch(0.51 0.15 149);
+
+  --gold: oklch(0.82 0.16 84); /* Google yellow #FBBC04 */
+  --gold-soft: oklch(0.92 0.08 88);
+
+  --coral: oklch(0.62 0.21 27); /* Google red #EA4335 */
+
+  --ink: oklch(0.28 0.02 258);
+  --paper: oklch(0.98 0.003 250);
+  --cream: oklch(0.965 0.006 250);
+  --mist: oklch(0.945 0.012 250);
+  --mist-deep: oklch(0.9 0.02 250);
+
+  --divider: oklch(0.905 0.008 250);
+  --subtle: oklch(0.58 0.015 258);
+
+  --background: oklch(1 0 0);
+  --foreground: var(--ink);
+  --muted-foreground: oklch(0.52 0.015 258);
+  --primary: var(--forest);
+  --ring: var(--forest);
+  --border: var(--divider);
+  --input: var(--divider);
+
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Blue-hour washes instead of the racing-green ones */
+.gmaps .forest-wash {
+  background:
+    radial-gradient(90% 70% at 80% 0%, oklch(0.5 0.17 262 / 0.9) 0%, transparent 60%),
+    radial-gradient(70% 60% at 5% 100%, oklch(0.45 0.13 235 / 0.7) 0%, transparent 65%),
+    oklch(0.28 0.05 258);
+}
+.gmaps .sky-wash {
+  background:
+    linear-gradient(180deg, oklch(0.92 0.045 245) 0%, oklch(0.965 0.02 245) 40%, var(--paper) 84%);
+}
