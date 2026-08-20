@@ -14,9 +14,9 @@ export function HeroScene() {
   const s = c.scene;
 
   return (
-    <div className="relative mt-4 w-full sm:mt-6">
+    <div className="relative mt-auto w-full shrink-0 pt-1 sm:pt-2">
       {/* the street band: full-bleed, height-scaled, cropped at the sides */}
-      <div className="relative h-[210px] w-full overflow-hidden sm:h-[min(32vh,280px)] lg:h-[min(36vh,340px)]">
+      <div className="relative h-[220px] w-full overflow-hidden sm:h-[min(35svh,250px)] lg:h-[min(38svh,300px)]">
         {/* floating product UI, over the street */}
         <div className="container-site pointer-events-none absolute inset-x-0 top-0 z-20">
           <div className="relative h-[74px] sm:h-[96px]">
@@ -60,7 +60,7 @@ export function HeroScene() {
           aria-hidden="true"
           width={1024}
           height={1024}
-          className="absolute bottom-0 left-[-32%] h-[80%] w-auto max-w-none object-contain object-bottom sm:left-[-16%] md:left-[-6%] md:h-[86%] lg:left-0"
+           className="absolute bottom-0 left-[-32%] h-[88%] w-auto max-w-none object-contain object-bottom sm:left-[-16%] sm:h-[90%] md:left-[-6%] lg:left-0"
         />
 
         {/* right: tram, shelter, bus */}
@@ -70,7 +70,7 @@ export function HeroScene() {
           aria-hidden="true"
           width={1024}
           height={1024}
-          className="absolute bottom-0 right-[-30%] h-[80%] w-auto max-w-none object-contain object-bottom sm:right-[-12%] sm:h-[92%] lg:right-0"
+           className="absolute bottom-0 right-[-30%] h-[88%] w-auto max-w-none object-contain object-bottom sm:right-[-12%] sm:h-[96%] lg:right-0"
         />
 
         {/* center: car at the curb + EV charger + traffic light */}
@@ -80,7 +80,7 @@ export function HeroScene() {
           aria-hidden="true"
           width={1024}
           height={768}
-          className="absolute bottom-0 left-1/2 h-[56%] w-auto max-w-none -translate-x-1/2 object-contain object-bottom sm:left-[6%] sm:h-[70%] sm:translate-x-0 lg:left-[26%]"
+           className="absolute bottom-0 left-1/2 h-[64%] w-auto max-w-none -translate-x-1/2 object-contain object-bottom sm:left-[6%] sm:h-[76%] sm:translate-x-0 lg:left-[26%]"
         />
 
 
