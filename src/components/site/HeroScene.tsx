@@ -17,8 +17,8 @@ export function HeroScene() {
   const offset = useParallax();
 
   return (
-    <div className="relative -mt-8 w-full shrink-0 sm:-mt-12">
-      <div className="relative h-[320px] w-full overflow-hidden sm:h-[min(46svh,360px)] lg:h-[min(52svh,420px)]">
+    <div className="relative -mt-6 w-full shrink-0 sm:-mt-10">
+      <div className="relative flex w-full justify-center overflow-hidden">
         {/* distant skyline + hills */}
         <img
           src={heroSkyline}
@@ -26,30 +26,28 @@ export function HeroScene() {
           aria-hidden="true"
           width={1920}
           height={512}
-          className="pointer-events-none absolute bottom-[52%] left-1/2 h-[46%] w-auto min-w-full max-w-none -translate-x-1/2 object-cover object-bottom opacity-60"
+          className="pointer-events-none absolute bottom-[38%] left-1/2 h-[40%] w-auto min-w-full max-w-none -translate-x-1/2 object-cover object-bottom opacity-50"
           style={{ transform: `translate3d(-50%, ${offset}px, 0)` }}
         />
 
         {/* soft haze so the skyline dissolves into the sky */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[56%] bg-gradient-to-b from-background via-background/40 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-background via-background/40 to-transparent" />
 
-        {/* the street itself: one continuous facade line */}
+        {/* the street itself: one continuous facade line.
+            Mobile scales by height and crops the sides; from sm up the whole
+            band fits the width so no rooftop is ever sliced off. */}
         <img
           src={heroBand}
           alt="Una via di Torino: portici, tram, parcheggio e ricarica elettrica"
           width={1920}
           height={720}
-          className="absolute bottom-0 left-1/2 h-full w-auto min-w-full max-w-none -translate-x-1/2 object-cover object-bottom"
-          style={{
-            maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 8%, #000 26%)",
-            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 8%, #000 26%)",
-          }}
+          className="relative block h-[240px] w-auto min-w-full max-w-none shrink-0 object-contain object-bottom sm:h-auto sm:w-full sm:min-w-0"
         />
 
         {/* chips pinned to the art */}
         <div className="pointer-events-none absolute inset-0 z-20">
-          {/* traffic light — sits over the signal, left-of-centre */}
-          <div className="animate-float absolute left-[3%] top-[14%] sm:left-[8%] lg:left-[16%]">
+          {/* traffic light — over the signal, left of centre */}
+          <div className="animate-float absolute left-[4%] top-[42%] sm:left-[8%] sm:top-[46%] lg:left-[15%]">
             <div className="flex items-center gap-2 rounded-full bg-forest px-3 py-1.5 text-[0.7rem] font-extrabold text-gold shadow-float sm:px-3.5 sm:py-2 sm:text-xs">
               <Timer className="h-3.5 w-3.5" />
               {s.light}
@@ -58,7 +56,7 @@ export function HeroScene() {
 
           {/* parking — over the parked car / charger */}
           <div
-            className="animate-float absolute bottom-[16%] left-[3%] w-[52%] max-w-[220px] sm:bottom-[20%] sm:left-[5%] lg:left-[9%]"
+            className="animate-float absolute bottom-[8%] left-[4%] w-[58%] max-w-[210px] sm:bottom-[14%] sm:left-[6%] lg:left-[8%]"
             style={{ animationDelay: "1.2s" }}
           >
             <SceneCard icon={<CircleParking className="h-4 w-4" />} title={s.parkTitle} body={s.parkBody} />
@@ -66,23 +64,20 @@ export function HeroScene() {
 
           {/* connection — over the tram */}
           <div
-            className="animate-float absolute right-[3%] top-[10%] w-[52%] max-w-[240px] sm:right-[6%] lg:right-[12%]"
+            className="animate-float absolute right-[4%] top-[34%] w-[58%] max-w-[230px] sm:right-[6%] sm:top-[40%] lg:right-[10%]"
             style={{ animationDelay: "2.1s" }}
           >
             <SceneCard icon={<Bus className="h-4 w-4" />} title={s.transitTitle} body={s.transitBody} />
-          </div>
-
-          <div className="absolute right-[8%] top-[46%] hidden lg:block">
-            <SceneBadge tone="gold">{s.billboard}</SceneBadge>
-          </div>
-          <div className="absolute left-[36%] top-[40%] hidden lg:block">
-            <SceneBadge tone="forest">{s.shelter}</SceneBadge>
           </div>
         </div>
 
         {/* the sidewalk line the whole scene stands on */}
         <div className="absolute inset-x-0 bottom-0 h-px bg-forest/15" />
       </div>
+    </div>
+  );
+}
+
     </div>
   );
 }
