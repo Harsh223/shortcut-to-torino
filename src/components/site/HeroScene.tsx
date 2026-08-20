@@ -54,7 +54,7 @@ export function HeroScene() {
         {/* chips pinned to the art */}
         <div className="pointer-events-none absolute inset-0 z-20">
           {/* traffic light — over the signal, left of centre */}
-          <div className="animate-float absolute left-[4%] top-[42%] sm:left-[8%] sm:top-[46%] lg:left-[15%]">
+          <div className="animate-float absolute left-[4%] top-[10%] sm:top-[46%] sm:left-[8%] lg:left-[15%]">
             <div className="flex items-center gap-2 rounded-full bg-forest px-3 py-1.5 text-[0.7rem] font-extrabold text-gold shadow-float sm:px-3.5 sm:py-2 sm:text-xs">
               <Timer className="h-3.5 w-3.5" />
               {s.light}
@@ -63,19 +63,20 @@ export function HeroScene() {
 
           {/* parking — over the parked car / charger */}
           <div
-            className="animate-float absolute bottom-[8%] left-[4%] w-[58%] max-w-[210px] sm:bottom-[14%] sm:left-[6%] lg:left-[8%]"
+            className="animate-float absolute bottom-[10%] left-[4%] w-[62%] max-w-[210px] sm:bottom-[14%] sm:left-[6%] lg:left-[8%]"
             style={{ animationDelay: "1.2s" }}
           >
             <SceneCard icon={<CircleParking className="h-4 w-4" />} title={s.parkTitle} body={s.parkBody} />
           </div>
 
-          {/* connection — over the tram */}
+          {/* connection — over the tram (desktop only: mobile has no room) */}
           <div
-            className="animate-float absolute right-[4%] top-[34%] w-[58%] max-w-[230px] sm:right-[6%] sm:top-[40%] lg:right-[10%]"
+            className="animate-float absolute right-[6%] top-[40%] hidden w-[58%] max-w-[230px] sm:block lg:right-[10%]"
             style={{ animationDelay: "2.1s" }}
           >
             <SceneCard icon={<Bus className="h-4 w-4" />} title={s.transitTitle} body={s.transitBody} />
           </div>
+
         </div>
 
         {/* the sidewalk line the whole scene stands on */}
