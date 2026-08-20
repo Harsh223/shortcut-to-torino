@@ -550,7 +550,29 @@ export const en: Copy = {
     storesTitle: "On the stores soon",
     reqTitle: "What you need",
     req: ["iPhone on iOS 16 or later", "Android 10 or later", "Location enabled while navigating", "Account optional"],
+    chips: ["Launching next month", "Turin first", "No spam"],
+    dayOne: {
+      title: "What happens when you join",
+      items: [
+        { name: "The link, on day one", body: "One email when the app hits the stores. Not a newsletter in disguise." },
+        { name: "Your city counts", body: "The cities people put in the list decide the order we open in after Turin." },
+        { name: "No spam", body: "Email and city, nothing else. One-click unsubscribe, always." },
+      ],
+    },
+    steps: {
+      title: "How we get to launch",
+      items: [
+        { n: "01", name: "Turin first", body: "Local data, restricted zones, parking and the GTT network: the city we know best." },
+        { n: "02", name: "Then the metro area", body: "The surrounding towns join with the same map and the same data." },
+        { n: "03", name: "Other cities", body: "We open where demand is strongest. Outside Turin we're not live yet, and we say so." },
+      ],
+    },
+    closing: {
+      title: "See you at launch",
+      body: "One email, the download link, and the city in your pocket.",
+    },
   },
+
   privacy: {
     title: "Privacy policy",
     updated: "Last updated: August 2026",
