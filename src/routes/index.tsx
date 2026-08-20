@@ -148,8 +148,9 @@ function Home() {
       {/* ------------------------ act 3 · parking, cream block ------------------- */}
       <section className="bg-white pb-12 sm:pb-16">
         <div className="container-site">
-          <div className="block-round bg-cream px-6 py-14 sm:px-10 lg:px-14">
+          <Reveal className="block-round block bg-cream px-6 py-14 sm:px-10 lg:px-14">
             <div className="grid items-center gap-10 lg:grid-cols-2">
+
               <div>
                 <p className="eyebrow text-grass">{c.parking.kicker}</p>
                 <h2 className="mt-3 text-3xl font-extrabold text-ink sm:text-4xl lg:text-[2.6rem] lg:leading-[1.06]">
