@@ -1,51 +1,46 @@
-# City pages: 14 Italian cities, each with its own vector story
+# Fourteen city storytelling pages
 
-A dedicated, illustrated page for each of Italy's 14 biggest cities, built one at a time, all sharing the same visual language as the home page (flat editorial vectors, forest/gold palette, scroll reveals, floating product chips).
+## What will be built
 
-## Navigation
+- Add a dedicated, shareable page for each major Italian city: **Roma, Milano, Napoli, Torino, Palermo, Genova, Bologna, Firenze, Bari, Catania, Venezia, Verona, Messina, and Padova**.
+- Add a `/cities` overview that presents all fourteen destinations as an illustrated city directory rather than a generic status table.
+- Replace the single “Città” navigation link with a polished desktop city menu listing all fourteen cities; the mobile menu will show the complete list in a compact, scroll-safe layout.
+- Preserve `/turin` as a working public URL and direct it to the new Torino experience.
 
-The header "Cities" link becomes a full cities menu instead of a single link to Turin:
-- Desktop: a dropdown panel listing all 14 cities in a grid, each with its status chip (Live / Next / Planned).
-- Mobile: the same list inside the existing burger menu, grouped and scrollable.
-- `/cities` becomes an index page: a map-flavoured grid of all 14 city cards, ordered by launch status.
-- `/turin` keeps working (redirect-friendly alias to `/citta/torino` route id) so no existing link breaks.
+## Storytelling system
 
-Cities (population/size order): Roma, Milano, Napoli, Torino, Palermo, Genova, Bologna, Firenze, Bari, Catania, Venezia, Verona, Messina, Padova.
+Every city page will use the same recognizable Shortcut rhythm while telling a different local story:
 
-## Page structure (same skeleton for every city, different content and art)
+1. **City arrival** — city-specific headline, local mobility tension, and the unique panoramic vector visible immediately on load.
+2. **The local reality** — a concise, honest snapshot of how movement in that city actually works.
+3. **Parking or access** — locally relevant constraints such as ZTLs, historic centres, curbside scarcity, park-and-ride, or Venice’s water/land interchange.
+4. **Public transport** — the actual local network vocabulary and connection problems, without claiming unavailable live integrations.
+5. **Driving, charging, and walking** — city-specific road, EV, shade, hill, ferry, cycling, or pedestrian considerations.
+6. **Future-city CTA** — a city-prefilled waitlist inviting residents to influence launch priority.
 
-Each city page tells the same five-act story the home page tells, but through that city's own streets:
+Italian remains primary and English remains fully available. Copy will be specific enough that a resident recognizes the city, while clearly describing future coverage rather than implying Shortcut is already live there.
 
-1. **Hero stage** — city-specific panoramic street band welded to the bottom of the first screen, exactly like the home hero: skyline layer with parallax, foreground band, 2-3 floating chips carrying that city's real pain point (e.g. Roma: ZTL Centro Storico; Milano: Area C; Napoli: parcheggio in doppia fila).
-2. **Why this city** — the local traffic truth, told in one short opinionated paragraph plus three stat pucks (residents, cars per 1000, average parking hunt minutes).
-3. **Parking here** — city-specific illustration (Milano garage tower, Napoli vicoli, Roma sanpietrini) plus how on-street vs garage availability works locally.
-4. **Transit here** — named local operator and network (ATM, ATAC, ANM, GTT, AMAT…) with the connection re-route story and an honest note on data quality.
-5. **Drive / EV / lights** — night street scene with the city's ZTL or congestion scheme, chargers, light countdowns where signals support it.
-6. **Local closing** — landmark silhouette strip along the bottom, launch status, waitlist form pre-filled with that city.
+## Visual direction and animation
 
-All acts wrapped in the existing `Reveal` component with staggered delays; hero art visible immediately on load, no scroll needed.
+- Reuse the existing Torino panorama and the thirteen newly created city panoramas; the image artwork itself will not be altered.
+- Build a reusable city-stage component that scales art by height and crops horizontally on narrow screens, keeping landmarks legible and visible in the first viewport.
+- Use full-width editorial acts, alternating light, cream, gold, and forest bands; avoid repeated nested-card layouts.
+- Add restrained scroll reveals and staggered local fact markers with reduced-motion support.
+- Add lightweight city-specific route lines, stop chips, parking indicators, and contextual labels around the panoramas so the pages feel like a living mobility map.
+- Keep phone UI secondary and use only the clearest existing product views where they support the story.
 
-## Art per city
+## Technical details
 
-Three new transparent PNG illustrations per city, in the exact style of `hero-band.png`:
-- `{city}-band.png` — panoramic street with that city's unmistakable architecture and transport (Milano tram 1928 + Duomo spires, Roma sanpietrini + umbrella pines + a 60s facade, Napoli vicoli with laundry lines + Vesuvio, Bologna porticoes in terracotta, Venezia vaporetto instead of a car, and so on).
-- `{city}-skyline.png` — muted landmark silhouette layer for the parallax.
-- `{city}-scene.png` — one mid-page scene reused across the parking/drive acts.
+- Create a typed central city registry containing slugs, bilingual narrative copy, local specialties, transport labels, launch status, and asset imports.
+- Add `src/routes/cities.tsx` as the `/cities` layout, `src/routes/cities.index.tsx` for the directory, and `src/routes/cities.$slug.tsx` for the fourteen city pages.
+- Use route-safe city validation and a proper not-found state for unknown slugs.
+- Give the city index and every city detail page unique title, description, Open Graph, Twitter, and canonical metadata.
+- Extend `WaitlistForm` with an optional initial city value so every local CTA is prefilled while preserving current forms.
+- Update the header and relevant home-page links to use the city directory and typed TanStack navigation.
+- Keep all existing product/backend behavior unchanged.
 
-Someone from the city should recognise it in a second; nobody should need a caption.
+## Validation
 
-## Copy
-
-Italian first, English second, both in `src/lib/copy.ts` under a `cities` map keyed by slug. Each city gets its own written story — local operator names, local schemes, local complaints — not a template with the name swapped. Tone stays helpful, local, slightly opinionated.
-
-## Rollout
-
-One city per turn, in this order: Torino (rebuild of the current page as the template), Roma, Milano, Napoli, Bologna, then the rest. Each turn delivers finished art + copy + page, reviewed before moving on.
-
-## Technical notes
-
-- New: `src/routes/cities.index.tsx`, `src/routes/cities.$slug.tsx` (single dynamic route, content driven by a `CITIES` registry), `src/components/site/CityScene.tsx` (generalised `HeroScene` taking band/skyline props), `src/components/site/CityMenu.tsx`.
-- `src/lib/cities.ts` holds slug, display name, status, asset imports and chip config; unknown slug throws `notFound()`.
-- Edits: `Header.tsx` (cities menu), `Footer.tsx` (city links), `copy.ts` (per-city dictionaries), `turin.tsx` (redirect to the new route).
-- Every city page defines its own `head()` with unique title, description, og:title/description, og:type, twitter:card, and canonical.
-- No new dependencies, no backend changes beyond reusing the existing waitlist table with the city field.
+- Verify all fourteen routes, the city menu, language switching, city-prefilled waitlist fields, legacy `/turin`, and unknown-city handling.
+- Check first-viewport art, text wrapping, menu overflow, and reveal behavior at mobile and desktop sizes.
+- Confirm each page has one H1, city-specific metadata, meaningful image alt text, and no visual overlap or clipped artwork.
