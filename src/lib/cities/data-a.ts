@@ -1,0 +1,865 @@
+import type { City } from "./types";
+
+import torinoBand from "@/assets/hero-band.png";
+import milanoBand from "@/assets/city-milano-band.png";
+import romaBand from "@/assets/city-roma-band.png";
+import napoliBand from "@/assets/city-napoli-band.png";
+import bolognaBand from "@/assets/city-bologna-band.png";
+import firenzeBand from "@/assets/city-firenze-band.png";
+import genovaBand from "@/assets/city-genova-band.png";
+
+export const citiesA: City[] = [
+  {
+    slug: "torino",
+    name: "Torino",
+    region: "Piemonte",
+    operator: "GTT",
+    band: torinoBand,
+    alt: {
+      it: "Una via di Torino: portici, tram, auto parcheggiate e colonnina di ricarica",
+      en: "A Turin street: arcades, tram, parked cars and an EV charger",
+    },
+    it: {
+      blurb: "Prima città. Portici, griglia e collina.",
+      status: "Prima città al lancio",
+      headline: "La scorciatoia per",
+      headlineAccent: "Torino",
+      sub: "Griglia di vie, portici, ZTL centrale e una collina che cambia ogni percorso. Torino è la città da cui partiamo.",
+      chips: ["ZTL centrale", "Tram 4 e 15", "Collina"],
+      reality: {
+        kicker: "La città reale",
+        title: "Una griglia che sembra semplice, finché non parcheggi",
+        body: "Torino si legge bene sulla mappa: assi lunghi, isolati regolari, portici che coprono il centro. Il problema arriva all'arrivo — la sosta blu del centro, la ZTL con i suoi orari e i controviali dove il posto libero c'è ma dura poco.",
+      },
+      facts: [
+        { value: "1", label: "app invece di quattro" },
+        { value: "ZTL", label: "orari e varchi in mappa" },
+        { value: "GTT", label: "tram, bus e metro" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Il posto giusto, non il primo che capita",
+        body: "Cerchiamo in parallelo lo stallo su strada vicino alla destinazione e il parcheggio in struttura con posti liberi, con prezzo e distanza a piedi a confronto.",
+        points: [
+          "Sosta blu, gialla e gratuita distinte per zona",
+          "Parcheggi in struttura del centro con posti aggiornati",
+          "Avviso prima del varco ZTL, con gli orari attivi",
+          "Controllo misure: se la tua auto entra, te lo diciamo",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "Tram, bus e metro letti insieme",
+        body: "La rete GTT è densa e le coincidenze contano più della singola linea. Correggiamo gli arrivi con quello che succede in strada e, se la coincidenza salta, proponiamo subito l'alternativa.",
+        points: [
+          "Arrivi corretti, non solo l'orario teorico",
+          "Metro 1 e superficie confrontate sullo stesso viaggio",
+          "Deviazioni, cantieri e scioperi segnalati in mappa",
+          "Porta a porta, tratti a piedi inclusi",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Semafori, traffico, colonnine",
+        body: "Sui grandi assi il tempo si perde agli incroci. Countdown dei semafori mappati, code segnalate prima di entrarci e colonnine filtrate per presa e potenza.",
+        points: [
+          "Countdown semafori sugli incroci mappati",
+          "Traffico live su corso Francia, corso Regina e tangenziale",
+          "Colonnine EV con disponibilità e potenza",
+          "Alternative: più veloce o meno semafori",
+        ],
+      },
+      closing: {
+        title: "Torino è la prima",
+        body: "Qui partiamo con dati locali, regole locali e mezzi locali. Entra in lista e sei tra i primi a usarla.",
+      },
+    },
+    en: {
+      blurb: "First city. Arcades, grid and hill.",
+      status: "First city at launch",
+      headline: "The shortcut across",
+      headlineAccent: "Turin",
+      sub: "A long street grid, arcades, a central restricted zone and a hill that rewrites every route. Turin is where we start.",
+      chips: ["Central ZTL", "Trams 4 and 15", "The hill"],
+      reality: {
+        kicker: "The real city",
+        title: "A grid that looks simple until you park",
+        body: "Turin reads well on a map: long axes, regular blocks, arcades covering the centre. The trouble starts on arrival — paid central parking, a restricted zone with its own hours, and side lanes where a free spot exists but never lasts.",
+      },
+      facts: [
+        { value: "1", label: "app instead of four" },
+        { value: "ZTL", label: "hours and gates on the map" },
+        { value: "GTT", label: "tram, bus and metro" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "The right spot, not the first one",
+        body: "We search the nearest curbside spot and the nearest garage with free spaces at the same time, comparing price and walking distance.",
+        points: [
+          "Paid, permit and free parking separated by zone",
+          "Central garages with live free-space counts",
+          "A warning before the restricted-zone gate, with active hours",
+          "Dimension check: we tell you if your car fits",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "Tram, bus and metro read together",
+        body: "The GTT network is dense and connections matter more than any single line. We correct arrivals against street reality and hand you plan B when a connection breaks.",
+        points: [
+          "Corrected arrivals, not just the timetable",
+          "Metro 1 and surface lines compared in one trip",
+          "Diversions, roadworks and strikes flagged on the map",
+          "Door to door, walking legs included",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Lights, traffic, chargers",
+        body: "On the big axes you lose time at junctions. Countdowns on mapped lights, queues flagged before you hit them, chargers filtered by plug and power.",
+        points: [
+          "Traffic-light countdowns on mapped junctions",
+          "Live traffic on the main corsi and the ring road",
+          "EV chargers with availability and power",
+          "Alternatives: fastest, or fewest lights",
+        ],
+      },
+      closing: {
+        title: "Turin goes first",
+        body: "Local data, local rules, local transit. Join the list and be among the first to use it.",
+      },
+    },
+  },
+
+  {
+    slug: "milano",
+    name: "Milano",
+    region: "Lombardia",
+    operator: "ATM",
+    band: milanoBand,
+    alt: {
+      it: "Una via di Milano: palazzi in stile, tram storico e guglie del Duomo sullo sfondo",
+      en: "A Milan street: mansion blocks, a historic tram and the Duomo spires behind",
+    },
+    it: {
+      blurb: "Area C, Area B e una rete metro che regge tutto.",
+      status: "In preparazione",
+      headline: "La scorciatoia per",
+      headlineAccent: "Milano",
+      sub: "Due zone a traffico limitato sovrapposte, cinque linee di metro e una sosta che costa più del viaggio.",
+      chips: ["Area C", "M1 → M5", "Interscambio"],
+      reality: {
+        kicker: "La città reale",
+        title: "Non è una città in cui si improvvisa",
+        body: "A Milano la decisione la prendi prima di partire: entrare in Area C, lasciare l'auto a un parcheggio di interscambio o non prenderla affatto. Shortcut mette il confronto davanti, non dopo il ticket.",
+      },
+      facts: [
+        { value: "2", label: "zone limitate sovrapposte" },
+        { value: "5", label: "linee di metro in mappa" },
+        { value: "ATM", label: "rete di superficie e metro" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Area C, Area B e dove lasciare l'auto",
+        body: "Ti diciamo se la tua auto può entrare, quanto costa e dove conviene fermarsi fuori. I parcheggi di interscambio vengono confrontati con la sosta in centro, tempo di metro incluso.",
+        points: [
+          "Verifica Area B in base al veicolo salvato",
+          "Costo Area C stimato prima di partire",
+          "Interscambio + metro confrontato con la sosta in centro",
+          "Strisce blu e silos con disponibilità aggiornata",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "La metro è veloce, il resto è coincidenze",
+        body: "Le cinque linee coprono molto, ma il viaggio reale finisce quasi sempre su un tram o un bus. Correggiamo gli arrivi di superficie e proteggiamo la coincidenza.",
+        points: [
+          "Arrivi di tram e bus corretti sui dati reali",
+          "Coincidenza a rischio: alternativa in un tocco",
+          "Interruzioni di linea e stazioni chiuse in mappa",
+          "Passante e metro confrontati sullo stesso percorso",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Circonvallazioni, code, colonnine",
+        body: "Il traffico milanese si concentra su pochi anelli. Ti mostriamo la coda prima di entrarci e la colonnina giusta dove hai davvero tempo di caricare.",
+        points: [
+          "Traffico live su circonvallazioni e tangenziali",
+          "Countdown semafori sugli incroci mappati",
+          "Colonnine EV per presa, potenza e operatore",
+          "Sharing di auto, scooter e monopattini sulla stessa mappa",
+        ],
+      },
+      closing: {
+        title: "Milano è nella lista",
+        body: "Stiamo preparando i dati milanesi. Lascia l'email: le richieste decidono l'ordine delle città.",
+      },
+    },
+    en: {
+      blurb: "Area C, Area B and a metro that carries everything.",
+      status: "In preparation",
+      headline: "The shortcut across",
+      headlineAccent: "Milan",
+      sub: "Two overlapping restricted zones, five metro lines, and parking that costs more than the trip.",
+      chips: ["Area C", "M1 → M5", "Park and ride"],
+      reality: {
+        kicker: "The real city",
+        title: "Not a city you improvise in",
+        body: "In Milan the decision happens before you leave: enter Area C, park at an interchange, or skip the car entirely. Shortcut puts that comparison up front, not after the ticket.",
+      },
+      facts: [
+        { value: "2", label: "overlapping restricted zones" },
+        { value: "5", label: "metro lines on the map" },
+        { value: "ATM", label: "surface and metro network" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "Area C, Area B and where to leave the car",
+        body: "We tell you whether your car may enter, what it costs, and where it pays to stop outside. Park-and-ride options are compared against central parking, metro time included.",
+        points: [
+          "Area B eligibility based on your saved vehicle",
+          "Estimated Area C cost before you set off",
+          "Park and ride plus metro compared with central parking",
+          "Paid street parking and garages with live availability",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "The metro is fast, the rest is connections",
+        body: "Five lines cover a lot, but the real trip almost always ends on a tram or a bus. We correct surface arrivals and protect the connection.",
+        points: [
+          "Tram and bus arrivals corrected against real data",
+          "Connection at risk: alternative in one tap",
+          "Line interruptions and closed stations on the map",
+          "Suburban rail and metro compared on the same route",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Ring roads, queues, chargers",
+        body: "Milan traffic concentrates on a few rings. We show the queue before you enter it, and the charger where you actually have time to charge.",
+        points: [
+          "Live traffic on the ring roads and motorway bypass",
+          "Traffic-light countdowns on mapped junctions",
+          "EV chargers by plug, power and operator",
+          "Car, scooter and bike sharing on the same map",
+        ],
+      },
+      closing: {
+        title: "Milan is on the list",
+        body: "We're preparing Milan's data now. Leave your email — requests decide the order of cities.",
+      },
+    },
+  },
+
+  {
+    slug: "roma",
+    name: "Roma",
+    region: "Lazio",
+    operator: "ATAC",
+    band: romaBand,
+    alt: {
+      it: "Una via di Roma: palazzi ocra, pini marittimi e archi antichi",
+      en: "A Rome street: ochre palazzi, umbrella pines and ancient arches",
+    },
+    it: {
+      blurb: "Centro storico, sanpietrini e distanze vere.",
+      status: "Città prioritaria",
+      headline: "La scorciatoia per",
+      headlineAccent: "Roma",
+      sub: "Una città dove la distanza sulla mappa non dice quasi niente sul tempo che ci metterai.",
+      chips: ["ZTL centro storico", "Metro A · B · C", "GRA"],
+      reality: {
+        kicker: "La città reale",
+        title: "A Roma il problema non è la strada, è l'arrivo",
+        body: "Il centro storico è un reticolo di ZTL con fasce orarie diverse, i sanpietrini rallentano tutto e il parcheggio libero vero è quasi sempre più lontano di quanto sembri. Shortcut misura il viaggio completo: auto, sosta e ultimo tratto a piedi.",
+      },
+      facts: [
+        { value: "3", label: "linee di metro" },
+        { value: "ZTL", label: "fasce orarie diverse per zona" },
+        { value: "GRA", label: "traffico dell'anello in mappa" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Dove si può davvero lasciare l'auto",
+        body: "Confrontiamo sosta su strada, parcheggi in struttura e nodi di scambio con la metro, con il tempo a piedi calcolato sul percorso reale — scalinate comprese.",
+        points: [
+          "Varchi ZTL con fasce orarie e giorni attivi",
+          "Parcheggi di scambio vicino alle stazioni metro",
+          "Strisce blu con probabilità di posto libero",
+          "Ultimo tratto a piedi calcolato sul selciato reale",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "Metro, bus e tram, con onestà",
+        body: "Su alcune linee i dati sono ottimi, su altre esiste solo l'orario programmato. Te lo diciamo: previsione corretta quando possiamo, orario teorico quando è tutto quello che c'è.",
+        points: [
+          "Arrivi corretti dove i dati del veicolo esistono",
+          "Etichetta chiara quando è solo orario programmato",
+          "Coincidenze protette tra metro e superficie",
+          "Deviazioni per eventi, cortei e cantieri",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Anelli, code e colonnine",
+        body: "Il traffico romano si accumula sulle consolari e sul Raccordo. Ti mostriamo la coda in anticipo, il countdown dei semafori mappati e le colonnine sul percorso.",
+        points: [
+          "Traffico live su consolari e Grande Raccordo",
+          "Countdown semafori sugli incroci mappati",
+          "Colonnine EV con potenza e disponibilità",
+          "Alternative con meno semafori e meno svolte",
+        ],
+      },
+      closing: {
+        title: "Roma è nella lista",
+        body: "La città più complessa d'Italia merita dati veri. Dicci che vuoi Shortcut a Roma.",
+      },
+    },
+    en: {
+      blurb: "Historic centre, cobbles and real distances.",
+      status: "Priority city",
+      headline: "The shortcut across",
+      headlineAccent: "Rome",
+      sub: "A city where the distance on the map tells you almost nothing about the time it will take.",
+      chips: ["Historic-centre ZTL", "Metro A · B · C", "Ring road"],
+      reality: {
+        kicker: "The real city",
+        title: "In Rome the problem isn't the road, it's arriving",
+        body: "The historic centre is a lattice of restricted zones with different hours, cobbles slow everything down, and genuinely free parking is usually further away than it looks. Shortcut measures the whole trip: drive, park, and the final walk.",
+      },
+      facts: [
+        { value: "3", label: "metro lines" },
+        { value: "ZTL", label: "different hours per zone" },
+        { value: "GRA", label: "ring-road traffic on the map" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "Where you can actually leave the car",
+        body: "We compare street parking, garages and metro interchanges, with walking time computed on the real route — steps included.",
+        points: [
+          "Restricted-zone gates with active hours and days",
+          "Interchange car parks next to metro stations",
+          "Paid street parking with likelihood of a free spot",
+          "Final walking leg measured on the real surface",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "Metro, bus and tram, honestly",
+        body: "On some lines the data is excellent; on others only the printed timetable exists. We say which: a corrected prediction when we can, the schedule when that's all there is.",
+        points: [
+          "Corrected arrivals where vehicle data exists",
+          "A clear label when it's schedule only",
+          "Protected connections between metro and surface",
+          "Diversions for events, marches and roadworks",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Rings, queues and chargers",
+        body: "Rome's traffic piles onto the consular roads and the ring. We show the queue early, count down mapped lights, and put chargers on your route.",
+        points: [
+          "Live traffic on the consular roads and the ring",
+          "Traffic-light countdowns on mapped junctions",
+          "EV chargers with power and availability",
+          "Alternatives with fewer lights and fewer turns",
+        ],
+      },
+      closing: {
+        title: "Rome is on the list",
+        body: "Italy's most complex city deserves real data. Tell us you want Shortcut in Rome.",
+      },
+    },
+  },
+
+  {
+    slug: "napoli",
+    name: "Napoli",
+    region: "Campania",
+    operator: "ANM",
+    band: napoliBand,
+    alt: {
+      it: "Una via di Napoli: vicoli stretti, funicolare e il Vesuvio sullo sfondo",
+      en: "A Naples street: narrow alleys, a funicular and Vesuvius behind",
+    },
+    it: {
+      blurb: "Vicoli, funicolari e dislivelli veri.",
+      status: "Città prioritaria",
+      headline: "La scorciatoia per",
+      headlineAccent: "Napoli",
+      sub: "Una città verticale: quello che sulla mappa è vicino, a piedi può essere cento gradini.",
+      chips: ["4 funicolari", "Linea 1", "Vicoli stretti"],
+      reality: {
+        kicker: "La città reale",
+        title: "La distanza qui si misura in dislivello",
+        body: "Tra Vomero e centro non conta la lunghezza del percorso, contano le scale, le funicolari e gli orari. Shortcut calcola il tratto a piedi con la pendenza vera e ti dice quando conviene la funicolare invece del bus.",
+      },
+      facts: [
+        { value: "4", label: "funicolari nel calcolo dei percorsi" },
+        { value: "ANM", label: "bus, metro e funicolari" },
+        { value: "±150 m", label: "di dislivello nel centro urbano" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Il posto e la larghezza della strada",
+        body: "Nel centro antico la domanda non è solo dove parcheggiare, ma se ci passi. Salviamo le misure della tua auto e filtriamo di conseguenza.",
+        points: [
+          "Vicoli troppo stretti esclusi dal percorso",
+          "Parcheggi in struttura con posti e altezza massima",
+          "Sosta su strada con regole e tariffe locali",
+          "ZTL del centro antico con orari attivi",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "Metro, funicolari e bus in un unico piano",
+        body: "La Linea 1 e le funicolari sono affidabili, la superficie molto meno. Mettiamo insieme le tre cose e diciamo chiaramente quanto è solida ogni previsione.",
+        points: [
+          "Funicolari con orari e ultima corsa in evidenza",
+          "Linea 1 e Cumana confrontate sullo stesso viaggio",
+          "Arrivi bus corretti dove i dati lo permettono",
+          "Percorsi a piedi con scale e pendenza reali",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Tangenziale, lungomare, ricarica",
+        body: "Il traffico si concentra su pochi assi e sulla tangenziale. Ti avvisiamo prima della coda e ti mostriamo dove ricaricare senza deviare mezza città.",
+        points: [
+          "Traffico live su tangenziale e assi principali",
+          "Countdown semafori sugli incroci mappati",
+          "Colonnine EV con presa, potenza e disponibilità",
+          "Alternative che evitano i tratti più stretti",
+        ],
+      },
+      closing: {
+        title: "Napoli è nella lista",
+        body: "Una città verticale ha bisogno di una mappa che lo capisca. Chiedila per Napoli.",
+      },
+    },
+    en: {
+      blurb: "Alleys, funiculars and real elevation.",
+      status: "Priority city",
+      headline: "The shortcut across",
+      headlineAccent: "Naples",
+      sub: "A vertical city: what looks close on the map can be a hundred steps on foot.",
+      chips: ["4 funiculars", "Line 1", "Narrow alleys"],
+      reality: {
+        kicker: "The real city",
+        title: "Here distance is measured in elevation",
+        body: "Between Vomero and the centre, route length doesn't matter — stairs, funiculars and their timetables do. Shortcut computes the walking leg with real gradient and tells you when the funicular beats the bus.",
+      },
+      facts: [
+        { value: "4", label: "funiculars in the routing" },
+        { value: "ANM", label: "bus, metro and funiculars" },
+        { value: "±150 m", label: "of elevation inside the city" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "The spot, and the width of the street",
+        body: "In the old centre the question isn't only where to park, but whether you fit. Save your car's dimensions and we filter accordingly.",
+        points: [
+          "Alleys that are too narrow left out of the route",
+          "Garages with free spaces and maximum height",
+          "Street parking with local rules and tariffs",
+          "Old-centre restricted zone with active hours",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "Metro, funiculars and buses in one plan",
+        body: "Line 1 and the funiculars are dependable; the surface network far less so. We combine all three and state plainly how solid each prediction is.",
+        points: [
+          "Funiculars with hours and last departure highlighted",
+          "Line 1 and regional rail compared in one trip",
+          "Corrected bus arrivals where the data allows",
+          "Walking routes with real stairs and gradient",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Bypass, seafront, charging",
+        body: "Traffic concentrates on a few axes and the bypass. We warn you before the queue and show chargers that don't cost you half the city in detours.",
+        points: [
+          "Live traffic on the bypass and main axes",
+          "Traffic-light countdowns on mapped junctions",
+          "EV chargers by plug, power and availability",
+          "Alternatives that avoid the tightest stretches",
+        ],
+      },
+      closing: {
+        title: "Naples is on the list",
+        body: "A vertical city needs a map that understands it. Ask for Naples.",
+      },
+    },
+  },
+
+  {
+    slug: "bologna",
+    name: "Bologna",
+    region: "Emilia-Romagna",
+    operator: "TPER",
+    band: bolognaBand,
+    alt: {
+      it: "Una via di Bologna: portici in terracotta, torri e biciclette",
+      en: "A Bologna street: terracotta arcades, towers and bicycles",
+    },
+    it: {
+      blurb: "Portici, T-days e un centro che cambia di sabato.",
+      status: "In valutazione",
+      headline: "La scorciatoia per",
+      headlineAccent: "Bologna",
+      sub: "Quaranta chilometri di portici, una ZTL storica e un centro che nel fine settimana diventa pedonale.",
+      chips: ["ZTL storica", "T-days", "40 km di portici"],
+      reality: {
+        kicker: "La città reale",
+        title: "Il centro non è sempre lo stesso centro",
+        body: "Con i T-days le vie centrali si chiudono e il percorso di ieri oggi non esiste. Shortcut tiene conto delle chiusure ricorrenti prima di proporti un itinerario, non mentre ci sei dentro.",
+      },
+      facts: [
+        { value: "T-days", label: "chiusure ricorrenti in calendario" },
+        { value: "TPER", label: "rete bus urbana" },
+        { value: "40 km", label: "di portici per il percorso a piedi" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Fuori dalla ZTL, ma vicino",
+        body: "Confrontiamo i parcheggi appena fuori dal centro con la sosta interna consentita, includendo il tempo a piedi sotto i portici.",
+        points: [
+          "Varchi ZTL con orari e permessi in evidenza",
+          "Parcheggi in struttura al bordo del centro",
+          "Sosta su strada con tariffa e durata massima",
+          "Percorso a piedi preferibilmente sotto i portici",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "Una rete tutta di superficie",
+        body: "Senza metro, tutto dipende dai bus e dalle coincidenze. Correggiamo gli arrivi con i dati reali e segnaliamo subito le deviazioni del centro.",
+        points: [
+          "Arrivi bus corretti, non solo programmati",
+          "Coincidenza a rischio: alternativa immediata",
+          "Deviazioni per chiusure e cantieri in mappa",
+          "Collegamenti con la stazione centrale e l'aeroporto",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Viali, tangenziale e colonnine",
+        body: "I viali di circonvallazione decidono i tempi. Traffico live, countdown dei semafori mappati e colonnine sul percorso.",
+        points: [
+          "Traffico live su viali e tangenziale",
+          "Countdown semafori sugli incroci mappati",
+          "Colonnine EV per presa e potenza",
+          "Percorsi ciclabili e bike sharing sulla stessa mappa",
+        ],
+      },
+      closing: {
+        title: "Bologna è nella lista",
+        body: "Portici, T-days e una rete di superficie: una città perfetta per Shortcut. Chiedila.",
+      },
+    },
+    en: {
+      blurb: "Arcades, car-free weekends, a centre that shifts.",
+      status: "Under evaluation",
+      headline: "The shortcut across",
+      headlineAccent: "Bologna",
+      sub: "Forty kilometres of arcades, a historic restricted zone, and a centre that goes pedestrian at weekends.",
+      chips: ["Historic ZTL", "Car-free days", "40 km of arcades"],
+      reality: {
+        kicker: "The real city",
+        title: "The centre isn't always the same centre",
+        body: "On car-free days the central streets close and yesterday's route no longer exists. Shortcut accounts for recurring closures before it suggests an itinerary, not while you're stuck in one.",
+      },
+      facts: [
+        { value: "T-days", label: "recurring closures in the calendar" },
+        { value: "TPER", label: "city bus network" },
+        { value: "40 km", label: "of arcades for walking routes" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "Outside the zone, but close",
+        body: "We compare car parks just outside the centre with permitted parking inside, walking time under the arcades included.",
+        points: [
+          "Restricted-zone gates with hours and permits shown",
+          "Garages on the edge of the centre",
+          "Street parking with tariff and maximum stay",
+          "Walking routes that prefer the arcades",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "An all-surface network",
+        body: "With no metro, everything rests on buses and connections. We correct arrivals with real data and flag central diversions immediately.",
+        points: [
+          "Corrected bus arrivals, not just scheduled ones",
+          "Connection at risk: an immediate alternative",
+          "Diversions for closures and roadworks on the map",
+          "Links to the central station and the airport",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Boulevards, bypass and chargers",
+        body: "The ring boulevards decide your travel time. Live traffic, countdowns on mapped lights, chargers along the route.",
+        points: [
+          "Live traffic on the boulevards and bypass",
+          "Traffic-light countdowns on mapped junctions",
+          "EV chargers by plug and power",
+          "Cycle routes and bike sharing on the same map",
+        ],
+      },
+      closing: {
+        title: "Bologna is on the list",
+        body: "Arcades, car-free days and a surface network: a perfect fit. Ask for it.",
+      },
+    },
+  },
+
+  {
+    slug: "firenze",
+    name: "Firenze",
+    region: "Toscana",
+    operator: "Autolinee Toscane",
+    band: firenzeBand,
+    alt: {
+      it: "Una via di Firenze: palazzi rinascimentali, la cupola e un tram moderno",
+      en: "A Florence street: Renaissance palazzi, the dome and a modern tram",
+    },
+    it: {
+      blurb: "ZTL severa, tramvia nuova, centro pieno.",
+      status: "In valutazione",
+      headline: "La scorciatoia per",
+      headlineAccent: "Firenze",
+      sub: "Una delle ZTL più rigide d'Italia, una tramvia che ha cambiato la città e un centro sempre affollato.",
+      chips: ["ZTL rigida", "Tramvia T1 · T2", "Parcheggi scambiatori"],
+      reality: {
+        kicker: "La città reale",
+        title: "Entrare in centro è una decisione, non un dettaglio",
+        body: "A Firenze il varco sbagliato costa una multa e il centro storico è quasi tutto interdetto. Shortcut ti porta al parcheggio scambiatore giusto e ti fa finire il viaggio in tramvia o a piedi.",
+      },
+      facts: [
+        { value: "2", label: "linee di tramvia in mappa" },
+        { value: "ZTL", label: "varchi con orari e telecamere" },
+        { value: "P+T", label: "scambiatori collegati alla tramvia" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Lo scambiatore giusto per la tua destinazione",
+        body: "Confrontiamo i parcheggi scambiatori in base al tempo totale porta a porta, non alla distanza in linea d'aria.",
+        points: [
+          "Varchi ZTL segnalati prima di avvicinarti",
+          "Scambiatori collegati alla tramvia con tempi reali",
+          "Parcheggi in struttura con posti liberi e prezzo",
+          "Ultimo tratto a piedi nel centro pedonale",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "Tramvia più bus, letti insieme",
+        body: "La tramvia è regolare, i bus dipendono dal traffico. Diciamo con chiarezza quale previsione è solida e quale no.",
+        points: [
+          "Arrivi tramvia e bus sullo stesso percorso",
+          "Coincidenze protette verso stazione e aeroporto",
+          "Deviazioni per eventi e cantieri",
+          "Piano porta a porta con tratti pedonali",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Viali, ponti, colonnine",
+        body: "I viali di circonvallazione e i ponti sull'Arno sono i colli di bottiglia. Ti mostriamo la coda in anticipo e le colonnine sul percorso.",
+        points: [
+          "Traffico live su viali e ponti",
+          "Countdown semafori sugli incroci mappati",
+          "Colonnine EV con potenza e disponibilità",
+          "Alternative che evitano i varchi ZTL",
+        ],
+      },
+      closing: {
+        title: "Firenze è nella lista",
+        body: "Dove la ZTL è severa, servono avvisi chiari. Chiedi Shortcut per Firenze.",
+      },
+    },
+    en: {
+      blurb: "Strict restricted zone, new tramway, crowded centre.",
+      status: "Under evaluation",
+      headline: "The shortcut across",
+      headlineAccent: "Florence",
+      sub: "One of Italy's strictest restricted zones, a tramway that reshaped the city, and a permanently busy centre.",
+      chips: ["Strict ZTL", "Tram T1 · T2", "Park and ride"],
+      reality: {
+        kicker: "The real city",
+        title: "Entering the centre is a decision, not a detail",
+        body: "In Florence the wrong gate costs a fine, and most of the historic centre is off limits. Shortcut takes you to the right park-and-ride and lets you finish by tram or on foot.",
+      },
+      facts: [
+        { value: "2", label: "tram lines on the map" },
+        { value: "ZTL", label: "camera-enforced gates and hours" },
+        { value: "P+T", label: "park and ride linked to the tram" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "The right park-and-ride for your destination",
+        body: "We compare park-and-ride options on total door-to-door time, not straight-line distance.",
+        points: [
+          "Restricted-zone gates flagged before you approach",
+          "Park and ride linked to the tram with live times",
+          "Garages with free spaces and price",
+          "Final walking leg through the pedestrian centre",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "Tram plus bus, read together",
+        body: "The tram is regular; buses depend on traffic. We say clearly which prediction is solid and which isn't.",
+        points: [
+          "Tram and bus arrivals on the same route",
+          "Protected connections to station and airport",
+          "Diversions for events and roadworks",
+          "Door-to-door plans with walking legs",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Boulevards, bridges, chargers",
+        body: "The ring boulevards and the Arno bridges are the bottlenecks. We show the queue early and chargers along the way.",
+        points: [
+          "Live traffic on boulevards and bridges",
+          "Traffic-light countdowns on mapped junctions",
+          "EV chargers with power and availability",
+          "Alternatives that avoid restricted-zone gates",
+        ],
+      },
+      closing: {
+        title: "Florence is on the list",
+        body: "Where the restricted zone is strict, warnings must be clear. Ask for Florence.",
+      },
+    },
+  },
+
+  {
+    slug: "genova",
+    name: "Genova",
+    region: "Liguria",
+    operator: "AMT",
+    band: genovaBand,
+    alt: {
+      it: "Una via di Genova: case liguri colorate, gru del porto e la Lanterna",
+      en: "A Genoa street: colourful Ligurian houses, harbour cranes and the lighthouse",
+    },
+    it: {
+      blurb: "Caruggi, salite e ascensori pubblici.",
+      status: "In valutazione",
+      headline: "La scorciatoia per",
+      headlineAccent: "Genova",
+      sub: "Una città lunga e stretta, schiacciata tra mare e collina, dove gli ascensori pubblici sono trasporto vero.",
+      chips: ["Ascensori pubblici", "Caruggi", "Sopraelevata"],
+      reality: {
+        kicker: "La città reale",
+        title: "Qui il percorso più corto spesso è verticale",
+        body: "Cremagliere, funicolari e ascensori pubblici fanno parte della rete, non sono attrazioni. Shortcut li considera come qualsiasi altra linea e calcola le salite dei caruggi con la pendenza reale.",
+      },
+      facts: [
+        { value: "AMT", label: "bus, metro e impianti verticali" },
+        { value: "30 km", label: "di città tra ponente e levante" },
+        { value: "Caruggi", label: "vicoli esclusi ai veicoli larghi" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Parcheggiare in una città senza spazio",
+        body: "Nel centro storico non si entra, e nei quartieri la sosta è scarsa. Confrontiamo silos, sosta su strada e nodi vicino agli impianti verticali.",
+        points: [
+          "Caruggi e vie strette esclusi in base alla tua auto",
+          "Parcheggi in struttura con posti e altezza massima",
+          "Sosta su strada con tariffe di zona",
+          "Nodi vicino ad ascensori e funicolari",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "Bus, metro e impianti in un solo piano",
+        body: "Una metro corta, tanti bus e una rete verticale unica in Italia. Li mettiamo insieme, con arrivi corretti dove i dati esistono.",
+        points: [
+          "Ascensori e funicolari trattati come linee",
+          "Arrivi bus corretti sui dati reali",
+          "Coincidenze protette con la metro",
+          "Percorsi a piedi con scale e pendenza",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Sopraelevata, gallerie, colonnine",
+        body: "Il traffico si concentra sull'asse costiero e sulle gallerie. Ti avvisiamo della coda prima di imboccarla e ti mostriamo dove ricaricare.",
+        points: [
+          "Traffico live su asse costiero e caselli",
+          "Countdown semafori sugli incroci mappati",
+          "Colonnine EV con potenza e disponibilità",
+          "Alternative che evitano le salite più dure",
+        ],
+      },
+      closing: {
+        title: "Genova è nella lista",
+        body: "Una città verticale e stretta è esattamente dove una mappa onesta serve di più.",
+      },
+    },
+    en: {
+      blurb: "Alleys, climbs and public lifts.",
+      status: "Under evaluation",
+      headline: "The shortcut across",
+      headlineAccent: "Genoa",
+      sub: "A long, narrow city squeezed between sea and hill, where public lifts are real transport.",
+      chips: ["Public lifts", "Old-town alleys", "Coastal flyover"],
+      reality: {
+        kicker: "The real city",
+        title: "Here the shortest route is often vertical",
+        body: "Rack railways, funiculars and public lifts are part of the network, not attractions. Shortcut treats them like any other line and computes alley climbs with real gradient.",
+      },
+      facts: [
+        { value: "AMT", label: "bus, metro and vertical transport" },
+        { value: "30 km", label: "of city from west to east" },
+        { value: "Alleys", label: "excluded for wider vehicles" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "Parking in a city with no room",
+        body: "The old town is closed to cars and neighbourhood parking is scarce. We compare garages, street parking and nodes next to the vertical lines.",
+        points: [
+          "Alleys and narrow streets excluded for your car",
+          "Garages with free spaces and maximum height",
+          "Street parking with zone tariffs",
+          "Nodes next to lifts and funiculars",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "Bus, metro and lifts in one plan",
+        body: "A short metro, many buses and a vertical network unique in Italy. We combine them, with corrected arrivals where data exists.",
+        points: [
+          "Lifts and funiculars treated as lines",
+          "Bus arrivals corrected against real data",
+          "Protected connections with the metro",
+          "Walking routes with stairs and gradient",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Flyover, tunnels, chargers",
+        body: "Traffic concentrates on the coastal axis and the tunnels. We warn you before the queue and show where to charge.",
+        points: [
+          "Live traffic on the coastal axis and toll gates",
+          "Traffic-light countdowns on mapped junctions",
+          "EV chargers with power and availability",
+          "Alternatives that avoid the hardest climbs",
+        ],
+      },
+      closing: {
+        title: "Genoa is on the list",
+        body: "A vertical, narrow city is exactly where an honest map matters most.",
+      },
+    },
+  },
+];

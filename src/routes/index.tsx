@@ -378,7 +378,7 @@ function Home() {
               <p className="mt-3 max-w-lg text-base leading-relaxed text-muted-foreground">
                 {c.cities.body}
               </p>
-              <Link to="/turin" className="pill mt-6 border border-divider text-ink hover:bg-cream">
+              <Link to="/cities" className="pill mt-6 border border-divider text-ink hover:bg-cream">
                 {c.cities.cta}
                 <ArrowRight className="h-4 w-4" />
               </Link>

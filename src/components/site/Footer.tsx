@@ -31,7 +31,7 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/turin" className="hover:text-gold">
+              <Link to="/cities" className="hover:text-gold">
                 {c.nav.cities}
               </Link>
             </li>
