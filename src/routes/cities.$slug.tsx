@@ -150,13 +150,19 @@ function CityPage() {
       </section>
 
       {/* --------------------------- acts 3-5 · the story --------------------------- */}
-      {acts.map(({ act, Icon }, i) => {
+      {acts.map(({ act, Icon, art }, i) => {
         const dark = i === 2;
         const tone = dark ? "forest-wash text-white" : i === 1 ? "bg-gold-soft/50" : "bg-cream";
+        const flip = i === 1;
         return (
-          <section key={act.kicker} className={`${tone} py-14 sm:py-20`}>
-            <div className="container-site grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-              <Reveal className={i === 1 ? "lg:order-2" : ""}>
+          <section key={act.kicker} className={`${tone} overflow-hidden py-14 sm:py-20`}>
+            {i === 1 && (
+              <Reveal className="mb-10 block">
+                <CityDetail src={city.band} alt={city.alt[lang]} />
+              </Reveal>
+            )}
+            <div className="container-site grid items-center gap-10 lg:grid-cols-2">
+              <Reveal className={flip ? "lg:order-2" : ""}>
                 <div>
                   <span
                     className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl ${
@@ -181,29 +187,43 @@ function CityPage() {
                 >
                   {act.body}
                 </p>
+
+                <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {act.points.map((p, j) => (
+                    <Reveal
+                      key={p}
+                      delay={60 + j * 70}
+                      as="li"
+                      className={`flex items-start gap-2.5 rounded-2xl border p-4 text-sm font-semibold ${
+                        dark
+                          ? "border-white/15 bg-white/5 text-white/85"
+                          : "border-divider bg-white text-ink"
+                      }`}
+                    >
+                      <Check
+                        className={`mt-0.5 h-4 w-4 shrink-0 ${dark ? "text-gold" : "text-grass"}`}
+                      />
+                      {p}
+                    </Reveal>
+                  ))}
+                </ul>
               </Reveal>
 
-              <ul className={`grid gap-3 sm:grid-cols-2 ${i === 1 ? "lg:order-1" : ""}`}>
-                {act.points.map((p, j) => (
-                  <Reveal
-                    key={p}
-                    delay={60 + j * 70}
-                    as="li"
-                    className={`flex items-start gap-2.5 rounded-2xl border p-4 text-sm font-semibold ${
-                      dark
-                        ? "border-white/15 bg-white/5 text-white/85"
-                        : "border-divider bg-white text-ink"
-                    }`}
-                  >
-                    <Check className={`mt-0.5 h-4 w-4 shrink-0 ${dark ? "text-gold" : "text-grass"}`} />
-                    {p}
-                  </Reveal>
-                ))}
-              </ul>
+              {art ? (
+                <Reveal delay={120} className={flip ? "lg:order-1" : ""}>
+                  <CityScene
+                    src={art.src}
+                    alt={art.alt}
+                    marks={art.marks}
+                    tone={dark ? "dark" : "light"}
+                  />
+                </Reveal>
+              ) : null}
             </div>
           </section>
         );
       })}
+
 
       {/* ------------------------------- act 6 · cta -------------------------------- */}
       <section className="bg-white pt-14 sm:pt-20">
