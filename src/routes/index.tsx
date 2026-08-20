@@ -15,6 +15,8 @@ import { TurinMap } from "@/components/site/TurinMap";
 import { HeroScene } from "@/components/site/HeroScene";
 import { Reveal } from "@/components/site/Reveal";
 import { DriveMock, ParkingMock } from "@/components/site/PhoneMock";
+import { ModeShowcase } from "@/components/site/ModeShowcase";
+
 import { StoreButtons, WaitlistForm, useWaitlist } from "@/components/site/WaitlistForm";
 import parkingScene from "@/assets/parking-scene.png";
 import transitScene from "@/assets/transit-scene.png";
@@ -100,48 +102,10 @@ function Home() {
 
 
 
-          <Reveal className="forest-wash block-round block px-6 py-14 text-white sm:px-10 lg:px-14">
-            <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-              <div>
-                <h2 className="max-w-md text-3xl font-extrabold sm:text-4xl lg:text-[2.8rem] lg:leading-[1.05]">
-                  {c.pillars.title}
-                </h2>
-                <p className="mt-4 max-w-md text-base leading-relaxed text-white/70">
-                  {c.pillars.sub}
-                </p>
-
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                  {c.pillars.items.map((p) => {
-                    const Icon = pillarIcons[p.key as keyof typeof pillarIcons] ?? Navigation;
-                    return (
-                      <div
-                        key={p.key}
-                        className="rounded-2xl border border-white/12 bg-white/5 p-4"
-                      >
-                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gold text-forest-deep">
-                          <Icon className="h-4.5 w-4.5" />
-                        </span>
-                        <h3 className="mt-3 text-sm font-extrabold">{p.name}</h3>
-                        <p className="mt-1 text-xs leading-relaxed text-white/65">{p.body}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div className="relative flex items-end justify-center gap-4 sm:gap-6">
-                <div className="z-10 shrink-0 origin-bottom scale-[0.82] sm:scale-[0.9] lg:scale-100">
-                  <DriveMock />
-                </div>
-                <div className="hidden shrink-0 origin-bottom translate-y-6 scale-[0.9] sm:block lg:scale-100">
-                  <ParkingMock />
-                </div>
-              </div>
-
-
-
-            </div>
+          <Reveal className="forest-wash block-round block overflow-hidden px-6 py-12 text-white sm:px-10 sm:py-14 lg:px-14">
+            <ModeShowcase />
           </Reveal>
+
 
         </div>
       </section>

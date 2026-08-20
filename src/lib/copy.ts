@@ -42,7 +42,10 @@ export const it = {
   pillars: {
     title: "Quattro cose, fatte bene",
     sub: "Il resto della città lo trovi comunque sulla stessa mappa.",
+    tabs: ["Parcheggio", "Mezzi", "Guida", "Voce"],
+    next: "Avanti",
     items: [
+
       {
         key: "parking",
         name: "Parcheggio, davvero",
@@ -345,7 +348,10 @@ export const en: Copy = {
   pillars: {
     title: "Four things, done properly",
     sub: "The rest of the city is on the same map anyway.",
+    tabs: ["Parking", "Transit", "Driving", "Voice"],
+    next: "Next",
     items: [
+
       {
         key: "parking",
         name: "Parking that works",
