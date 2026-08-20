@@ -64,7 +64,7 @@ function Home() {
   return (
     <>
       {/* --------------------------- act 1 · the stage --------------------------- */}
-      <section className="sky-wash relative flex min-h-[calc(100svh-68px)] flex-col overflow-hidden">
+      <section className="sky-wash relative flex min-h-[calc(92svh-68px)] flex-col overflow-hidden sm:min-h-[calc(100svh-68px)]">
         <TurinMap
           variant="day"
           className="animate-pan absolute inset-0 h-full w-full opacity-[0.12]"
