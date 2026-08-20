@@ -48,7 +48,7 @@ export function ModeShowcase() {
         ))}
       </div>
 
-      <div className="mt-10 grid items-center gap-12 lg:mt-14 lg:grid-cols-[1fr_0.85fr] lg:gap-8">
+      <div className="mt-8 grid items-center gap-8 sm:gap-12 lg:mt-14 lg:grid-cols-[1fr_0.85fr] lg:gap-8">
         {/* story */}
         <div
           key={active}
