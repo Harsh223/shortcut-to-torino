@@ -1,74 +1,82 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Car, Bus, Footprints, ParkingSquare, Zap, Bike, WifiOff, TrafficCone } from "lucide-react";
+import { Check } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import { DriveMock, TransitMock, WalkMock, ExploreMock } from "@/components/site/PhoneMock";
+import { ParkingMock, TransitMock } from "@/components/site/PhoneMock";
+import { StoreButtons, WaitlistForm } from "@/components/site/WaitlistForm";
 
 export const Route = createFileRoute("/features")({
   head: () => ({
     meta: [
-      { title: "Product — Shortcut for Turin" },
+      { title: "Features — Shortcut city navigation app" },
       {
         name: "description",
         content:
-          "Drive, GTT transit, walking, parking, charging, micromobility, offline maps and traffic signals — with the limits written next to each one.",
+          "Curbside and garage parking with live availability, corrected transit arrivals, protected connections, traffic-light countdowns, EV charging and a voice assistant.",
       },
-      { property: "og:title", content: "Product — Shortcut for Turin" },
+      { property: "og:title", content: "Everything Shortcut does" },
       {
         property: "og:description",
-        content:
-          "Every Shortcut feature in detail, with honest constraints: scheduled vs live, timed signals, curb occupancy.",
+        content: "One map for parking, transit, driving, charging and micromobility.",
       },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: "/features" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/features" }],
   }),
-  component: Features,
+  component: FeaturesPage,
 });
 
-const ICONS = [Car, Bus, Footprints, ParkingSquare, Zap, Bike, WifiOff, TrafficCone];
-
-function Features() {
+function FeaturesPage() {
   const { c } = useI18n();
   return (
     <>
-      <section className="bg-navy-deep py-20">
-        <div className="container-site max-w-3xl">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl">{c.features.title}</h1>
-          <p className="mt-4 text-lg text-white/70">{c.features.sub}</p>
+      <section className="forest-wash py-16 text-white sm:py-20">
+        <div className="container-site grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <h1 className="text-4xl font-extrabold sm:text-5xl">{c.featuresPage.title}</h1>
+            <p className="mt-4 max-w-xl text-lg text-white/70">{c.featuresPage.sub}</p>
+            <div className="mt-8 max-w-lg">
+              <WaitlistForm source="features-hero" tone="dark" stacked />
+            </div>
+          </div>
+          <div className="animate-float mx-auto hidden lg:block">
+            <ParkingMock />
+          </div>
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="container-site grid gap-5 lg:grid-cols-2">
-          {c.features.items.map((f, i) => {
-            const Icon = ICONS[i] ?? Car;
-            return (
-              <article key={f.name} className="rounded-3xl border border-divider bg-paper p-7">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white text-azure shadow-chrome">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <h2 className="mt-4 text-xl font-extrabold text-ink">{f.name}</h2>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
-                <p className="mt-5 rounded-2xl border border-divider bg-white px-4 py-3 text-xs leading-relaxed text-muted-foreground">
-                  <span className="font-bold uppercase tracking-wider">
-                    {c.features.constraintLabel}
-                  </span>
-                  <br />
-                  {f.constraint}
-                </p>
-              </article>
-            );
-          })}
+      <section className="bg-white py-20">
+        <div className="container-site grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {c.featuresPage.items.map((f) => (
+            <article key={f.name} className="card-soft">
+              <h2 className="text-base font-extrabold text-ink">{f.name}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="bg-paper py-16">
-        <div className="container-site flex snap-x gap-6 overflow-x-auto pb-4 no-scrollbar">
-          <DriveMock />
-          <TransitMock />
-          <WalkMock />
-          <ExploreMock />
+      <section className="bg-cream py-20">
+        <div className="container-site grid items-center gap-12 lg:grid-cols-2">
+          <div className="flex justify-center">
+            <TransitMock />
+          </div>
+          <div>
+            <p className="eyebrow text-grass">{c.transit.kicker}</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-ink sm:text-4xl">{c.transit.title}</h2>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">{c.transit.body}</p>
+            <ul className="mt-6 space-y-3">
+              {c.transit.points.map((p) => (
+                <li key={p} className="flex items-start gap-2.5 text-sm font-semibold text-ink">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-grass" />
+                  {p}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8">
+              <StoreButtons />
+            </div>
+          </div>
         </div>
       </section>
     </>
