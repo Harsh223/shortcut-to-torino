@@ -140,14 +140,18 @@ function CityPage() {
           <section key={act.kicker} className={`${tone} py-14 sm:py-20`}>
             <div className="container-site grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
               <Reveal className={i === 1 ? "lg:order-2" : ""}>
-                <span
-                  className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl ${
-                    dark ? "bg-gold text-forest-deep" : "bg-forest text-gold"
-                  }`}
-                >
-                  <Icon className="h-5 w-5" />
-                </span>
-                <p className={`eyebrow mt-4 ${dark ? "text-gold" : "text-grass"}`}>{act.kicker}</p>
+                <div>
+                  <span
+                    className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl ${
+                      dark ? "bg-gold text-forest-deep" : "bg-forest text-gold"
+                    }`}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </span>
+                </div>
+                <p className={`eyebrow mt-4 block ${dark ? "text-gold" : "text-grass"}`}>
+                  {act.kicker}
+                </p>
                 <h2
                   className={`mt-2 text-3xl font-extrabold sm:text-4xl ${dark ? "" : "text-ink"}`}
                 >
