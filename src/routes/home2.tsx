@@ -18,11 +18,13 @@ import { DriveMock, ParkingMock } from "@/components/site/PhoneMock";
 import { ModeShowcase } from "@/components/site/ModeShowcase";
 
 import { StoreButtons, WaitlistForm, useWaitlist } from "@/components/site/WaitlistForm";
-import parkingScene from "@/assets/parking-scene.png";
-import transitScene from "@/assets/transit-scene.png";
-import driveScene from "@/assets/drive-scene.png";
-import voiceScene from "@/assets/voice-scene.png";
-import cityScene from "@/assets/city-scene.png";
+import parkingScene from "@/assets/maps-parking.png";
+import transitScene from "@/assets/maps-transit.png";
+import driveScene from "@/assets/maps-drive.png";
+import voiceScene from "@/assets/maps-voice.png";
+import cityScene from "@/assets/maps-cities.png";
+import mapsBand from "@/assets/maps-hero-band.png";
+import mapsSkyline from "@/assets/maps-hero-skyline.png";
 
 
 
@@ -67,7 +69,7 @@ function Home2() {
       <section className="sky-wash relative flex min-h-[calc(92svh-68px)] flex-col overflow-hidden sm:min-h-[calc(100svh-68px)]">
         <TurinMap
           variant="day"
-          className="animate-pan absolute inset-0 h-full w-full opacity-[0.12]"
+          className="animate-pan absolute inset-0 h-full w-full opacity-[0.12] [filter:hue-rotate(62deg)]"
           showRoutes={false}
         />
 
@@ -92,12 +94,12 @@ function Home2() {
           </div>
         </div>
 
-        <HeroScene />
+        <HeroScene band={mapsBand} skyline={mapsSkyline} />
       </section>
 
 
       {/* ------------------------- act 2 · one app, deep green ------------------- */}
-      <section className="bg-paper py-12 sm:py-16">
+      <section className="bg-mist/60 py-12 sm:py-16">
         <div className="container-site">
 
 
@@ -155,7 +157,7 @@ function Home2() {
       {/* ------------------------- act 4 · transit, gold block ------------------- */}
       <section className="bg-white pb-12 sm:pb-16">
         <div className="container-site">
-          <Reveal className="block-round block bg-gold-soft/60 px-6 py-14 sm:px-10 lg:px-14">
+          <Reveal className="block-round block bg-gold-soft/50 px-6 py-14 sm:px-10 lg:px-14">
             <div className="grid items-center gap-10 lg:grid-cols-2">
 
               <div className="lg:order-2">
@@ -301,7 +303,7 @@ function Home2() {
 
 
       {/* ---------------------------------- more --------------------------------- */}
-      <section className="bg-cream py-20">
+      <section className="bg-mist/70 py-20">
         <div className="container-site">
           <h2 className="text-3xl font-extrabold text-ink sm:text-4xl">{c.more.title}</h2>
           <p className="mt-3 text-base text-muted-foreground">{c.more.sub}</p>
@@ -347,8 +349,8 @@ function Home2() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-            <div className="relative h-56 overflow-hidden rounded-3xl bg-forest-deep sm:h-64">
-              <TurinMap variant="night" className="absolute inset-0 h-full w-full" />
+            <div className="relative h-56 overflow-hidden rounded-3xl bg-navy-deep sm:h-64">
+              <TurinMap variant="night" className="absolute inset-0 h-full w-full [filter:hue-rotate(62deg)]" />
             </div>
           </div>
           <img
