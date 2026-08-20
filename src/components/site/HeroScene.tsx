@@ -18,7 +18,7 @@ export function HeroScene() {
 
   return (
     <div className="relative -mt-8 w-full shrink-0 sm:-mt-12">
-      <div className="relative h-[280px] w-full overflow-hidden sm:h-[min(46svh,360px)] lg:h-[min(52svh,420px)]">
+      <div className="relative h-[320px] w-full overflow-hidden sm:h-[min(46svh,360px)] lg:h-[min(52svh,420px)]">
         {/* distant skyline + hills */}
         <img
           src={heroSkyline}
