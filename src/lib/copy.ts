@@ -16,9 +16,9 @@ export const it = {
   },
   hero: {
     badge: "In arrivo a Torino",
-    title: "Un'app per attraversare",
-    titleAccent: "la città.",
-    sub: "Shortcut trova il parcheggio, corregge gli orari dei mezzi e ti porta a destinazione con il traffico, i semafori e le ricariche già dentro la mappa.",
+    title: "La scorciatoia per",
+    titleAccent: "attraversare Torino",
+    sub: "Parcheggio, mezzi e traffico in una sola app.",
     ctaPrimary: "Entra in lista d'attesa",
     ctaSecondary: "Guarda cosa fa",
     proof: ["Parcheggi live", "Mezzi più precisi", "Ricarica EV", "Assistente vocale"],
@@ -28,6 +28,17 @@ export const it = {
       { value: "24/7", label: "traffico e disservizi" },
     ],
   },
+  scene: {
+    billboard: "Lancio il mese prossimo",
+    awning: "Live a Torino",
+    shelter: "Torino + cintura",
+    light: "Verde tra 12 s",
+    parkTitle: "Via Roma",
+    parkBody: "2 posti liberi · la tua auto ci sta",
+    transitTitle: "Coincidenza a rischio",
+    transitBody: "Nuovo percorso: 4 → 15, +2 min",
+  },
+
   pillars: {
     title: "Quattro cose, fatte bene",
     sub: "Il resto della città lo trovi comunque sulla stessa mappa.",
@@ -258,9 +269,9 @@ export const en: Copy = {
   },
   hero: {
     badge: "Coming to Turin",
-    title: "One app to cross",
-    titleAccent: "the city.",
-    sub: "Shortcut finds you parking, fixes transit times, and gets you there with traffic, traffic lights and EV charging already on the map.",
+    title: "The shortcut across",
+    titleAccent: "Turin",
+    sub: "Parking, transit and traffic in one app.",
     ctaPrimary: "Join the waitlist",
     ctaSecondary: "See what it does",
     proof: ["Live parking", "Sharper transit", "EV charging", "Voice assistant"],
@@ -270,6 +281,17 @@ export const en: Copy = {
       { value: "24/7", label: "traffic and disruptions" },
     ],
   },
+  scene: {
+    billboard: "Launching next month",
+    awning: "Live in Turin",
+    shelter: "Turin + metro area",
+    light: "Green in 12 s",
+    parkTitle: "Via Roma",
+    parkBody: "2 spots free · your car fits",
+    transitTitle: "Connection at risk",
+    transitBody: "New route: 4 → 15, +2 min",
+  },
+
   pillars: {
     title: "Four things, done properly",
     sub: "The rest of the city is on the same map anyway.",
