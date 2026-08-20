@@ -10,15 +10,22 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CitiesRouteImport } from './routes/cities'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TurinRouteImport } from './routes/turin'
+import { Route as CitiesIndexRouteImport } from './routes/cities.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CitiesRoute = CitiesRouteImport.update({
+  id: '/cities',
+  path: '/cities',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DownloadRoute = DownloadRouteImport.update({
@@ -46,14 +53,21 @@ const TurinRoute = TurinRouteImport.update({
   path: '/turin',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CitiesIndexRoute = CitiesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CitiesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cities': typeof CitiesRouteWithChildren
   '/download': typeof DownloadRoute
   '/features': typeof FeaturesRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/turin': typeof TurinRoute
+  '/cities/': typeof CitiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,33 +76,54 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/turin': typeof TurinRoute
+  '/cities': typeof CitiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cities': typeof CitiesRouteWithChildren
   '/download': typeof DownloadRoute
   '/features': typeof FeaturesRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/turin': typeof TurinRoute
+  '/cities/': typeof CitiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/download' | '/features' | '/privacy' | '/terms' | '/turin'
+  fullPaths:
+    | '/'
+    | '/cities'
+    | '/download'
+    | '/features'
+    | '/privacy'
+    | '/terms'
+    | '/turin'
+    | '/cities/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/download' | '/features' | '/privacy' | '/terms' | '/turin'
-  id:
-    | '__root__'
+  to:
     | '/'
     | '/download'
     | '/features'
     | '/privacy'
     | '/terms'
     | '/turin'
+    | '/cities'
+  id:
+    | '__root__'
+    | '/'
+    | '/cities'
+    | '/download'
+    | '/features'
+    | '/privacy'
+    | '/terms'
+    | '/turin'
+    | '/cities/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CitiesRoute: typeof CitiesRouteWithChildren
   DownloadRoute: typeof DownloadRoute
   FeaturesRoute: typeof FeaturesRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -103,6 +138,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cities': {
+      id: '/cities'
+      path: '/cities'
+      fullPath: '/cities'
+      preLoaderRoute: typeof CitiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/download': {
@@ -140,11 +182,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TurinRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cities/': {
+      id: '/cities/'
+      path: '/'
+      fullPath: '/cities/'
+      preLoaderRoute: typeof CitiesIndexRouteImport
+      parentRoute: typeof CitiesRoute
+    }
   }
 }
 
+interface CitiesRouteChildren {
+  CitiesIndexRoute: typeof CitiesIndexRoute
+}
+
+const CitiesRouteChildren: CitiesRouteChildren = {
+  CitiesIndexRoute: CitiesIndexRoute,
+}
+
+const CitiesRouteWithChildren =
+  CitiesRoute._addFileChildren(CitiesRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CitiesRoute: CitiesRouteWithChildren,
   DownloadRoute: DownloadRoute,
   FeaturesRoute: FeaturesRoute,
   PrivacyRoute: PrivacyRoute,
