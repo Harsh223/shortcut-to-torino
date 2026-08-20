@@ -42,7 +42,7 @@ export function HeroScene() {
           alt="Una via di Torino: portici, tram, parcheggio e ricarica elettrica"
           width={1920}
           height={720}
-          className="relative block h-[240px] w-auto min-w-full max-w-none shrink-0 self-end object-contain object-bottom sm:h-auto sm:w-full sm:min-w-0"
+          className="relative block h-full w-auto min-w-full max-w-none shrink-0 self-end object-cover object-bottom"
           style={{
             maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 10%, #000 24%)",
             WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 10%, #000 24%)",
