@@ -69,7 +69,7 @@ function Home2() {
       <section className="sky-wash relative flex min-h-[calc(92svh-68px)] flex-col overflow-hidden sm:min-h-[calc(100svh-68px)]">
         <TurinMap
           variant="day"
-          className="animate-pan absolute inset-0 h-full w-full opacity-[0.12]"
+          className="animate-pan absolute inset-0 h-full w-full opacity-[0.12] [filter:hue-rotate(62deg)_saturate(1.15)]"
           showRoutes={false}
         />
 
@@ -349,8 +349,8 @@ function Home2() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-            <div className="relative h-56 overflow-hidden rounded-3xl bg-forest-deep sm:h-64">
-              <TurinMap variant="night" className="absolute inset-0 h-full w-full" />
+            <div className="relative h-56 overflow-hidden rounded-3xl bg-navy-deep sm:h-64">
+              <TurinMap variant="night" className="absolute inset-0 h-full w-full [filter:hue-rotate(62deg)_saturate(1.1)]" />
             </div>
           </div>
           <img
