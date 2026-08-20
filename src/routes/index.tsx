@@ -217,9 +217,9 @@ function Home() {
 
 
       {/* --------------------------------- drive --------------------------------- */}
-      <section className="forest-wash py-20 text-white">
-        <div className="container-site grid gap-12 lg:grid-cols-2">
-          <div>
+      <section className="forest-wash relative overflow-hidden pt-20 text-white">
+        <div className="container-site grid gap-12 pb-16 lg:grid-cols-2">
+          <Reveal>
             <p className="eyebrow text-gold">{c.drive.kicker}</p>
             <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">{c.drive.title}</h2>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-white/70">{c.drive.body}</p>
@@ -231,32 +231,43 @@ function Home() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="flex flex-col justify-between rounded-3xl border border-white/15 bg-white/5 p-6">
+            <Reveal delay={80} className="flex flex-col justify-between rounded-3xl border border-white/15 bg-white/5 p-6">
               <div className="flex h-20 w-20 items-center justify-center rounded-full border-4 border-gold text-2xl font-extrabold text-gold">
                 12
               </div>
-              <p className="mt-6 text-sm font-bold text-white/80">
-                {c.drive.points[0]}
-              </p>
-            </div>
-            <div className="rounded-3xl border border-white/15 bg-white/5 p-6">
+              <p className="mt-6 text-sm font-bold text-white/80">{c.drive.points[0]}</p>
+            </Reveal>
+            <Reveal delay={160} className="rounded-3xl border border-white/15 bg-white/5 p-6">
               <TrafficCone className="h-8 w-8 text-gold" />
               <p className="mt-6 text-sm font-bold text-white/80">{c.drive.points[1]}</p>
-            </div>
-            <div className="rounded-3xl border border-white/15 bg-white/5 p-6">
+            </Reveal>
+            <Reveal delay={240} className="rounded-3xl border border-white/15 bg-white/5 p-6">
               <Zap className="h-8 w-8 text-gold" />
               <p className="mt-6 text-sm font-bold text-white/80">{c.drive.points[2]}</p>
-            </div>
-            <div className="rounded-3xl border border-white/15 bg-white/5 p-6">
+            </Reveal>
+            <Reveal delay={320} className="rounded-3xl border border-white/15 bg-white/5 p-6">
               <Navigation className="h-8 w-8 text-gold" />
               <p className="mt-6 text-sm font-bold text-white/80">{c.drive.points[3]}</p>
-            </div>
+            </Reveal>
           </div>
         </div>
+
+        <div className="relative h-[150px] w-full overflow-hidden sm:h-[220px] lg:h-[280px]">
+          <img
+            src={driveScene}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            width={1536}
+            height={640}
+            className="absolute bottom-0 left-1/2 h-full w-auto max-w-none -translate-x-1/2 object-contain object-bottom"
+          />
+        </div>
       </section>
+
 
       {/* --------------------------------- voice --------------------------------- */}
       <section className="relative overflow-hidden bg-white py-20">
