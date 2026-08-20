@@ -51,87 +51,87 @@ function Home() {
 
   return (
     <>
-      {/* ---------------------------------- hero --------------------------------- */}
-      <section className="forest-wash relative overflow-hidden">
+      {/* --------------------------- act 1 · the stage --------------------------- */}
+      <section className="sky-wash relative overflow-hidden">
         <TurinMap
-          variant="night"
-          className="animate-pan absolute inset-0 h-full w-full opacity-30"
+          variant="day"
+          className="animate-pan absolute inset-0 h-full w-full opacity-[0.12]"
           showRoutes={false}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest-deep/80 via-forest-deep/70 to-forest-deep" />
 
-        <div className="container-site relative grid items-center gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
-          <div className="animate-rise">
-            <p className="eyebrow inline-flex rounded-full border border-gold/40 bg-gold/10 px-3.5 py-1.5 text-gold">
+        <div className="container-site relative pt-14 sm:pt-20">
+          <div className="animate-rise mx-auto max-w-3xl text-center">
+            <p className="eyebrow inline-flex rounded-full border border-forest/15 bg-white/70 px-3.5 py-1.5 text-grass">
               <Sparkles className="h-3.5 w-3.5" />
               {c.hero.badge}
             </p>
 
-            <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-[3.6rem]">
+            <h1 className="mt-5 text-[2.2rem] font-extrabold leading-[1.03] text-forest-deep sm:text-5xl lg:text-[4.2rem]">
               {c.hero.title} <span className="text-gold">{c.hero.titleAccent}</span>
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-              {c.hero.sub}
-            </p>
+            <p className="mx-auto mt-4 max-w-xl text-base text-forest/70 sm:text-lg">{c.hero.sub}</p>
 
-            <div className="mt-8 max-w-xl">
-              <WaitlistForm source="hero" tone="dark" />
+            <div className="mx-auto mt-7 max-w-lg text-left">
+              <WaitlistForm source="hero" tone="light" />
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-2">
-              {c.hero.proof.map((p) => (
-                <span
-                  key={p}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-bold text-white/75"
-                >
-                  <Check className="h-3.5 w-3.5 text-gold" />
-                  {p}
-                </span>
-              ))}
+            <div className="mt-6 flex justify-center">
+              <StoreButtons />
             </div>
-          </div>
-
-          <div className="animate-float relative mx-auto">
-            <DriveMock />
           </div>
         </div>
 
-        <div className="container-site relative border-t border-white/10 py-8">
-          <dl className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            {c.hero.stats.map((s) => (
-              <div key={s.label}>
-                <dt className="text-3xl font-extrabold text-gold">{s.value}</dt>
-                <dd className="mt-1 text-sm font-semibold text-white/60">{s.label}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+        <HeroScene />
       </section>
 
-      {/* -------------------------------- pillars -------------------------------- */}
-      <section className="paper-wash py-20">
+      {/* ------------------------- act 2 · one app, deep green ------------------- */}
+      <section className="bg-paper py-12 sm:py-16">
         <div className="container-site">
-          <h2 className="max-w-2xl text-3xl font-extrabold text-ink sm:text-4xl">
-            {c.pillars.title}
-          </h2>
-          <p className="mt-3 max-w-xl text-base text-muted-foreground">{c.pillars.sub}</p>
+          <div className="forest-wash block-round px-6 py-14 text-white sm:px-10 lg:px-14">
+            <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+              <div>
+                <h2 className="max-w-md text-3xl font-extrabold sm:text-4xl lg:text-[2.8rem] lg:leading-[1.05]">
+                  {c.pillars.title}
+                </h2>
+                <p className="mt-4 max-w-md text-base leading-relaxed text-white/70">
+                  {c.pillars.sub}
+                </p>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {c.pillars.items.map((p) => {
-              const Icon = pillarIcons[p.key as keyof typeof pillarIcons] ?? Navigation;
-              return (
-                <div key={p.key} className="card-soft">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-forest text-gold">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <h3 className="mt-4 text-lg font-extrabold text-ink">{p.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                  {c.pillars.items.map((p) => {
+                    const Icon = pillarIcons[p.key as keyof typeof pillarIcons] ?? Navigation;
+                    return (
+                      <div
+                        key={p.key}
+                        className="rounded-2xl border border-white/12 bg-white/5 p-4"
+                      >
+                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gold text-forest-deep">
+                          <Icon className="h-4.5 w-4.5" />
+                        </span>
+                        <h3 className="mt-3 text-sm font-extrabold">{p.name}</h3>
+                        <p className="mt-1 text-xs leading-relaxed text-white/65">{p.body}</p>
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
+              </div>
+
+              <div className="relative flex items-end justify-center gap-4">
+                <div className="hidden w-[38%] translate-y-6 sm:block">
+                  <TransitMock />
+                </div>
+                <div className="w-[62%] max-w-[280px] sm:w-[42%]">
+                  <DriveMock />
+                </div>
+                <div className="hidden w-[38%] translate-y-6 lg:block">
+                  <ParkingMock />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* -------------------------------- parking -------------------------------- */}
       <Story
