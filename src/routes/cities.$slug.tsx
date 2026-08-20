@@ -74,7 +74,7 @@ function CityPage() {
   return (
     <>
       {/* ------------------------------ act 1 · arrival ----------------------------- */}
-      <section className="sky-wash relative flex min-h-[calc(100svh-68px)] flex-col overflow-hidden">
+      <section className="sky-wash relative flex min-h-[600px] flex-col overflow-hidden sm:min-h-[calc(100svh-68px)]">
         <div className="container-site relative z-30 pt-5 sm:pt-8">
           <div className="animate-rise mx-auto max-w-3xl text-center">
             <Link

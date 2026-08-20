@@ -14,7 +14,7 @@ export function CityStage({
 }) {
   return (
     <div className="relative mt-auto w-full shrink-0">
-      <div className="relative flex h-[240px] w-full justify-center overflow-hidden sm:h-[min(42svh,320px)] lg:h-[min(48svh,380px)]">
+      <div className="relative flex h-[300px] w-full justify-center overflow-hidden sm:h-[min(42svh,320px)] lg:h-[min(48svh,380px)]">
         <img
           src={src}
           alt={alt}
