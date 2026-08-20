@@ -269,9 +269,9 @@ export const en: Copy = {
   },
   hero: {
     badge: "Coming to Turin",
-    title: "One app to cross",
-    titleAccent: "the city.",
-    sub: "Shortcut finds you parking, fixes transit times, and gets you there with traffic, traffic lights and EV charging already on the map.",
+    title: "The shortcut across",
+    titleAccent: "Turin",
+    sub: "Parking, transit and traffic in one app.",
     ctaPrimary: "Join the waitlist",
     ctaSecondary: "See what it does",
     proof: ["Live parking", "Sharper transit", "EV charging", "Voice assistant"],
@@ -281,6 +281,17 @@ export const en: Copy = {
       { value: "24/7", label: "traffic and disruptions" },
     ],
   },
+  scene: {
+    billboard: "Launching next month",
+    awning: "Live in Turin",
+    shelter: "Turin + metro area",
+    light: "Green in 12 s",
+    parkTitle: "Via Roma",
+    parkBody: "2 spots free · your car fits",
+    transitTitle: "Connection at risk",
+    transitBody: "New route: 4 → 15, +2 min",
+  },
+
   pillars: {
     title: "Four things, done properly",
     sub: "The rest of the city is on the same map anyway.",
