@@ -207,9 +207,24 @@ function Home() {
                   ))}
                 </ul>
               </div>
-              <div className="flex justify-center lg:order-1">
-                <TransitMock />
+              <div className="relative flex justify-center lg:order-1">
+                <img
+                  src={transitScene}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                  className="w-full max-w-md object-contain"
+                />
+                <div className="absolute bottom-2 left-0 max-w-[70%] rounded-2xl border border-divider bg-white/95 px-3.5 py-2.5 text-[0.72rem] font-extrabold text-ink shadow-float">
+                  <span className="mb-0.5 block text-[0.62rem] uppercase tracking-wider text-grass">
+                    {c.scene.transitTitle}
+                  </span>
+                  {c.scene.transitBody}
+                </div>
               </div>
+
             </div>
           </div>
         </div>
