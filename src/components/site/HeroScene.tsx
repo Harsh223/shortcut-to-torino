@@ -14,44 +14,44 @@ export function HeroScene() {
   const s = c.scene;
 
   return (
-    <div className="relative mt-8 w-full sm:mt-10">
-      {/* floating product UI, above the street */}
-      <div className="container-site pointer-events-none relative z-20">
-        <div className="relative h-[92px] sm:h-[110px]">
-          <div className="animate-float absolute left-0 top-0 sm:left-[4%]">
-            <div className="flex items-center gap-2 rounded-full bg-forest px-3.5 py-2 text-xs font-extrabold text-gold shadow-float">
-              <Timer className="h-3.5 w-3.5" />
-              {s.light}
+    <div className="relative mt-4 w-full sm:mt-6">
+      {/* the street band: full-bleed, height-scaled, cropped at the sides */}
+      <div className="relative h-[210px] w-full overflow-hidden sm:h-[min(32vh,280px)] lg:h-[min(36vh,340px)]">
+        {/* floating product UI, over the street */}
+        <div className="container-site pointer-events-none absolute inset-x-0 top-0 z-20">
+          <div className="relative h-[74px] sm:h-[96px]">
+            <div className="animate-float absolute left-0 top-0 sm:left-[2%]">
+              <div className="flex items-center gap-2 rounded-full bg-forest px-3 py-1.5 text-[0.7rem] font-extrabold text-gold shadow-float sm:px-3.5 sm:py-2 sm:text-xs">
+                <Timer className="h-3.5 w-3.5" />
+                {s.light}
+              </div>
+            </div>
+
+            <div
+              className="animate-float absolute right-0 top-0 w-[54%] max-w-[230px] sm:right-[2%]"
+              style={{ animationDelay: "1.2s" }}
+            >
+              <SceneCard icon={<CircleParking className="h-4 w-4" />} title={s.parkTitle} body={s.parkBody} />
+            </div>
+
+            <div
+              className="animate-float absolute bottom-[-24px] left-1/2 hidden w-[250px] -translate-x-1/2 lg:block"
+              style={{ animationDelay: "2.1s" }}
+            >
+              <SceneCard icon={<Bus className="h-4 w-4" />} title={s.transitTitle} body={s.transitBody} />
             </div>
           </div>
-
-          <div
-            className="animate-float absolute right-0 top-2 w-[58%] max-w-[240px] sm:right-[4%]"
-            style={{ animationDelay: "1.2s" }}
-          >
-            <SceneCard icon={<CircleParking className="h-4 w-4" />} title={s.parkTitle} body={s.parkBody} />
-          </div>
-
-          <div
-            className="animate-float absolute bottom-[-30px] left-1/2 hidden w-[250px] -translate-x-1/2 lg:block"
-            style={{ animationDelay: "2.1s" }}
-          >
-            <SceneCard icon={<Bus className="h-4 w-4" />} title={s.transitTitle} body={s.transitBody} />
-          </div>
         </div>
-      </div>
 
-      {/* the street band: full-bleed, height-scaled, cropped at the sides */}
-      <div className="relative h-[190px] w-full overflow-hidden sm:h-[260px] lg:h-[360px]">
-        {/* proof, hidden as props */}
-        <div className="container-site pointer-events-none relative z-10 flex justify-between">
+        <div className="container-site pointer-events-none absolute inset-x-0 top-[86px] z-10 hidden justify-between sm:flex">
           <SceneBadge tone="gold" className="hidden lg:inline-flex">
             {s.billboard}
           </SceneBadge>
-          <SceneBadge tone="forest" className="ml-auto hidden sm:inline-flex">
+          <SceneBadge tone="forest" className="ml-auto">
             {s.shelter}
           </SceneBadge>
         </div>
+
 
         {/* left: Turin porticoes */}
         <img
@@ -60,7 +60,7 @@ export function HeroScene() {
           aria-hidden="true"
           width={1024}
           height={1024}
-          className="absolute bottom-0 left-[-14%] hidden h-[86%] w-auto max-w-none object-contain object-bottom md:left-[-6%] md:block lg:left-0"
+          className="absolute bottom-0 left-[-32%] h-[80%] w-auto max-w-none object-contain object-bottom sm:left-[-16%] md:left-[-6%] md:h-[86%] lg:left-0"
         />
 
         {/* right: tram, shelter, bus */}
@@ -70,7 +70,7 @@ export function HeroScene() {
           aria-hidden="true"
           width={1024}
           height={1024}
-          className="absolute bottom-0 right-[-22%] h-[92%] w-auto max-w-none object-contain object-bottom sm:right-[-10%] lg:right-0"
+          className="absolute bottom-0 right-[-30%] h-[80%] w-auto max-w-none object-contain object-bottom sm:right-[-12%] sm:h-[92%] lg:right-0"
         />
 
         {/* center: car at the curb + EV charger + traffic light */}
@@ -80,7 +80,7 @@ export function HeroScene() {
           aria-hidden="true"
           width={1024}
           height={768}
-          className="absolute bottom-0 left-[-8%] h-[62%] w-auto max-w-none object-contain object-bottom sm:left-[2%] sm:h-[70%] lg:left-[26%]"
+          className="absolute bottom-0 left-1/2 h-[56%] w-auto max-w-none -translate-x-1/2 object-contain object-bottom sm:left-[6%] sm:h-[70%] sm:translate-x-0 lg:left-[26%]"
         />
 
 
@@ -88,6 +88,7 @@ export function HeroScene() {
         <div className="absolute inset-x-0 bottom-0 h-px bg-forest/15" />
       </div>
     </div>
+
   );
 }
 

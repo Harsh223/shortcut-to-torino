@@ -14,7 +14,7 @@ import { useI18n } from "@/lib/i18n";
 import { TurinMap } from "@/components/site/TurinMap";
 import { HeroScene } from "@/components/site/HeroScene";
 import { Reveal } from "@/components/site/Reveal";
-import { DriveMock, ParkingMock, TransitMock } from "@/components/site/PhoneMock";
+import { DriveMock, ParkingMock } from "@/components/site/PhoneMock";
 import { StoreButtons, WaitlistForm, useWaitlist } from "@/components/site/WaitlistForm";
 import parkingScene from "@/assets/parking-scene.png";
 import transitScene from "@/assets/transit-scene.png";
@@ -69,34 +69,39 @@ function Home() {
           showRoutes={false}
         />
 
-        <div className="container-site relative pt-14 sm:pt-20">
+        <div className="container-site relative pt-8 sm:pt-14">
           <div className="animate-rise mx-auto max-w-3xl text-center">
-            <p className="eyebrow inline-flex rounded-full border border-forest/15 bg-white/70 px-3.5 py-1.5 text-grass">
+            <p className="eyebrow inline-flex rounded-full border border-forest/15 bg-white/70 px-3 py-1 text-grass">
               <Sparkles className="h-3.5 w-3.5" />
               {c.hero.badge}
             </p>
 
-            <h1 className="mt-5 text-[2.2rem] font-extrabold leading-[1.03] text-forest-deep sm:text-5xl lg:text-[4.2rem]">
+            <h1 className="mt-3 text-[2rem] font-extrabold leading-[1.04] text-forest-deep sm:mt-5 sm:text-5xl lg:text-[4.2rem]">
               {c.hero.title} <span className="text-gold">{c.hero.titleAccent}</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-xl text-base text-forest/70 sm:text-lg">{c.hero.sub}</p>
+            <p className="mx-auto mt-3 max-w-xl text-[0.95rem] text-forest/70 sm:mt-4 sm:text-lg">
+              {c.hero.sub}
+            </p>
 
-            <div className="mx-auto mt-7 max-w-lg text-left">
+            <div className="mx-auto mt-5 max-w-lg text-left sm:mt-7">
               <WaitlistForm source="hero" tone="light" />
             </div>
 
-            <div className="mt-6 flex justify-center">
-              <StoreButtons />
-            </div>
           </div>
         </div>
 
         <HeroScene />
       </section>
 
+
       {/* ------------------------- act 2 · one app, deep green ------------------- */}
       <section className="bg-paper py-12 sm:py-16">
         <div className="container-site">
+          <div className="mb-10 flex justify-center">
+            <StoreButtons />
+          </div>
+
+
           <Reveal className="forest-wash block-round block px-6 py-14 text-white sm:px-10 lg:px-14">
             <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
               <div>
@@ -126,19 +131,16 @@ function Home() {
                 </div>
               </div>
 
-              <div className="relative h-[420px] sm:h-[480px]">
-                <div className="absolute left-1/2 top-0 origin-top -translate-x-1/2 scale-[0.58] sm:scale-[0.66]">
-                  <div className="flex items-end gap-5">
-                    <div className="hidden translate-y-10 rotate-[-4deg] sm:block">
-                      <TransitMock />
-                    </div>
-                    <DriveMock />
-                    <div className="hidden translate-y-10 rotate-[4deg] lg:block">
-                      <ParkingMock />
-                    </div>
-                  </div>
+              <div className="relative flex items-end justify-center gap-4 sm:gap-6">
+                <div className="z-10 shrink-0 origin-bottom scale-[0.82] sm:scale-[0.9] lg:scale-100">
+                  <DriveMock />
+                </div>
+                <div className="hidden shrink-0 origin-bottom translate-y-6 scale-[0.9] sm:block lg:scale-100">
+                  <ParkingMock />
                 </div>
               </div>
+
+
 
             </div>
           </Reveal>
