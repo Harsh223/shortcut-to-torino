@@ -11,7 +11,13 @@ import heroSkyline from "@/assets/hero-skyline.png";
  * small screens. Chips are anchored in percentages of the band so they keep
  * pointing at the right piece of art at every breakpoint.
  */
-export function HeroScene() {
+export function HeroScene({
+  band = heroBand,
+  skyline = heroSkyline,
+}: {
+  band?: string;
+  skyline?: string;
+} = {}) {
   const { c } = useI18n();
   const s = c.scene;
   const offset = useParallax();
