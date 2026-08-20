@@ -84,7 +84,7 @@ export function ModeShowcase() {
           />
           <div
             key={active}
-            className="animate-scale-in relative z-10 origin-center scale-[0.82] motion-reduce:animate-none sm:scale-90 lg:scale-100"
+            className="animate-scale-in relative z-10 -my-20 origin-center scale-[0.68] motion-reduce:animate-none sm:-my-10 sm:scale-[0.85] lg:my-0 lg:scale-100"
           >
             <Mock />
           </div>
