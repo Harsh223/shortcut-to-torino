@@ -329,7 +329,7 @@ function Home() {
 
       {/* --------------------------------- cities -------------------------------- */}
       <section className="bg-paper py-16">
-        <div className="container-site overflow-hidden rounded-[2rem] border border-divider bg-white">
+        <Reveal className="container-site block overflow-hidden rounded-[2rem] border border-divider bg-white">
           <div className="grid items-center gap-8 p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
             <div>
               <p className="eyebrow text-grass">{c.cities.kicker}</p>
@@ -346,8 +346,18 @@ function Home() {
               <TurinMap variant="night" className="absolute inset-0 h-full w-full" />
             </div>
           </div>
-        </div>
+          <img
+            src={cityScene}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            width={1536}
+            height={560}
+            className="h-[110px] w-full min-w-[720px] object-cover object-top sm:h-[150px]"
+          />
+        </Reveal>
       </section>
+
 
       {/* ---------------------------------- faq ---------------------------------- */}
       <section className="bg-white py-20">
