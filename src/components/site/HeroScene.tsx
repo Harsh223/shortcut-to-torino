@@ -14,40 +14,35 @@ export function HeroScene() {
   const s = c.scene;
 
   return (
-    <div className="relative mt-5 w-full sm:mt-8">
-      {/* floating product UI, above the street */}
-      <div className="container-site pointer-events-none relative z-20">
-        <div className="relative h-[74px] sm:h-[104px]">
-          <div className="animate-float absolute left-0 top-0 sm:left-[4%]">
-            <div className="flex items-center gap-2 rounded-full bg-forest px-3 py-1.5 text-[0.7rem] font-extrabold text-gold shadow-float sm:px-3.5 sm:py-2 sm:text-xs">
-              <Timer className="h-3.5 w-3.5" />
-              {s.light}
+    <div className="relative mt-4 w-full sm:mt-6">
+      {/* the street band: full-bleed, height-scaled, cropped at the sides */}
+      <div className="relative h-[250px] w-full overflow-hidden sm:h-[320px] lg:h-[400px]">
+        {/* floating product UI, over the street */}
+        <div className="container-site pointer-events-none absolute inset-x-0 top-0 z-20">
+          <div className="relative h-[74px] sm:h-[96px]">
+            <div className="animate-float absolute left-0 top-0 sm:left-[2%]">
+              <div className="flex items-center gap-2 rounded-full bg-forest px-3 py-1.5 text-[0.7rem] font-extrabold text-gold shadow-float sm:px-3.5 sm:py-2 sm:text-xs">
+                <Timer className="h-3.5 w-3.5" />
+                {s.light}
+              </div>
+            </div>
+
+            <div
+              className="animate-float absolute right-0 top-0 w-[54%] max-w-[230px] sm:right-[2%]"
+              style={{ animationDelay: "1.2s" }}
+            >
+              <SceneCard icon={<CircleParking className="h-4 w-4" />} title={s.parkTitle} body={s.parkBody} />
+            </div>
+
+            <div
+              className="animate-float absolute bottom-[-24px] left-1/2 hidden w-[250px] -translate-x-1/2 lg:block"
+              style={{ animationDelay: "2.1s" }}
+            >
+              <SceneCard icon={<Bus className="h-4 w-4" />} title={s.transitTitle} body={s.transitBody} />
             </div>
           </div>
-
-          <div
-            className="animate-float absolute right-0 top-1 w-[54%] max-w-[230px] sm:right-[4%] sm:top-2"
-            style={{ animationDelay: "1.2s" }}
-          >
-            <SceneCard icon={<CircleParking className="h-4 w-4" />} title={s.parkTitle} body={s.parkBody} />
-          </div>
-
-          <div
-            className="animate-float absolute bottom-[-30px] left-1/2 hidden w-[250px] -translate-x-1/2 lg:block"
-            style={{ animationDelay: "2.1s" }}
-          >
-            <SceneCard icon={<Bus className="h-4 w-4" />} title={s.transitTitle} body={s.transitBody} />
-          </div>
         </div>
-      </div>
 
-      {/* the street band: full-bleed, height-scaled, cropped at the sides */}
-      <div className="relative h-[210px] w-full overflow-hidden sm:h-[280px] lg:h-[370px]">
-        {/* proof, hidden as props */}
-        <div className="container-site pointer-events-none relative z-10 flex justify-between">
-          <SceneBadge tone="gold" className="hidden lg:inline-flex">
-            {s.billboard}
-          </SceneBadge>
           <SceneBadge tone="forest" className="ml-auto hidden sm:inline-flex">
             {s.shelter}
           </SceneBadge>
