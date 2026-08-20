@@ -102,7 +102,7 @@ function Home() {
 
 
 
-          <Reveal className="forest-wash block-round block overflow-hidden px-6 py-12 text-white sm:px-10 sm:py-14 lg:px-14">
+          <Reveal className="forest-wash block-round block overflow-hidden px-6 py-14 text-white sm:px-12 sm:py-16 lg:px-16 lg:py-20">
             <ModeShowcase />
           </Reveal>
 
