@@ -43,10 +43,15 @@ export function HeroScene() {
           </div>
         </div>
 
-          <SceneBadge tone="forest" className="ml-auto hidden sm:inline-flex">
+        <div className="container-site pointer-events-none absolute inset-x-0 top-[86px] z-10 hidden justify-between sm:flex">
+          <SceneBadge tone="gold" className="hidden lg:inline-flex">
+            {s.billboard}
+          </SceneBadge>
+          <SceneBadge tone="forest" className="ml-auto">
             {s.shelter}
           </SceneBadge>
         </div>
+
 
         {/* left: Turin porticoes */}
         <img
