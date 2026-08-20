@@ -18,7 +18,7 @@ export function HeroScene() {
 
   return (
     <div className="relative -mt-6 w-full shrink-0 sm:-mt-10">
-      <div className="relative flex w-full justify-center overflow-hidden">
+      <div className="relative flex w-full justify-center overflow-hidden sm:max-h-[min(54svh,430px)]">
         {/* distant skyline + hills */}
         <img
           src={heroSkyline}
@@ -31,18 +31,25 @@ export function HeroScene() {
         />
 
         {/* soft haze so the skyline dissolves into the sky */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-background via-background/40 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-[45%] bg-gradient-to-b from-background via-background/40 to-transparent" />
 
         {/* the street itself: one continuous facade line.
-            Mobile scales by height and crops the sides; from sm up the whole
-            band fits the width so no rooftop is ever sliced off. */}
+            Mobile scales by height and crops the sides; from sm up the band
+            fits the width, and the roofline dissolves into the sky so the
+            container cap never reads as a hard cut. */}
         <img
           src={heroBand}
           alt="Una via di Torino: portici, tram, parcheggio e ricarica elettrica"
           width={1920}
           height={720}
-          className="relative block h-[240px] w-auto min-w-full max-w-none shrink-0 object-contain object-bottom sm:h-auto sm:w-full sm:min-w-0"
+          className="relative block h-[240px] w-auto min-w-full max-w-none shrink-0 self-end object-contain object-bottom sm:h-auto sm:w-full sm:min-w-0"
+          style={{
+            maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 10%, #000 24%)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 10%, #000 24%)",
+          }}
         />
+
+
 
         {/* chips pinned to the art */}
         <div className="pointer-events-none absolute inset-0 z-20">
