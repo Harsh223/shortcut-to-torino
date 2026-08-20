@@ -15,6 +15,8 @@ import { TurinMap } from "@/components/site/TurinMap";
 import { HeroScene } from "@/components/site/HeroScene";
 import { DriveMock, ParkingMock, TransitMock } from "@/components/site/PhoneMock";
 import { StoreButtons, WaitlistForm, useWaitlist } from "@/components/site/WaitlistForm";
+import parkingScene from "@/assets/parking-scene.png";
+
 
 
 export const Route = createFileRoute("/")({
