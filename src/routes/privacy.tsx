@@ -4,19 +4,16 @@ import { useI18n } from "@/lib/i18n";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy — Shortcut" },
+      { title: "Privacy policy — Shortcut by Civimatica" },
       {
         name: "description",
         content:
-          "How Shortcut handles location and accounts: location is for navigation, sign-in is optional, and we don't sell your location to ad networks.",
+          "How Shortcut handles waitlist emails, cookies and location data, and how to exercise your GDPR rights.",
       },
-      { property: "og:title", content: "Privacy — Shortcut" },
-      {
-        property: "og:description",
-        content: "Plain-language privacy draft: optional login, location for navigation, no data selling.",
-      },
+      { property: "og:title", content: "Shortcut privacy policy" },
+      { property: "og:description", content: "Plain-language privacy policy for the Shortcut app and site." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/privacy" },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [{ rel: "canonical", href: "/privacy" }],
   }),
@@ -25,36 +22,24 @@ export const Route = createFileRoute("/privacy")({
 
 function PrivacyPage() {
   const { c } = useI18n();
-  return <LegalPage title={c.privacy.title} updated={c.privacy.updated} sections={c.privacy.sections} />;
-}
-
-function LegalPage({
-  title,
-  updated,
-  sections,
-}: {
-  title: string;
-  updated: string;
-  sections: { h: string; p: string }[];
-}) {
   return (
-    <>
-      <section className="bg-navy-deep py-16">
-        <div className="container-site max-w-3xl">
-          <h1 className="text-4xl font-extrabold text-white">{title}</h1>
-          <p className="mt-3 text-sm font-semibold text-white/55">{updated}</p>
-        </div>
-      </section>
-      <section className="bg-white py-14">
-        <div className="container-site max-w-3xl space-y-8">
-          {sections.map((s) => (
+    <section className="bg-white py-16">
+      <div className="container-site max-w-3xl">
+        <h1 className="text-3xl font-extrabold text-ink sm:text-4xl">{c.privacy.title}</h1>
+        <p className="mt-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+          {c.privacy.updated}
+        </p>
+        <p className="mt-6 text-base leading-relaxed text-muted-foreground">{c.privacy.intro}</p>
+
+        <div className="mt-10 space-y-8">
+          {c.privacy.sections.map((s) => (
             <div key={s.h}>
               <h2 className="text-lg font-extrabold text-ink">{s.h}</h2>
-              <p className="mt-2 text-base leading-relaxed text-muted-foreground">{s.p}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.p}</p>
             </div>
           ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
