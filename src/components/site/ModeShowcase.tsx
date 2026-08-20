@@ -60,14 +60,14 @@ export function ModeShowcase() {
           <h2 className="max-w-[13ch] text-[1.9rem] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-5xl lg:text-[3.75rem]">
             {mode.title}
           </h2>
-          <p className="mt-6 max-w-[46ch] text-base leading-[1.65] text-white/75 sm:text-lg">
+          <p className="mt-4 max-w-[46ch] text-[0.95rem] leading-[1.6] text-white/75 sm:mt-6 sm:text-lg">
             {mode.body}
           </p>
 
           <button
             type="button"
             onClick={() => setActive((a) => (a + 1) % modes.length)}
-            className="group mt-10 inline-flex items-center gap-3.5 text-[0.95rem] font-bold text-white"
+            className="group mt-7 inline-flex items-center gap-3.5 text-[0.95rem] font-bold text-white sm:mt-10"
           >
             <span className="flex size-12 items-center justify-center rounded-full border-[1.5px] border-white/50 transition-colors group-hover:border-white group-hover:bg-white group-hover:text-forest-deep">
               <ArrowRight className="size-5" />
