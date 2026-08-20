@@ -97,9 +97,7 @@ function Home() {
       {/* ------------------------- act 2 · one app, deep green ------------------- */}
       <section className="bg-paper py-12 sm:py-16">
         <div className="container-site">
-          <div className="mb-10 flex justify-center">
-            <StoreButtons />
-          </div>
+
 
 
           <Reveal className="forest-wash block-round block px-6 py-14 text-white sm:px-10 lg:px-14">
