@@ -14,7 +14,7 @@ export function HeroScene() {
   const s = c.scene;
 
   return (
-    <div className="relative mt-auto w-full shrink-0 pt-1 sm:pt-2">
+    <div className="relative mt-2 w-full shrink-0 sm:mt-3">
       {/* the street band: full-bleed, height-scaled, cropped at the sides */}
       <div className="relative h-[220px] w-full overflow-hidden sm:h-[min(35svh,250px)] lg:h-[min(38svh,300px)]">
         {/* floating product UI, over the street */}
