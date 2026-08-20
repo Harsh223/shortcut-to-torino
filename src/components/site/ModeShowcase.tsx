@@ -57,7 +57,7 @@ export function ModeShowcase() {
           aria-labelledby={`mode-tab-${active}`}
           className="animate-fade-in motion-reduce:animate-none"
         >
-          <h2 className="max-w-[13ch] text-[2.25rem] font-extrabold leading-[1.02] tracking-[-0.035em] sm:text-5xl lg:text-[3.75rem]">
+          <h2 className="max-w-[13ch] text-[1.9rem] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-5xl lg:text-[3.75rem]">
             {mode.title}
           </h2>
           <p className="mt-6 max-w-[46ch] text-base leading-[1.65] text-white/75 sm:text-lg">
