@@ -12,8 +12,10 @@ import {
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { TurinMap } from "@/components/site/TurinMap";
+import { HeroScene } from "@/components/site/HeroScene";
 import { DriveMock, ParkingMock, TransitMock } from "@/components/site/PhoneMock";
 import { StoreButtons, WaitlistForm, useWaitlist } from "@/components/site/WaitlistForm";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
