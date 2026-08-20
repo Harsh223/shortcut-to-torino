@@ -80,8 +80,9 @@ export function HeroScene() {
           aria-hidden="true"
           width={1024}
           height={768}
-          className="absolute bottom-0 left-[-16%] h-[70%] w-auto max-w-none object-contain object-bottom sm:left-[2%] lg:left-[26%]"
+          className="absolute bottom-0 left-[-8%] h-[62%] w-auto max-w-none object-contain object-bottom sm:left-[2%] sm:h-[70%] lg:left-[26%]"
         />
+
 
         {/* the sidewalk line the whole scene stands on */}
         <div className="absolute inset-x-0 bottom-0 h-px bg-forest/15" />
