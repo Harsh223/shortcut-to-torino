@@ -120,17 +120,20 @@ function Home() {
                 </div>
               </div>
 
-              <div className="relative flex items-end justify-center gap-4">
-                <div className="hidden w-[38%] translate-y-6 sm:block">
-                  <TransitMock />
-                </div>
-                <div className="w-[62%] max-w-[280px] sm:w-[42%]">
-                  <DriveMock />
-                </div>
-                <div className="hidden w-[38%] translate-y-6 lg:block">
-                  <ParkingMock />
+              <div className="relative h-[420px] sm:h-[480px]">
+                <div className="absolute left-1/2 top-0 origin-top -translate-x-1/2 scale-[0.62] sm:scale-[0.72]">
+                  <div className="flex items-end gap-5">
+                    <div className="hidden translate-y-10 rotate-[-4deg] sm:block">
+                      <TransitMock />
+                    </div>
+                    <DriveMock />
+                    <div className="hidden translate-y-10 rotate-[4deg] lg:block">
+                      <ParkingMock />
+                    </div>
+                  </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
