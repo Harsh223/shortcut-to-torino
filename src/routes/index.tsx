@@ -182,7 +182,8 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
+
         </div>
       </section>
 
