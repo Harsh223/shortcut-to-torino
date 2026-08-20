@@ -206,7 +206,7 @@ function FeaturesPage() {
           </Reveal>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {p.items.map((f, i) => (
-              <Reveal as="article" key={f.name} delay={(i % 3) * 90} className="card-soft h-full">
+              <Reveal key={f.name} delay={(i % 3) * 90} className="card-soft h-full">
                 <h3 className="text-base font-extrabold text-ink">{f.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
               </Reveal>
