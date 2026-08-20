@@ -121,7 +121,7 @@ function Home() {
               </div>
 
               <div className="relative h-[420px] sm:h-[480px]">
-                <div className="absolute left-1/2 top-0 origin-top -translate-x-1/2 scale-[0.62] sm:scale-[0.72]">
+                <div className="absolute left-1/2 top-0 origin-top -translate-x-1/2 scale-[0.58] sm:scale-[0.66]">
                   <div className="flex items-end gap-5">
                     <div className="hidden translate-y-10 rotate-[-4deg] sm:block">
                       <TransitMock />
