@@ -259,9 +259,9 @@ function Home() {
       </section>
 
       {/* --------------------------------- voice --------------------------------- */}
-      <section className="bg-white py-20">
+      <section className="relative overflow-hidden bg-white py-20">
         <div className="container-site grid items-center gap-12 lg:grid-cols-2">
-          <div>
+          <Reveal>
             <p className="eyebrow text-grass">{c.voice.kicker}</p>
             <h2 className="mt-3 text-3xl font-extrabold text-ink sm:text-4xl">{c.voice.title}</h2>
             <p className="mt-4 text-base text-muted-foreground">{c.voice.sub}</p>
@@ -269,9 +269,18 @@ function Home() {
               {c.common.joinWaitlist}
               <ArrowRight className="h-4 w-4" />
             </button>
-          </div>
+            <img
+              src={voiceScene}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              width={1024}
+              height={768}
+              className="mt-10 w-full max-w-md object-contain"
+            />
+          </Reveal>
 
-          <div className="rounded-3xl border border-divider bg-paper p-5 sm:p-7">
+          <Reveal delay={120} className="rounded-3xl border border-divider bg-paper p-5 sm:p-7">
             <div className="space-y-3">
               {c.voice.lines.map((line, i) => (
                 <div
@@ -291,9 +300,10 @@ function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
+
 
       {/* ---------------------------------- more --------------------------------- */}
       <section className="bg-cream py-20">
