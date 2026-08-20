@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import { ParkingMock } from "@/components/site/PhoneMock";
+import { Reveal } from "@/components/site/Reveal";
+import { CityStage, CityStrip } from "@/components/site/CityStage";
+import { CityScene } from "@/components/site/CityArt";
 import { WaitlistForm, StoreButtons } from "@/components/site/WaitlistForm";
+import { waitlistArt, productArt } from "@/lib/product-art";
 
 export const Route = createFileRoute("/download")({
   head: () => ({
@@ -27,63 +30,121 @@ export const Route = createFileRoute("/download")({
 });
 
 function DownloadPage() {
-  const { c } = useI18n();
+  const { c, lang } = useI18n();
+  const d = c.downloadPage;
+
   return (
     <>
-      <section className="forest-wash py-16 text-white sm:py-20">
-        <div className="container-site grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <p className="eyebrow inline-flex rounded-full border border-gold/40 bg-gold/10 px-3.5 py-1.5 text-gold">
-              {c.common.comingSoon}
-            </p>
-            <h1 className="mt-5 text-4xl font-extrabold sm:text-5xl">{c.downloadPage.title}</h1>
-            <p className="mt-4 text-lg text-white/70">{c.downloadPage.sub}</p>
+      {/* Act 1 — the stage */}
+      <section className="forest-wash relative flex min-h-[86svh] flex-col overflow-hidden pt-14 text-white sm:pt-16">
+        <div className="container-site relative z-10 text-center">
+          <Reveal>
+            <h1 className="mx-auto max-w-3xl text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
+              {d.title}
+            </h1>
+            <p className="mx-auto mt-4 max-w-xl text-lg text-white/70">{d.sub}</p>
+          </Reveal>
+          <Reveal delay={120} className="mx-auto mt-7 max-w-lg">
+            <WaitlistForm source="waitlist-page" tone="dark" />
+          </Reveal>
+        </div>
 
-            <div className="mt-8 max-w-lg">
-              <WaitlistForm source="waitlist-page" tone="dark" stacked />
-            </div>
+        <CityStage
+          src={waitlistArt.hero.src}
+          alt={waitlistArt.hero.alt[lang]}
+          chips={[...d.chips]}
+        />
+      </section>
 
-            <p className="mt-8 text-xs font-extrabold uppercase tracking-wider text-white/45">
-              {c.downloadPage.storesTitle}
-            </p>
-            <div className="mt-3">
-              <StoreButtons tone="dark" />
-            </div>
-          </div>
-          <div className="animate-float mx-auto">
-            <ParkingMock />
+      {/* Act 2 — what joining means */}
+      <section className="bg-cream py-20 sm:py-24">
+        <div className="container-site">
+          <Reveal>
+            <h2 className="max-w-2xl text-3xl font-extrabold text-ink sm:text-4xl">{d.dayOne.title}</h2>
+          </Reveal>
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {d.dayOne.items.map((item, i) => (
+              <Reveal key={item.name} delay={i * 110} className="card-soft h-full">
+                <h3 className="text-base font-extrabold text-ink">{item.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="container-site grid gap-10 lg:grid-cols-2">
-          <div className="rounded-3xl border border-divider bg-paper p-7">
-            <h2 className="text-lg font-extrabold text-ink">{c.downloadPage.reqTitle}</h2>
-            <ul className="mt-4 space-y-3">
-              {c.downloadPage.req.map((r) => (
-                <li key={r} className="flex items-start gap-2.5 text-sm font-semibold text-ink">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-grass" />
-                  {r}
+      {/* Act 3 — the road to launch */}
+      <section className="bg-forest-deep py-20 text-white sm:py-24">
+        <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <Reveal className="lg:order-2">
+            <CityScene
+              src={productArt.hero.src}
+              alt={productArt.hero.alt[lang]}
+              marks={[c.hero.badge, c.common.comingSoon]}
+              tone="dark"
+            />
+          </Reveal>
+          <Reveal delay={120} className="lg:order-1">
+            <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl">{d.steps.title}</h2>
+            <ol className="mt-8 space-y-6">
+              {d.steps.items.map((s) => (
+                <li key={s.n} className="flex gap-4">
+                  <span className="text-sm font-extrabold text-gold">{s.n}</span>
+                  <div>
+                    <p className="font-extrabold">{s.name}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-white/70">{s.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Act 4 — requirements + stores */}
+      <section className="bg-white py-20 sm:py-24">
+        <div className="container-site grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <Reveal>
+            <h2 className="text-3xl font-extrabold text-ink sm:text-4xl">{d.reqTitle}</h2>
+            <ul className="mt-6 space-y-3">
+              {d.req.map((r) => (
+                <li key={r} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-forest text-gold">
+                    <Check className="size-3" strokeWidth={3} />
+                  </span>
+                  <span className="text-sm text-ink/80">{r}</span>
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="rounded-3xl border border-divider p-7">
-            <h2 className="text-lg font-extrabold text-ink">{c.faq.title}</h2>
-            <div className="mt-4 divide-y divide-divider">
-              {c.faq.items.slice(0, 4).map((f) => (
-                <details key={f.q} className="group py-3.5">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-extrabold text-ink">
-                    {f.q}
-                    <span className="text-gold transition-transform group-open:rotate-45">+</span>
-                  </summary>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
-                </details>
-              ))}
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="eyebrow text-forest">{d.storesTitle}</p>
+            <div className="mt-4">
+              <StoreButtons />
             </div>
-          </div>
+            <div className="mt-8">
+              <CityScene
+                src={productArt.voice.src}
+                alt={productArt.voice.alt[lang]}
+                marks={[c.voice.kicker, c.scene.light]}
+              />
+            </div>
+          </Reveal>
         </div>
+      </section>
+
+      {/* Act 5 — closing, blue hour */}
+      <section className="relative overflow-hidden bg-forest-deep pt-20 text-white sm:pt-24">
+        <div className="container-site text-center">
+          <Reveal>
+            <h2 className="mx-auto max-w-2xl text-3xl font-extrabold sm:text-4xl">{d.closing.title}</h2>
+            <p className="mt-3 text-lg text-white/70">{d.closing.body}</p>
+          </Reveal>
+          <Reveal delay={120} className="mx-auto mt-8 max-w-lg">
+            <WaitlistForm source="waitlist-closing" tone="dark" />
+          </Reveal>
+        </div>
+        <CityStrip src={waitlistArt.launch.src} className="mt-14 [&>div]:hidden" />
       </section>
     </>
   );
