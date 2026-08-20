@@ -62,28 +62,28 @@ function Home() {
   return (
     <>
       {/* --------------------------- act 1 · the stage --------------------------- */}
-      <section className="sky-wash relative overflow-hidden">
+      <section className="sky-wash relative flex min-h-[calc(100svh-68px)] flex-col overflow-hidden">
         <TurinMap
           variant="day"
           className="animate-pan absolute inset-0 h-full w-full opacity-[0.12]"
           showRoutes={false}
         />
 
-        <div className="container-site relative pt-8 sm:pt-14">
+        <div className="container-site relative z-30 pt-5 sm:pt-7 lg:pt-9">
           <div className="animate-rise mx-auto max-w-3xl text-center">
             <p className="eyebrow inline-flex rounded-full border border-forest/15 bg-white/70 px-3 py-1 text-grass">
               <Sparkles className="h-3.5 w-3.5" />
               {c.hero.badge}
             </p>
 
-            <h1 className="mt-3 text-[2rem] font-extrabold leading-[1.04] text-forest-deep sm:mt-5 sm:text-5xl lg:text-[4.2rem]">
+            <h1 className="mt-2.5 text-[2rem] font-extrabold leading-[1.04] text-forest-deep sm:mt-3 sm:text-5xl lg:text-[4.2rem]">
               {c.hero.title} <span className="text-gold">{c.hero.titleAccent}</span>
             </h1>
-            <p className="mx-auto mt-3 max-w-xl text-[0.95rem] text-forest/70 sm:mt-4 sm:text-lg">
+            <p className="mx-auto mt-2.5 max-w-xl text-[0.95rem] text-forest/70 sm:mt-3 sm:text-lg">
               {c.hero.sub}
             </p>
 
-            <div className="mx-auto mt-5 max-w-lg text-left sm:mt-7">
+            <div className="mx-auto mt-4 max-w-lg text-left sm:mt-5">
               <WaitlistForm source="hero" tone="light" />
             </div>
 
