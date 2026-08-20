@@ -348,7 +348,10 @@ export const en: Copy = {
   pillars: {
     title: "Four things, done properly",
     sub: "The rest of the city is on the same map anyway.",
+    tabs: ["Parking", "Transit", "Driving", "Voice"],
+    next: "Next",
     items: [
+
       {
         key: "parking",
         name: "Parking that works",
