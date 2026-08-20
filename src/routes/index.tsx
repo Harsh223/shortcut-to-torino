@@ -87,9 +87,6 @@ function Home() {
               <WaitlistForm source="hero" tone="light" />
             </div>
 
-            <div className="mt-5 hidden justify-center sm:flex">
-              <StoreButtons />
-            </div>
           </div>
         </div>
 
@@ -100,9 +97,10 @@ function Home() {
       {/* ------------------------- act 2 · one app, deep green ------------------- */}
       <section className="bg-paper py-12 sm:py-16">
         <div className="container-site">
-          <div className="mb-10 flex justify-center sm:hidden">
+          <div className="mb-10 flex justify-center">
             <StoreButtons />
           </div>
+
 
           <Reveal className="forest-wash block-round block px-6 py-14 text-white sm:px-10 lg:px-14">
             <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
