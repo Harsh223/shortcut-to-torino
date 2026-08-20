@@ -3,6 +3,8 @@ import { ArrowRight, Check, MapPin, Navigation, Bus, CircleParking } from "lucid
 import { useI18n } from "@/lib/i18n";
 import { CITIES, cityCopy, getCity } from "@/lib/cities";
 import { CityStage, CityStrip } from "@/components/site/CityStage";
+import { CityScene, CityDetail } from "@/components/site/CityArt";
+import { CITY_ART } from "@/lib/cities/art";
 import { Reveal } from "@/components/site/Reveal";
 import { WaitlistForm } from "@/components/site/WaitlistForm";
 import { cityUi } from "@/lib/cities";
