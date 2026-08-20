@@ -1,0 +1,865 @@
+import type { City } from "./types";
+
+import palermoBand from "@/assets/city-palermo-band.png";
+import bariBand from "@/assets/city-bari-band.png";
+import cataniaBand from "@/assets/city-catania-band.png";
+import veneziaBand from "@/assets/city-venezia-band.png";
+import veronaBand from "@/assets/city-verona-band.png";
+import messinaBand from "@/assets/city-messina-band.png";
+import padovaBand from "@/assets/city-padova-band.png";
+
+export const citiesB: City[] = [
+  {
+    slug: "palermo",
+    name: "Palermo",
+    region: "Sicilia",
+    operator: "AMAT",
+    band: palermoBand,
+    alt: {
+      it: "Una via di Palermo: palazzi barocchi, cupola rossa e palme",
+      en: "A Palermo street: baroque palaces, a red dome and palm trees",
+    },
+    it: {
+      blurb: "Sosta creativa, mercati e assi lunghi.",
+      status: "In valutazione",
+      headline: "La scorciatoia per",
+      headlineAccent: "Palermo",
+      sub: "Grandi assi rettilinei, un centro storico fittissimo e una sosta che nessuna mappa racconta davvero.",
+      chips: ["Centro storico", "Tram periferico", "Mercati"],
+      reality: {
+        kicker: "La città reale",
+        title: "Il traffico è prevedibile, la sosta no",
+        body: "Gli assi principali si leggono bene, ma nel centro il posto libero è una questione di minuti e di zona. Preferiamo dirti che un'area è probabilmente satura piuttosto che promettere stalli che non ci sono.",
+      },
+      facts: [
+        { value: "AMAT", label: "bus e tram urbani" },
+        { value: "ZTL", label: "centro storico con fasce orarie" },
+        { value: "Onestà", label: "diciamo quando il dato è una stima" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Dove il posto c'è davvero",
+        body: "Confrontiamo parcheggi in struttura, sosta a pagamento e aree fuori dalla ZTL, con il tempo a piedi fino alla destinazione.",
+        points: [
+          "Zone di sosta con probabilità realistica di posto",
+          "Parcheggi in struttura con prezzo e orari",
+          "ZTL del centro storico con fasce attive",
+          "Vie troppo strette escluse in base alla tua auto",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "Bus, tram e passante ferroviario",
+        body: "Il tram serve la periferia, il passante collega la città in modo sottovalutato. Li mettiamo sullo stesso piano dei bus, con previsioni etichettate per affidabilità.",
+        points: [
+          "Arrivi corretti dove i dati del veicolo esistono",
+          "Passante ferroviario incluso nei percorsi urbani",
+          "Coincidenze protette tra tram e bus",
+          "Deviazioni per mercati, eventi e cantieri",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Assi, circonvallazione, colonnine",
+        body: "La circonvallazione e i grandi viali decidono i tempi. Traffico live, countdown dei semafori mappati e colonnine sul percorso.",
+        points: [
+          "Traffico live su circonvallazione e viali",
+          "Countdown semafori sugli incroci mappati",
+          "Colonnine EV con presa e potenza",
+          "Alternative con meno svolte nel centro storico",
+        ],
+      },
+      closing: {
+        title: "Palermo è nella lista",
+        body: "Vuoi Shortcut a Palermo? Lascia l'email: le richieste contano.",
+      },
+    },
+    en: {
+      blurb: "Improvised parking, markets, long axes.",
+      status: "Under evaluation",
+      headline: "The shortcut across",
+      headlineAccent: "Palermo",
+      sub: "Long straight axes, a very dense historic core, and parking no map has ever described honestly.",
+      chips: ["Historic centre", "Suburban tram", "Markets"],
+      reality: {
+        kicker: "The real city",
+        title: "Traffic is predictable, parking isn't",
+        body: "The main axes read well, but in the centre a free spot is a matter of minutes and blocks. We'd rather tell you an area is probably full than promise spaces that aren't there.",
+      },
+      facts: [
+        { value: "AMAT", label: "city buses and tram" },
+        { value: "ZTL", label: "historic centre with time bands" },
+        { value: "Honesty", label: "we say when a figure is an estimate" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "Where space actually exists",
+        body: "We compare garages, paid parking and areas outside the restricted zone, with walking time to your destination.",
+        points: [
+          "Parking zones with a realistic chance of a space",
+          "Garages with price and opening hours",
+          "Historic-centre restricted zone with active bands",
+          "Streets too narrow for your car left out",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "Bus, tram and the city rail link",
+        body: "The tram serves the outskirts and the rail link is an underrated city connector. We put both on par with buses, labelling how reliable each prediction is.",
+        points: [
+          "Corrected arrivals where vehicle data exists",
+          "City rail link included in urban routes",
+          "Protected connections between tram and bus",
+          "Diversions for markets, events and roadworks",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Axes, ring road, chargers",
+        body: "The ring road and the great boulevards set your travel time. Live traffic, countdowns on mapped lights, chargers on route.",
+        points: [
+          "Live traffic on the ring road and boulevards",
+          "Traffic-light countdowns on mapped junctions",
+          "EV chargers by plug and power",
+          "Alternatives with fewer turns in the old centre",
+        ],
+      },
+      closing: {
+        title: "Palermo is on the list",
+        body: "Want Shortcut in Palermo? Leave your email — requests count.",
+      },
+    },
+  },
+
+  {
+    slug: "bari",
+    name: "Bari",
+    region: "Puglia",
+    operator: "AMTAB",
+    band: bariBand,
+    alt: {
+      it: "Una via di Bari: case bianche, basilica e lungomare",
+      en: "A Bari street: whitewashed houses, the basilica and the seafront",
+    },
+    it: {
+      blurb: "Lungomare, città vecchia e park and ride.",
+      status: "In valutazione",
+      headline: "La scorciatoia per",
+      headlineAccent: "Bari",
+      sub: "Un centro murattiano a scacchiera, una città vecchia impenetrabile in auto e un porto che detta i flussi.",
+      chips: ["Bari Vecchia", "Park and ride", "Porto"],
+      reality: {
+        kicker: "La città reale",
+        title: "Due città con due logiche diverse",
+        body: "Nel Murattiano la griglia funziona e la sosta si trova con metodo; in Bari Vecchia l'auto semplicemente non entra. Shortcut cambia strategia in base alla destinazione, senza farti scoprire il vicolo cieco sul posto.",
+      },
+      facts: [
+        { value: "AMTAB", label: "bus urbani e park and ride" },
+        { value: "2", label: "città in una: griglia e centro antico" },
+        { value: "Porto", label: "flussi di traghetti nei percorsi" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Lasciare l'auto prima, non dopo",
+        body: "I parcheggi di interscambio con navetta sono spesso la scelta giusta. Li confrontiamo con la sosta a pagamento del centro, tempo totale alla mano.",
+        points: [
+          "Park and ride confrontati con la sosta in centro",
+          "Sosta a pagamento con tariffa e durata",
+          "Bari Vecchia esclusa ai veicoli non autorizzati",
+          "Parcheggi in struttura con posti liberi",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "Bus urbani e ferrovie regionali",
+        body: "Molti spostamenti sono da area metropolitana. Uniamo bus urbani e treni regionali in un unico piano porta a porta.",
+        points: [
+          "Arrivi bus corretti dove i dati esistono",
+          "Treni regionali inclusi nel piano urbano",
+          "Coincidenze protette con la stazione centrale",
+          "Deviazioni e disservizi segnalati in mappa",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Lungomare, tangenziale, colonnine",
+        body: "Traffico live sul lungomare e sulla tangenziale, countdown dei semafori mappati e colonnine per chi guida elettrico.",
+        points: [
+          "Traffico live su lungomare e tangenziale",
+          "Countdown semafori sugli incroci mappati",
+          "Colonnine EV con potenza e disponibilità",
+          "Alternative in caso di eventi al porto",
+        ],
+      },
+      closing: {
+        title: "Bari è nella lista",
+        body: "Dicci che vuoi Shortcut a Bari: le richieste decidono l'ordine.",
+      },
+    },
+    en: {
+      blurb: "Seafront, old town and park and ride.",
+      status: "Under evaluation",
+      headline: "The shortcut across",
+      headlineAccent: "Bari",
+      sub: "A grid-planned centre, an old town no car can enter, and a port that sets the city's rhythm.",
+      chips: ["Old town", "Park and ride", "Port"],
+      reality: {
+        kicker: "The real city",
+        title: "Two cities with two different logics",
+        body: "In the grid the method works and parking can be found; in the old town a car simply doesn't fit. Shortcut switches strategy by destination instead of letting you discover the dead end in person.",
+      },
+      facts: [
+        { value: "AMTAB", label: "city buses and park and ride" },
+        { value: "2", label: "cities in one: grid and old town" },
+        { value: "Port", label: "ferry flows factored into routes" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "Leave the car earlier, not later",
+        body: "Interchange car parks with a shuttle are often the right call. We compare them with paid central parking on total time.",
+        points: [
+          "Park and ride compared with central parking",
+          "Paid parking with tariff and maximum stay",
+          "Old town excluded for unauthorised vehicles",
+          "Garages with live free spaces",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "City buses and regional rail",
+        body: "Many trips are metropolitan. We merge city buses and regional trains into a single door-to-door plan.",
+        points: [
+          "Corrected bus arrivals where data exists",
+          "Regional trains inside the city plan",
+          "Protected connections at the central station",
+          "Diversions and disruptions on the map",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Seafront, bypass, chargers",
+        body: "Live traffic on the seafront and bypass, countdowns on mapped lights, and chargers for electric drivers.",
+        points: [
+          "Live traffic on the seafront and bypass",
+          "Traffic-light countdowns on mapped junctions",
+          "EV chargers with power and availability",
+          "Alternatives when the port is busy",
+        ],
+      },
+      closing: {
+        title: "Bari is on the list",
+        body: "Tell us you want Shortcut in Bari — requests decide the order.",
+      },
+    },
+  },
+
+  {
+    slug: "catania",
+    name: "Catania",
+    region: "Sicilia",
+    operator: "AMT",
+    band: cataniaBand,
+    alt: {
+      it: "Una via di Catania: palazzi in pietra lavica e l'Etna sullo sfondo",
+      en: "A Catania street: lava-stone buildings with Etna behind",
+    },
+    it: {
+      blurb: "Pietra lavica, metro breve e l'Etna che decide.",
+      status: "In valutazione",
+      headline: "La scorciatoia per",
+      headlineAccent: "Catania",
+      sub: "Una città barocca in pietra lavica, con una metro breve ma utile e un vulcano che ogni tanto cambia i piani.",
+      chips: ["Metro FCE", "Etna", "Lungomare"],
+      reality: {
+        kicker: "La città reale",
+        title: "Quando l'Etna parla, la città rallenta",
+        body: "La cenere chiude l'aeroporto e rende scivolose le strade: sono eventi rari ma pesanti. Li segnaliamo come disservizio, insieme a code, cantieri e sosta satura.",
+      },
+      facts: [
+        { value: "AMT", label: "bus urbani e BRT" },
+        { value: "FCE", label: "metropolitana in mappa" },
+        { value: "Alert", label: "eventi eccezionali segnalati" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Il centro barocco e la sosta reale",
+        body: "Tra via Etnea e il centro storico la sosta è scarsa. Confrontiamo strutture, sosta a pagamento e nodi vicino alla metro.",
+        points: [
+          "Parcheggi in struttura con posti liberi e prezzo",
+          "Zone di sosta con probabilità realistica",
+          "Aree pedonali e ZTL segnalate in anticipo",
+          "Nodi di scambio vicino alle stazioni metro",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "Metro corta, bus lunghi",
+        body: "La metro copre poco ma bene; il resto è bus. Diciamo con chiarezza dove la previsione è solida e dove è solo l'orario programmato.",
+        points: [
+          "Metro e bus confrontati sullo stesso viaggio",
+          "Arrivi corretti dove i dati lo permettono",
+          "Coincidenze protette verso stazione e aeroporto",
+          "Disservizi e deviazioni in tempo reale",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Tangenziale, assi, colonnine",
+        body: "La tangenziale è il nervo della città. Traffico live, countdown dei semafori mappati e colonnine EV filtrate.",
+        points: [
+          "Traffico live su tangenziale e assi principali",
+          "Countdown semafori sugli incroci mappati",
+          "Colonnine EV per presa e potenza",
+          "Alternative in caso di strade chiuse",
+        ],
+      },
+      closing: {
+        title: "Catania è nella lista",
+        body: "Chiedi Shortcut per Catania e ti avvisiamo quando arriviamo.",
+      },
+    },
+    en: {
+      blurb: "Lava stone, a short metro and Etna's mood.",
+      status: "Under evaluation",
+      headline: "The shortcut across",
+      headlineAccent: "Catania",
+      sub: "A baroque city built in lava stone, with a short but useful metro and a volcano that occasionally rewrites plans.",
+      chips: ["Metro", "Etna", "Seafront"],
+      reality: {
+        kicker: "The real city",
+        title: "When Etna speaks, the city slows",
+        body: "Ash closes the airport and makes roads slippery: rare events, heavy consequences. We flag them as disruptions, alongside queues, roadworks and saturated parking.",
+      },
+      facts: [
+        { value: "AMT", label: "city buses and rapid transit" },
+        { value: "Metro", label: "rail line on the map" },
+        { value: "Alerts", label: "exceptional events flagged" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "The baroque centre and real parking",
+        body: "Around the main axis and the old centre space is scarce. We compare garages, paid parking and nodes near the metro.",
+        points: [
+          "Garages with free spaces and price",
+          "Parking zones with a realistic chance of space",
+          "Pedestrian areas and restricted zones flagged early",
+          "Interchange nodes near metro stations",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "Short metro, long buses",
+        body: "The metro covers little but does it well; the rest is buses. We state clearly where the prediction is solid and where it's schedule only.",
+        points: [
+          "Metro and bus compared in the same trip",
+          "Corrected arrivals where the data allows",
+          "Protected connections to station and airport",
+          "Real-time disruptions and diversions",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Bypass, axes, chargers",
+        body: "The bypass is the city's nerve. Live traffic, countdowns on mapped lights, filtered EV chargers.",
+        points: [
+          "Live traffic on the bypass and main axes",
+          "Traffic-light countdowns on mapped junctions",
+          "EV chargers by plug and power",
+          "Alternatives when roads close",
+        ],
+      },
+      closing: {
+        title: "Catania is on the list",
+        body: "Ask for Catania and we'll tell you when we arrive.",
+      },
+    },
+  },
+
+  {
+    slug: "venezia",
+    name: "Venezia",
+    region: "Veneto",
+    operator: "ACTV",
+    band: veneziaBand,
+    alt: {
+      it: "Il Canal Grande a Venezia: palazzi, vaporetti e ponti",
+      en: "The Grand Canal in Venice: palazzi, waterbuses and bridges",
+    },
+    it: {
+      blurb: "Acqua, ponti e un'auto che si ferma a Piazzale Roma.",
+      status: "Caso speciale",
+      headline: "La scorciatoia per",
+      headlineAccent: "Venezia",
+      sub: "L'unica città italiana dove la navigazione stradale finisce dove comincia il viaggio.",
+      chips: ["Vaporetti", "Piazzale Roma", "Ponti e maree"],
+      reality: {
+        kicker: "La città reale",
+        title: "Qui l'auto è solo il primo tratto",
+        body: "A Venezia centro storico il percorso si fa in vaporetto e a piedi, tra ponti e calli. Shortcut tratta l'auto come un mezzo di avvicinamento: ti porta al parcheggio giusto e poi passa all'acqua.",
+      },
+      facts: [
+        { value: "ACTV", label: "vaporetti e bus di terraferma" },
+        { value: "400+", label: "ponti nel calcolo a piedi" },
+        { value: "Acqua alta", label: "segnalata come disservizio" },
+      ],
+      access: {
+        kicker: "Accesso e sosta",
+        title: "Dove finisce la strada",
+        body: "Confrontiamo Piazzale Roma, il Tronchetto e i parcheggi di Mestre, includendo il costo e il tempo del tratto in vaporetto o in treno.",
+        points: [
+          "Parcheggi di accesso confrontati per costo e tempo totale",
+          "Mestre e terraferma come alternativa realistica",
+          "Nessun percorso in auto dentro il centro storico",
+          "Tratto finale sempre a piedi o in vaporetto",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi d'acqua",
+        title: "Le linee sono d'acqua, la logica è la stessa",
+        body: "I vaporetti hanno linee, fermate e coincidenze come qualsiasi rete. Correggiamo gli arrivi dove possibile e segnaliamo le corse soppresse.",
+        points: [
+          "Linee di vaporetto con fermate e frequenze",
+          "Coincidenze protette tra acqua e terraferma",
+          "Corse soppresse e deviazioni segnalate",
+          "Ultimo collegamento serale sempre in evidenza",
+        ],
+      },
+      drive: {
+        kicker: "A piedi e accessibilità",
+        title: "Ponti, gradini e acqua alta",
+        body: "Il percorso a piedi cambia con il numero di ponti e con la marea. Calcoliamo entrambi e proponiamo alternative accessibili quando esistono.",
+        points: [
+          "Percorsi con conteggio dei ponti e dei gradini",
+          "Avvisi di acqua alta sulle calli interessate",
+          "Alternative accessibili quando disponibili",
+          "Mappa consultabile offline tra le calli",
+        ],
+      },
+      closing: {
+        title: "Venezia è un caso speciale",
+        body: "Merita una mappa costruita sull'acqua, non adattata. Dicci che la vuoi.",
+      },
+    },
+    en: {
+      blurb: "Water, bridges, and a car that stops at the edge.",
+      status: "Special case",
+      headline: "The shortcut across",
+      headlineAccent: "Venice",
+      sub: "The one Italian city where road navigation ends exactly where the journey begins.",
+      chips: ["Waterbuses", "Car terminal", "Bridges and tides"],
+      reality: {
+        kicker: "The real city",
+        title: "Here the car is only the first leg",
+        body: "In the historic centre you travel by waterbus and on foot, across bridges and alleys. Shortcut treats the car as an approach: it takes you to the right car park, then switches to water.",
+      },
+      facts: [
+        { value: "ACTV", label: "waterbuses and mainland buses" },
+        { value: "400+", label: "bridges in walking routes" },
+        { value: "High water", label: "flagged as a disruption" },
+      ],
+      access: {
+        kicker: "Access and parking",
+        title: "Where the road ends",
+        body: "We compare the car terminals and the mainland car parks, including the cost and time of the waterbus or train leg.",
+        points: [
+          "Access car parks compared on cost and total time",
+          "The mainland as a realistic alternative",
+          "No driving routes inside the historic centre",
+          "Final leg always on foot or by water",
+        ],
+      },
+      transit: {
+        kicker: "Water transit",
+        title: "The lines are water, the logic is the same",
+        body: "Waterbuses have lines, stops and connections like any network. We correct arrivals where possible and flag cancelled runs.",
+        points: [
+          "Waterbus lines with stops and frequencies",
+          "Protected connections between water and mainland",
+          "Cancelled runs and diversions flagged",
+          "Last evening connection always highlighted",
+        ],
+      },
+      drive: {
+        kicker: "Walking and access",
+        title: "Bridges, steps and high water",
+        body: "Walking routes change with the number of bridges and with the tide. We compute both and offer accessible alternatives where they exist.",
+        points: [
+          "Routes counting bridges and steps",
+          "High-water warnings on affected alleys",
+          "Accessible alternatives when available",
+          "Offline map for use among the alleys",
+        ],
+      },
+      closing: {
+        title: "Venice is a special case",
+        body: "It deserves a map built on water, not adapted to it. Tell us you want it.",
+      },
+    },
+  },
+
+  {
+    slug: "verona",
+    name: "Verona",
+    region: "Veneto",
+    operator: "ATV",
+    band: veronaBand,
+    alt: {
+      it: "Una via di Verona: l'Arena romana e i palazzi di Piazza Bra",
+      en: "A Verona street: the Roman Arena and the palazzi of Piazza Bra",
+    },
+    it: {
+      blurb: "Arena, ZTL e serate da 20.000 persone.",
+      status: "In valutazione",
+      headline: "La scorciatoia per",
+      headlineAccent: "Verona",
+      sub: "Una città di dimensioni gestibili, finché non ci sono l'opera in Arena o la fiera.",
+      chips: ["ZTL centro", "Serate in Arena", "Fiera"],
+      reality: {
+        kicker: "La città reale",
+        title: "Gli eventi cambiano tutta la mappa",
+        body: "Nelle sere di spettacolo il centro si chiude e la sosta sparisce in un raggio ampio. Shortcut considera gli eventi noti nel calcolo, invece di mandarti verso un parcheggio già pieno.",
+      },
+      facts: [
+        { value: "ATV", label: "bus urbani ed extraurbani" },
+        { value: "ZTL", label: "varchi del centro storico" },
+        { value: "Eventi", label: "chiusure previste nei percorsi" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Parcheggiare anche nelle sere piene",
+        body: "Confrontiamo i parcheggi perimetrali con la sosta interna consentita, con il tempo a piedi verso il centro storico.",
+        points: [
+          "Parcheggi perimetrali con posti e prezzo",
+          "Varchi ZTL con orari attivi e permessi",
+          "Aree sature segnalate nelle sere di evento",
+          "Percorso a piedi fino a Piazza Bra e dintorni",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "Bus urbani, filoviari e stazione",
+        body: "Una rete tutta di superficie che regge bene, finché non ci sono deviazioni. Correggiamo gli arrivi e segnaliamo subito i cambi di percorso.",
+        points: [
+          "Arrivi bus corretti sui dati reali",
+          "Deviazioni per eventi e cantieri",
+          "Coincidenze protette con Porta Nuova",
+          "Piano porta a porta con tratti a piedi",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Tangenziali, ponti, colonnine",
+        body: "I ponti sull'Adige e le tangenziali concentrano il traffico. Ti avvisiamo prima della coda e ti mostriamo dove ricaricare.",
+        points: [
+          "Traffico live su tangenziali e ponti",
+          "Countdown semafori sugli incroci mappati",
+          "Colonnine EV con potenza e disponibilità",
+          "Alternative nelle sere di evento",
+        ],
+      },
+      closing: {
+        title: "Verona è nella lista",
+        body: "Lascia l'email e dicci che Verona ti serve.",
+      },
+    },
+    en: {
+      blurb: "Arena nights, restricted zone, trade fairs.",
+      status: "Under evaluation",
+      headline: "The shortcut across",
+      headlineAccent: "Verona",
+      sub: "A manageable city — until there's an opera at the Arena or a fair in town.",
+      chips: ["Central ZTL", "Arena nights", "Trade fair"],
+      reality: {
+        kicker: "The real city",
+        title: "Events redraw the whole map",
+        body: "On performance nights the centre closes and parking disappears across a wide radius. Shortcut factors known events into routing instead of sending you to a car park that's already full.",
+      },
+      facts: [
+        { value: "ATV", label: "city and regional buses" },
+        { value: "ZTL", label: "historic-centre gates" },
+        { value: "Events", label: "planned closures in routing" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "Parking even on busy nights",
+        body: "We compare perimeter car parks with permitted parking inside, including walking time into the historic centre.",
+        points: [
+          "Perimeter car parks with spaces and price",
+          "Restricted-zone gates with hours and permits",
+          "Saturated areas flagged on event nights",
+          "Walking route to the main squares",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "City buses, trolleybus and station",
+        body: "An all-surface network that holds up well until diversions start. We correct arrivals and flag route changes immediately.",
+        points: [
+          "Bus arrivals corrected against real data",
+          "Diversions for events and roadworks",
+          "Protected connections at the main station",
+          "Door-to-door plans with walking legs",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Bypasses, bridges, chargers",
+        body: "The river bridges and bypasses concentrate the traffic. We warn you before the queue and show where to charge.",
+        points: [
+          "Live traffic on bypasses and bridges",
+          "Traffic-light countdowns on mapped junctions",
+          "EV chargers with power and availability",
+          "Alternatives on event nights",
+        ],
+      },
+      closing: {
+        title: "Verona is on the list",
+        body: "Leave your email and tell us Verona matters to you.",
+      },
+    },
+  },
+
+  {
+    slug: "messina",
+    name: "Messina",
+    region: "Sicilia",
+    operator: "ATM Messina",
+    band: messinaBand,
+    alt: {
+      it: "Una via di Messina: il campanile con l'orologio, il tram e i traghetti sullo Stretto",
+      en: "A Messina street: the clock tower, the tram and ferries on the strait",
+    },
+    it: {
+      blurb: "Una città lineare, un tram e lo Stretto.",
+      status: "In valutazione",
+      headline: "La scorciatoia per",
+      headlineAccent: "Messina",
+      sub: "Una città lunga e stretta lungo la costa, con un tram unico in linea retta e i traghetti che scandiscono la giornata.",
+      chips: ["Tram lineare", "Traghetti", "Costa"],
+      reality: {
+        kicker: "La città reale",
+        title: "Tutto succede lungo una linea",
+        body: "Il traffico, il tram e i flussi dei traghetti condividono lo stesso asse costiero. Chi deve imbarcarsi ha bisogno di tempi di viaggio veri, non ottimistici.",
+      },
+      facts: [
+        { value: "ATM", label: "tram e bus urbani" },
+        { value: "Stretto", label: "orari dei traghetti nei percorsi" },
+        { value: "1 asse", label: "su cui si concentra la città" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Parcheggio vicino all'asse giusto",
+        body: "Confrontiamo la sosta lungo il corso principale con i parcheggi vicini agli imbarchi e alla stazione.",
+        points: [
+          "Sosta a pagamento con tariffe e orari",
+          "Parcheggi vicino agli imbarchi",
+          "Aree pedonali del centro segnalate",
+          "Parcheggi in struttura con posti liberi",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "Tram, bus e traghetti in un piano solo",
+        body: "Il tram è regolare e prevedibile, i bus meno. Mettiamo insieme i tre modi e includiamo l'attesa dell'imbarco nel tempo totale.",
+        points: [
+          "Tram con frequenze e fermate in mappa",
+          "Arrivi bus corretti dove i dati esistono",
+          "Attesa dell'imbarco inclusa nel viaggio",
+          "Coincidenze protette con la stazione",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Viali, imbarchi, colonnine",
+        body: "Nei giorni di grande traffico gli imbarchi generano code lunghe. Le segnaliamo prima, con alternative e punti di ricarica.",
+        points: [
+          "Traffico live su viale principale e imbarchi",
+          "Countdown semafori sugli incroci mappati",
+          "Colonnine EV con presa e potenza",
+          "Alternative nei giorni di code all'imbarco",
+        ],
+      },
+      closing: {
+        title: "Messina è nella lista",
+        body: "Chiedi Shortcut per Messina: le richieste contano davvero.",
+      },
+    },
+    en: {
+      blurb: "A linear city, a tram, and the strait.",
+      status: "Under evaluation",
+      headline: "The shortcut across",
+      headlineAccent: "Messina",
+      sub: "A long, narrow coastal city with a single straight tram line and ferries that set the daily rhythm.",
+      chips: ["Linear tram", "Ferries", "Coast"],
+      reality: {
+        kicker: "The real city",
+        title: "Everything happens along one line",
+        body: "Traffic, tram and ferry flows share the same coastal axis. Anyone catching a boat needs true travel times, not optimistic ones.",
+      },
+      facts: [
+        { value: "ATM", label: "tram and city buses" },
+        { value: "Strait", label: "ferry times inside routes" },
+        { value: "1 axis", label: "the city concentrates on" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "Park near the right axis",
+        body: "We compare parking along the main avenue with car parks near the ferry terminals and the station.",
+        points: [
+          "Paid parking with tariffs and hours",
+          "Car parks near the ferry terminals",
+          "Pedestrian areas of the centre flagged",
+          "Garages with live free spaces",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "Tram, bus and ferries in one plan",
+        body: "The tram is regular and predictable; buses less so. We combine all three and include boarding waits in total time.",
+        points: [
+          "Tram frequencies and stops on the map",
+          "Corrected bus arrivals where data exists",
+          "Boarding wait included in the trip",
+          "Protected connections at the station",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Avenues, terminals, chargers",
+        body: "On busy days the terminals generate long queues. We flag them early, with alternatives and charging points.",
+        points: [
+          "Live traffic on the main avenue and terminals",
+          "Traffic-light countdowns on mapped junctions",
+          "EV chargers by plug and power",
+          "Alternatives on heavy boarding days",
+        ],
+      },
+      closing: {
+        title: "Messina is on the list",
+        body: "Ask for Messina — requests genuinely count.",
+      },
+    },
+  },
+
+  {
+    slug: "padova",
+    name: "Padova",
+    region: "Veneto",
+    operator: "Busitalia",
+    band: padovaBand,
+    alt: {
+      it: "Una via di Padova: portici, cupole della basilica e biciclette",
+      en: "A Padua street: arcades, basilica domes and bicycles",
+    },
+    it: {
+      blurb: "Bici ovunque, tram su gomma e studenti.",
+      status: "In valutazione",
+      headline: "La scorciatoia per",
+      headlineAccent: "Padova",
+      sub: "Una città compatta, piena di biciclette e studenti, con un tram su gomma che attraversa tutto in linea retta.",
+      chips: ["Tram su gomma", "Bici", "ZTL centro"],
+      reality: {
+        kicker: "La città reale",
+        title: "Compatta, quindi la bici spesso vince",
+        body: "Su molte tratte urbane la bicicletta batte l'auto, e non fingiamo il contrario. Confrontiamo i modi con onestà, tempo di parcheggio incluso.",
+      },
+      facts: [
+        { value: "Bici", label: "confrontata come modo primario" },
+        { value: "Tram", label: "asse rettilineo nord-sud" },
+        { value: "ZTL", label: "centro storico con fasce" },
+      ],
+      access: {
+        kicker: "Sosta e accessi",
+        title: "Parcheggi al bordo, centro a piedi",
+        body: "Confrontiamo i parcheggi perimetrali e i nodi del tram con la sosta interna, includendo il tempo a piedi sotto i portici.",
+        points: [
+          "Parcheggi al bordo del centro con posti e prezzo",
+          "Nodi di scambio lungo la linea del tram",
+          "Varchi ZTL con fasce orarie attive",
+          "Rastrelliere e bike sharing sulla stessa mappa",
+        ],
+      },
+      transit: {
+        kicker: "Mezzi",
+        title: "Tram e bus, con arrivi corretti",
+        body: "L'asse del tram è affidabile, i bus dipendono dal traffico. Etichettiamo la qualità della previsione e proteggiamo le coincidenze.",
+        points: [
+          "Arrivi corretti dove i dati esistono",
+          "Coincidenze protette con la stazione",
+          "Deviazioni e cantieri in mappa",
+          "Piano porta a porta con tratti in bici",
+        ],
+      },
+      drive: {
+        kicker: "Guida e ricarica",
+        title: "Circonvallazione, semafori, colonnine",
+        body: "La circonvallazione decide i tempi in auto. Traffico live, countdown dei semafori mappati e colonnine sul percorso.",
+        points: [
+          "Traffico live su circonvallazione e assi",
+          "Countdown semafori sugli incroci mappati",
+          "Colonnine EV per presa e potenza",
+          "Alternative con meno attraversamenti ciclabili",
+        ],
+      },
+      closing: {
+        title: "Padova è nella lista",
+        body: "Una città compatta è perfetta per il confronto tra modi. Chiedila.",
+      },
+    },
+    en: {
+      blurb: "Bicycles everywhere, a guided tram, students.",
+      status: "Under evaluation",
+      headline: "The shortcut across",
+      headlineAccent: "Padua",
+      sub: "A compact city full of bicycles and students, with a guided tram running straight through it.",
+      chips: ["Guided tram", "Bicycles", "Central ZTL"],
+      reality: {
+        kicker: "The real city",
+        title: "Compact enough that the bike often wins",
+        body: "On many urban trips a bicycle beats a car, and we won't pretend otherwise. We compare modes honestly, parking time included.",
+      },
+      facts: [
+        { value: "Bike", label: "compared as a primary mode" },
+        { value: "Tram", label: "straight north-south axis" },
+        { value: "ZTL", label: "historic centre with time bands" },
+      ],
+      access: {
+        kicker: "Parking and access",
+        title: "Park at the edge, walk the centre",
+        body: "We compare perimeter car parks and tram nodes with parking inside, walking time under the arcades included.",
+        points: [
+          "Edge-of-centre car parks with spaces and price",
+          "Interchange nodes along the tram line",
+          "Restricted-zone gates with active time bands",
+          "Bike racks and bike sharing on the same map",
+        ],
+      },
+      transit: {
+        kicker: "Transit",
+        title: "Tram and bus, with corrected arrivals",
+        body: "The tram axis is reliable; buses depend on traffic. We label prediction quality and protect connections.",
+        points: [
+          "Corrected arrivals where data exists",
+          "Protected connections at the station",
+          "Diversions and roadworks on the map",
+          "Door-to-door plans including cycling legs",
+        ],
+      },
+      drive: {
+        kicker: "Driving and charging",
+        title: "Ring road, lights, chargers",
+        body: "The ring road sets driving times. Live traffic, countdowns on mapped lights, chargers along the route.",
+        points: [
+          "Live traffic on the ring road and main axes",
+          "Traffic-light countdowns on mapped junctions",
+          "EV chargers by plug and power",
+          "Alternatives with fewer cycle crossings",
+        ],
+      },
+      closing: {
+        title: "Padua is on the list",
+        body: "A compact city is perfect for honest mode comparison. Ask for it.",
+      },
+    },
+  },
+];

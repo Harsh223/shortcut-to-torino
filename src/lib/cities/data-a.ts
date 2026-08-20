@@ -32,7 +32,7 @@ export const citiesA: City[] = [
         body: "Torino si legge bene sulla mappa: assi lunghi, isolati regolari, portici che coprono il centro. Il problema arriva all'arrivo — la sosta blu del centro, la ZTL con i suoi orari e i controviali dove il posto libero c'è ma dura poco.",
       },
       facts: [
-        { value: "1", app: "", label: "app invece di quattro" } as never,
+        { value: "1", label: "app invece di quattro" },
         { value: "ZTL", label: "orari e varchi in mappa" },
         { value: "GTT", label: "tram, bus e metro" },
       ],
