@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
+import { absoluteUrl } from "@/lib/site";
 import { CITIES, cityCopy, cityUi } from "@/lib/cities";
 import { Reveal } from "@/components/site/Reveal";
 import { WaitlistForm } from "@/components/site/WaitlistForm";
@@ -21,10 +22,10 @@ export const Route = createFileRoute("/cities/")({
           "Local rules, local transit, local data. A dedicated Shortcut page for each of Italy's biggest cities.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://shortcut-to-torino.lovable.app/cities" },
+      { property: "og:url", content: absoluteUrl("/cities") },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://shortcut-to-torino.lovable.app/cities" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/cities") }],
   }),
   component: CitiesIndex,
 });

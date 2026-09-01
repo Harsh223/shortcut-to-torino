@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: shortcut-to-torino
+    runtime: node
+    repo: https://gitlab.com/ytraffic/shortcut-to-torino
+    branch: main
+    region: frankfurt
+    plan: starter
+    buildCommand: npm i -g bun && bun install --frozen-lockfile && bun run build
+    startCommand: node .output/server/index.mjs
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NITRO_PRESET
+        value: node_server
+      - key: SUPABASE_PROJECT_ID
+        sync: false
+      - key: SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_PROJECT_ID
+        sync: false
+      - key: VITE_SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: VITE_SUPABASE_URL
+        sync: false
+      - key: SITE_URL
+        sync: false
+      - key: VITE_SITE_URL
+        sync: false

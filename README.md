@@ -1,29 +1,34 @@
-# Welcome to your Lovable project
+# Shortcut
 
-This project was built with [Lovable](https://lovable.dev).
+Marketing site for Shortcut — parking, transit, and driving in one city app.
 
-## Build with Lovable
+## Stack
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+- TanStack Start + React + TypeScript
+- Vite + Nitro (`node_server` preset)
+- Tailwind CSS
+- Supabase
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+## Local development
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requires [Bun](https://bun.sh).
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install
+bun run dev
 ```
 
-## Built with
+Copy `.env.example` to `.env` and fill in the Supabase values.
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Production
+
+```sh
+bun run build
+bun run start
+```
+
+The Node server listens on `PORT` (Render sets this automatically).
+
+## Deploy
+
+Render web service, Frankfurt, from `https://gitlab.com/ytraffic/shortcut-to-torino`. See `render.yaml`.

@@ -8,6 +8,7 @@ import { CITY_ART } from "@/lib/cities/art";
 import { Reveal } from "@/components/site/Reveal";
 import { WaitlistForm } from "@/components/site/WaitlistForm";
 import { cityUi } from "@/lib/cities";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/cities/$slug")({
   loader: ({ params }) => {
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/cities/$slug")({
     return { name: city.name, region: city.region, title: city.en.headlineAccent };
   },
   head: ({ params, loaderData }) => {
-    const url = `https://shortcut-to-torino.lovable.app/cities/${params.slug}`;
+    const url = absoluteUrl(`/cities/${params.slug}`);
     if (!loaderData) {
       return {
         meta: [{ title: "City not found — Shortcut" }, { name: "robots", content: "noindex" }],

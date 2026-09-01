@@ -1,10 +1,7 @@
-<!-- LOVABLE:BEGIN -->
-> [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+# Shortcut
+
+TanStack Start (React + Vite + Nitro) marketing site for Shortcut.
+
+- Routes live in `src/routes/` (file-based). Do not add Next.js `app/` or `pages/` trees.
+- Production server entry is `src/server.ts`. Start command: `node .output/server/index.mjs`.
+- Public site URL comes from `SITE_URL`, `VITE_SITE_URL`, or `RENDER_EXTERNAL_URL`.
