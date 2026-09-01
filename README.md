@@ -31,4 +31,6 @@ The Node server listens on `PORT` (Render sets this automatically).
 
 ## Deploy
 
-Render web service, Frankfurt, from `https://gitlab.com/ytraffic/shortcut-to-torino`. See `render.yaml`.
+Live at [https://shortcut-to-torino.onrender.com](https://shortcut-to-torino.onrender.com).
+
+Render web service (Frankfurt, free plan) builds from GitHub. The private GitLab copy is `https://gitlab.com/ytraffic/shortcut-to-torino`. See `render.yaml`.

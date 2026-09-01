@@ -2,11 +2,11 @@ services:
   - type: web
     name: shortcut-to-torino
     runtime: node
-    repo: https://gitlab.com/ytraffic/shortcut-to-torino
+    repo: https://github.com/Harsh223/shortcut-to-torino
     branch: main
     region: frankfurt
-    plan: starter
-    buildCommand: npm i -g bun && bun install --frozen-lockfile && bun run build
+    plan: free
+    buildCommand: npm install && npx vite build
     startCommand: node .output/server/index.mjs
     healthCheckPath: /
     envVars:
